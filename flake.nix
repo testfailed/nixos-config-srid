@@ -1,5 +1,5 @@
 {
-  description = "Srid's NixOS / nix-darwin configuration";
+  description = "testfailed's NixOS / nix-darwin configuration";
 
   inputs = {
     # Principle inputs
@@ -10,7 +10,8 @@
     home-manager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
     nixos-hardware.url = "github:NixOS/nixos-hardware";
-    nixos-flake.url = "github:srid/nixos-flake";
+    # nixos-flake.url = "github:srid/nixos-flake";
+    nixos-flake.url = "github:testfailed/nixos-flake-srid/dev-testfailed";
     disko.url = "github:nix-community/disko";
     disko.inputs.nixpkgs.follows = "nixpkgs";
     colmena-flake.url = "github:juspay/colmena-flake";
@@ -33,6 +34,10 @@
 
   outputs = inputs@{ self, ... }:
     inputs.flake-parts.lib.mkFlake { inherit inputs; } {
+
+      # NOTE: for debugging.
+      debug = true;
+
       systems = [ "x86_64-linux" "aarch64-linux" "x86_64-darwin" "aarch64-darwin" ];
       imports = [
         inputs.treefmt-nix.flakeModule
@@ -83,7 +88,7 @@
 
       flake = {
         # Configuration for my M1 Macbook Max (using nix-darwin)
-        darwinConfigurations.appreciate =
+        darwinConfigurations.clv-mba-m1 =
           self.nixos-flake.lib.mkMacosSystem
             ./systems/darwin.nix;
 
@@ -121,7 +126,7 @@
         devShells.default = pkgs.mkShell {
           inputsFrom = [ config.treefmt.build.devShell ];
           packages = with pkgs; [
-            just
+            # just
             colmena
             nixd
           ];

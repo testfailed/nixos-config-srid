@@ -6,6 +6,7 @@
       my-home = {
         home-manager.users.${config.people.myself} = {
           imports = [
+            self.homeModules.common
             self.homeModules.common-darwin
           ];
         };

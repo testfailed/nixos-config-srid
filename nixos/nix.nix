@@ -13,6 +13,8 @@
   };
 
   nix = {
+    # package = pkgs.nix;
+    package = pkgs.nixVersions.nix_2_21;
     nixPath = [ "nixpkgs=${flake.inputs.nixpkgs}" ]; # Enables use of `nix-shell -p ...` etc
     registry.nixpkgs.flake = flake.inputs.nixpkgs; # Make `nix shell` etc use pinned nixpkgs
     settings = {

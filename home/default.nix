@@ -1,27 +1,29 @@
-{ self, inputs, ... }:
+# { self, inputs, ... }:
+{ self, ... }:
 {
   flake = {
     homeModules = {
       common = {
         home.stateVersion = "22.11";
         imports = [
-          inputs.nixvim.homeManagerModules.nixvim
-          inputs.nix-index-database.hmModules.nix-index
-          ./_1password.nix
-          ./tmux.nix
-          ./neovim.nix
-          # ./helix.nix
-          ./ssh.nix
-          ./starship.nix
-          ./terminal.nix
-          ./nix.nix
-          ./git.nix
-          ./direnv.nix
-          ./zellij.nix
-          # ./nushell.nix
-          ./just.nix
-          # ./powershell.nix
-          ./juspay.nix
+          # inputs.nixvim.homeManagerModules.nixvim
+          # inputs.nix-index-database.hmModules.nix-index
+          # ./_1password.nix
+          # ./tmux.nix
+          # ./neovim.nix
+          # # ./helix.nix
+          # ./ssh.nix
+          # ./starship.nix
+          # ./terminal.nix
+          # ./nix.nix
+          # ./git.nix
+          # ./direnv.nix
+          # ./zellij.nix
+          # # ./nushell.nix
+          # ./just.nix
+          # # ./powershell.nix
+          # ./juspay.nix
+          ./ripgrep.nix
         ];
       };
       common-linux = {
@@ -35,9 +37,9 @@
         imports = [
           self.homeModules.common
           ./zsh.nix
-          # ./bash.nix
-          # ./kitty.nix
-          ./himalaya.nix
+          # # ./bash.nix
+          # # ./kitty.nix
+          # ./himalaya.nix
         ];
       };
     };
