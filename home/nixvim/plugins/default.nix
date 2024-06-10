@@ -1,6 +1,5 @@
 {
   imports = [
-    # ./barbar.nix
     # ./comment.nix
     # ./efm.nix
     # ./floaterm.nix
@@ -9,7 +8,7 @@
     # ./neorg.nix
     # ./startify.nix
     ./auto-session.nix
-    # ./bufferline.nix
+    ./bufferline.nix
     ./lsp.nix
     ./lualine.nix
     ./neo-tree.nix
@@ -17,6 +16,7 @@
     ./telescope.nix
     ./treesitter.nix
     ./vimtex.nix
+    ./which-key.nix
   ];
 
   programs.nixvim = {
