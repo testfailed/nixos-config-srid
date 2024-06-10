@@ -1,5 +1,4 @@
 { self, inputs, ... }:
-# { self, ... }:
 {
   flake = {
     homeModules = {
@@ -19,17 +18,17 @@
           # ./just.nix
           # ./starship.nix
           # ./terminal.nix
-          ./tmux.nix
           # ./zellij.nix
           ./bat.nix
           ./direnv.nix
           ./fzf.nix
           ./git.nix
           ./gnutools.nix
-          ./neovim.nix
           ./nix.nix
+          ./nixvim/default.nix
           ./ripgrep.nix
           ./ssh.nix
+          ./tmux.nix
           ./zoxide.nix
           ./zsh.nix
         ];
