@@ -4,11 +4,12 @@
   flake = {
     darwinModules = {
       my-home = {
+
+        # home-manager configs
+        home-manager.backupFileExtension = "before-home-manager";
+
         home-manager.users.${config.people.myself} = {
-          imports = [
-            self.homeModules.common
-            self.homeModules.common-darwin
-          ];
+          imports = [ self.homeModules.common-darwin ];
         };
       };
 

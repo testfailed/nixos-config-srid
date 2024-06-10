@@ -46,11 +46,11 @@
         enable = true;
         settings.keymaps = {
           "<leader>ff" = {
-            desc = "file finder";
+            desc = "Find files";
             action = "find_files";
           };
-          "<leader>fg" = {
-            desc = "find via grep";
+          "<leader>sg" = {
+            desc = "Find via grep";
             action = "live_grep";
           };
         };
@@ -65,7 +65,7 @@
         servers = {
           hls.enable = true;
           marksman.enable = true;
-          nil_ls.enable = true;
+          nil-ls.enable = true;
           rust-analyzer = {
             enable = true;
             installCargo = false;

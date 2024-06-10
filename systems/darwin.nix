@@ -32,4 +32,10 @@ in
   # Used for backwards compatibility, please read the changelog before changing.
   # $ darwin-rebuild changelog
   system.stateVersion = 4;
+
+  # Turn off NIX_PATH warnings now that we're using flakes
+  system.checks.verifyNixPath = false;
+
+  # Enable fonts dir
+  fonts.fontDir.enable = true;
 }

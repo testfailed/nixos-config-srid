@@ -6,10 +6,12 @@
   ];
 
   programs.git = {
-    package = pkgs.gitAndTools.gitFull;
     enable = true;
+
+    package = pkgs.gitAndTools.gitFull;
     userName = flake.config.people.users.${config.home.username}.name;
     userEmail = flake.config.people.users.${config.home.username}.email;
+
     aliases = {
       co = "checkout";
       ci = "commit";
@@ -20,14 +22,18 @@
       # p = "pull --rebase";
       pu = "push";
     };
+
     iniContent = {
       # Branch with most recent change comes first
       branch.sort = "-committerdate";
+
       # Remember and auto-resolve merge conflicts
       # https://git-scm.com/book/en/v2/Git-Tools-Rerere
       rerere.enabled = true;
     };
+
     ignores = [ "*~" "*.swp" ];
+
     delta = {
       enable = true;
       options = {
@@ -37,11 +43,12 @@
         side-by-side = true;
       };
     };
+
     extraConfig = {
-      init.defaultBranch = "master"; # Undo breakage due to https://srid.ca/luxury-belief
+      init.defaultBranch = "main"; # Undo breakage due to https://srid.ca/luxury-belief
       core.editor = "nvim";
-      #protocol.keybase.allow = "always";
-      credential.helper = "store --file ~/.git-credentials";
+      # protocol.keybase.allow = "always";
+      # credential.helper = "store --file ~/.git-credentials";
       pull.rebase = "false";
     };
   };
