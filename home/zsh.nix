@@ -1,20 +1,25 @@
 { lib, pkgs, config, ... }:
 
 {
+  home.packages = with pkgs; [
+    zsh-completions
+    zsh-powerlevel10k
+  ];
+
   programs.zsh = {
     enable = true;
 
-    syntaxHighlighting = {
-      enable = true;
-      highlighters = [
-        "main"
-        "brackets"
-        # "pattern"
-        # "regexp"
-        "cursor"
-        "root"
-      ];
-    };
+    # syntaxHighlighting = {
+    #   enable = true;
+    #   highlighters = [
+    #     "main"
+    #     "brackets"
+    #     # "pattern"
+    #     # "regexp"
+    #     "cursor"
+    #     "root"
+    #   ];
+    # };
 
     # autocd = null;
     autosuggestion = {
@@ -43,8 +48,8 @@
     historySubstringSearch = {
       enable = true; # *: false
 
-      searchDownKey = ["^N"]; # *: ["^[[B"] | $terminfo[kcud1]
-      searchUpKey = ["^P"]; # *: ["^[[A"] | $terminfo[kcuu1]
+      searchDownKey = [ "^N" ]; # *: ["^[[B"] | $terminfo[kcud1]
+      searchUpKey = [ "^P" ]; # *: ["^[[A"] | $terminfo[kcuu1]
     };
 
     plugins = [
@@ -58,7 +63,16 @@
         src = lib.cleanSource ./_file;
         file = "p10k.zsh";
       }
-      # { TODO: use it
+      {
+        name = "magic-enter";
+        src = pkgs.fetchFromGitHub {
+          owner = "zshzoo";
+          repo = "magic-enter";
+          rev = "b5a7d0a55abab268ebd94969e2df6ea867fa2cd5";
+          sha256 = "sha256-3g9upBzGipbL5E2cjUG10rrahQdcmdvUx/ufmmdyzso=";
+        };
+      }
+      # {
       #   name = "vi-mode";
       #   src = pkgs.zsh-vi-mode;
       #   file = "share/zsh-vi-mode/zsh-vi-mode.plugin.zsh";
@@ -885,8 +899,26 @@
       # magic-enter
       #
 
-      export MAGIC_ENTER_GIT_COMMAND=''${MAGIC_ENTER_GIT_COMMAND:-'git status'}
+      export MAGIC_ENTER_GIT_COMMAND=''${MAGIC_ENTER_GIT_COMMAND:-'git status -sb .'}
       export MAGIC_ENTER_OTHER_COMMAND=''${MAGIC_ENTER_OTHER_COMMAND:-'eza -1lhm -F --color=auto --icons=auto --git --group-directories-first -a'}
+
+      # magic-enter alternative
+      # REF: <https://github.com/zshzoo/magic-enter>
+      # TODO: Error on shell init => /Users/ssm/.zshrc:819: not an identifier: git status -sb .
+      # zstyle -s ':zshzoo:magic-enter' command 'ls -laFh .'
+      # zstyle -s ':zshzoo:magic-enter' git-command 'git status -sb .'
+      # zstyle -s ':zshzoo:magic-enter' command "$MAGIC_ENTER_OTHER_COMMAND"
+      # zstyle -s ':zshzoo:magic-enter' git-command "$MAGIC_ENTER_GIT_COMMAND"
+
+      function magic-enter-cmd {
+        if command git rev-parse --is-inside-work-tree &>/dev/null; then
+          echo "git status -sb ."
+          # echo "$MAGIC_ENTER_GIT_COMMAND"
+        else
+          # echo "ls -laFh ."
+          echo "$MAGIC_ENTER_OTHER_COMMAND"
+        fi
+      }
 
       #
       # zsh-autosuggestions

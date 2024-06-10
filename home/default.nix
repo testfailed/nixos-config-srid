@@ -6,30 +6,32 @@
       common = {
         home.stateVersion = "22.11";
         imports = [
+          ./_packages.nix
           ./xdg.nix
 
           inputs.nixvim.homeManagerModules.nixvim
           inputs.nix-index-database.hmModules.nix-index
-          # ./_1password.nix
-          # ./tmux.nix
-          ./neovim.nix
           # # ./helix.nix
-          ./ssh.nix
+          # # ./nushell.nix
+          # # ./powershell.nix
+          # ./_1password.nix
+          # ./juspay.nix
+          # ./just.nix
           # ./starship.nix
           # ./terminal.nix
-          ./nix.nix
-          ./git.nix
-          ./direnv.nix
+          ./tmux.nix
           # ./zellij.nix
-          # # ./nushell.nix
-          # ./just.nix
-          # # ./powershell.nix
-          # ./juspay.nix
-          ./ripgrep.nix
-
-          # ./fzf.nix
-          ./gnutools.nix
           ./bat.nix
+          ./direnv.nix
+          ./fzf.nix
+          ./git.nix
+          ./gnutools.nix
+          ./neovim.nix
+          ./nix.nix
+          ./ripgrep.nix
+          ./ssh.nix
+          ./zoxide.nix
+          ./zsh.nix
         ];
       };
       common-linux = {
@@ -42,7 +44,6 @@
       common-darwin = {
         imports = [
           self.homeModules.common
-          ./zsh.nix
           # # ./bash.nix
           # # ./kitty.nix
           # ./himalaya.nix
