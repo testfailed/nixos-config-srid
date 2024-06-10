@@ -48,6 +48,7 @@
       scrolloff = 8; # *: 0 /// start scrolling when the cursor is x lines away from the top/bottom.
       sessionoptions = "buffers,curdir,folds,globals,help,localoptions,skiprtp,resize,tabpages,terminal,winpos,winsize"; # recommended by 'rmagatti/auto-session'.
       shiftwidth = 2; # Number of spaces used for each step of (auto)indent (local to buffer)
+      showmode = false; # Hide status messages like --- INSERT ---
       showtabline = 2; # *: 1 /// always show tabs.
       sidescroll = 1; # _: 1 /// scroll horizontally one column at a time.
       sidescrolloff = 8; # *: 0 /// start scrolling when the cursor is x columns away from the left/right.
