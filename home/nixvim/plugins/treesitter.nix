@@ -28,7 +28,7 @@
         min_window_height = 8; # *: 0
         mode = "topline"; # *: "cursor"
         multiline_threshold = 20;
-        separator = ""; # -: ""
+        separator = null;
         trim_scope = "inner";
         zindex = 20;
       };

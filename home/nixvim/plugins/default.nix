@@ -31,6 +31,9 @@
     # colorschemes.vscode.enable = true;
 
     plugins = {
+
+      conform-nvim.enable = true;
+
       gitsigns = {
         enable = true;
         settings.signs = {
@@ -59,6 +62,9 @@
           ];
         };
       };
+
+      trouble.enable = true;
+
     };
   };
 }
