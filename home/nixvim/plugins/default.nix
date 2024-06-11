@@ -4,14 +4,15 @@
     # ./floaterm.nix
     # ./harpoon.nix
     # ./markdown-preview.nix
-    # ./neorg.nix
     # ./startify.nix
     ./auto-session.nix
     ./bufferline.nix
     ./comment.nix
     ./copilot-vim.nix
+    ./hop.nix
     ./lsp.nix
     ./lualine.nix
+    ./marks.nix
     ./neo-tree.nix
     ./tagbar.nix
     ./telescope.nix

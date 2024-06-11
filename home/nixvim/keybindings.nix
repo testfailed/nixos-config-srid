@@ -16,24 +16,17 @@
             })
             {
               "<Space>" = "<NOP>";
-
-              # Esc to clear search results
-              "<esc>" = ":noh<CR>";
-
-              # fix Y behaviour
-              Y = "y$";
+              "<Esc>" = ":noh<CR>";
+              "<C-x>" = ":close<CR>";
 
               # back and fourth between the two most recent files
               "<C-c>" = ":b#<CR>";
 
-              # close by Ctrl+x
-              "<C-x>" = ":close<CR>";
+              # manage window
+              "<Leader>wd" = ":w<CR>";
+              "<Leader>=" = "<C-w>=";
 
-              # save by Space+s or Ctrl+s
-              "<leader>s" = ":w<CR>";
-              "<C-s>" = ":w<CR>";
-
-              # navigate windows
+              # navigate window
               "<C-h>" = "<C-w>h";
               "<C-l>" = "<C-w>l";
               "<C-j>" = "<C-w>j";
@@ -43,21 +36,26 @@
               H = "^";
               L = "$";
 
+              Y = "y$";
+
               # resize with arrows
               "<C-Up>" = ":resize -2<CR>";
               "<C-Down>" = ":resize +2<CR>";
               "<C-Left>" = ":vertical resize +2<CR>";
               "<C-Right>" = ":vertical resize -2<CR>";
 
-              # equalize window sizes
-              "<leader>=" = "<C-w>=";
+              # # move current line up/down
+              # # M = Alt key
+              # "<M-k>" = ":move-2<CR>";
+              # "<M-j>" = ":move+<CR>";
 
-              # move current line up/down
-              # M = Alt key
-              "<M-k>" = ":move-2<CR>";
-              "<M-j>" = ":move+<CR>";
+              "<Leader>rp" = ":!remi push<CR>";
 
-              "<leader>rp" = ":!remi push<CR>";
+              # Bufferline
+              "<A-h>" = ":BufferLineCyclePrev<CR>";
+              "<A-l>" = ":BufferLineCycleNext<CR>";
+              "[b" = ":BufferLineCyclePrev<CR>";
+              "]b" = ":BufferLineCycleNext<CR>";
             };
 
         visual =
@@ -67,11 +65,19 @@
               inherit action key;
             })
             {
+              # sort lines (Asc)
+              "<Leader>ss" = ":sort<CR>";
+              "<Leader>si" = ":sort i<CR>";
+
+              # sort lines (Desc)
+              "<Leader>sr" = ":sort!<CR>";
+              "<Leader>sri" = ":sort! i<CR>";
+
               # better indenting
               ">" = ">gv";
               "<" = "<gv";
-              "<TAB>" = ">gv";
-              "<S-TAB>" = "<gv";
+              "<Tab>" = ">gv";
+              "<S-Tab>" = "<gv";
 
               # move selected line / block of text in visual mode
               "K" = ":m '<-2<CR>gv=gv";

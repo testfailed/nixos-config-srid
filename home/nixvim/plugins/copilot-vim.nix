@@ -13,13 +13,19 @@
     keymaps = [
       {
         action = "<Plug>(copilot-accept-word)";
-        key = "<C-'>";
+        key = "<A-'>";
         mode = [ "i" ];
         options = { noremap = true; silent = true; };
       }
       {
         action = "<Plug>(copilot-accept-line)";
-        key = "<C-;>";
+        key = "<A-;>";
+        mode = [ "i" ];
+        options = { noremap = true; silent = true; };
+      }
+      {
+        action = "<Plug>(copilot-accept-line)";
+        key = "<C-,>";
         mode = [ "i" ];
         options = { noremap = true; silent = true; };
       }
