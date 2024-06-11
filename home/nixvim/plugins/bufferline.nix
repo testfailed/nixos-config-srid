@@ -1,6 +1,8 @@
-{ config, lib, ... }: let
-  colors = import ../colors/${config.theme}.nix {};
-in {
+{ config, lib, ... }:
+let
+  colors = import ../colors/${config.theme}.nix { };
+in
+{
   programs.nixvim = {
     plugins = {
       bufferline = {

@@ -1,3 +1,11 @@
+.direnv/**/*
+result/**/*
 result
-.direnv
+
+.vscode/**/*
+!.vscode/extensions.json
+!.vscode/launch.json
+!.vscode/settings.json
+!.vscode/tasks.json
+
 *.qcow2

@@ -1,9 +1,11 @@
 {
     "recommendations": [
-        "bbenoist.nix",
+        "arrterian.nix-env-selector",
         "b4dm4n.nixpkgs-fmt",
+        "bbenoist.nix",
         "jnoortheen.nix-ide",
         "mattn.lisp",
-        "mkhl.direnv"
+        "mkhl.direnv",
+        "pinage404.nix-extension-pack"
     ]
 }

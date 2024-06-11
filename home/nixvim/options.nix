@@ -61,7 +61,7 @@
       splitbelow = true; # A new window is put below the current one
       splitright = true; # A new window is put right of the current one
       swapfile = true; # *: false /// creates a swapfile.
-      tabstop = 8; # Number of spaces a <Tab> in the text stands for (local to buffer)
+      tabstop = 4; # Number of spaces a <Tab> in the text stands for (local to buffer)
       termguicolors = true; # set term gui colors. (most terminals support this)
       textwidth = 0; # Maximum width of text that is being inserted.  A longer line will be broken after white space to get this width.
       timeoutlen = 300; # *: 1000 /// time to wait for a mapped sequence to complete (in milliseconds)

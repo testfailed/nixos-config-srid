@@ -9,8 +9,11 @@
     nix-prefetch-github
 
     # Encryption and security tools
+    # bitwarden # NOTE: error on macOS (linux/capability.h is required in order to build libcap-ng)
     age
     age-plugin-yubikey
+    # bitwarden-cli
+    # bws
     libfido2
 
     # GNU/core tools
@@ -44,27 +47,30 @@
     # aspellDicts.en
     # hunspell
     # just # TODO: use it
-    # lesspipe
+    # ncdu
     # zsh-vi-mode # TODO: use it
-    alacritty
     asciinema
     btop
     cheat
     cht-sh
+    du-dust
     eza
     fd
     fortune
+    gdu
     gh
     htop
     iftop
     jq
     killall
+    lesspipe
     neofetch
     nufmt
     nushell
     silver-searcher
     sqlite
     uutils-coreutils
+    watchman
     yq-go
 
     # Media-related packages
@@ -92,17 +98,50 @@
       ];
     })
 
-    docker
-    docker-compose
+    #
+    # Development tools
+    #
 
     # Python packages
     python311 # NOTE: try python-rewrite
     python311Packages.virtualenv # globally install virtualenv
 
     # Node.js development tools
-    nodePackages.npm # globally install npm
-    nodePackages.prettier
     nodejs
+    # nodePackages.lerna # NOTE: build error
+    nodePackages.cspell
+    nodePackages.dotenv-cli
+    nodePackages.dotenv-vault
+    nodePackages.eslint
+    nodePackages.graphql-cli
+    nodePackages.neovim
+    nodePackages.node-gyp
+    nodePackages.nodemon
+    nodePackages.npm
+    nodePackages.patch-package
+    nodePackages.pm2
+    nodePackages.pnpm
+    nodePackages.prettier
+    nodePackages.prettier
+    nodePackages.prisma
+    nodePackages.semver
+    nodePackages.speed-test
+    nodePackages.svgo
+    nodePackages.ts-node
+    nodePackages.vercel
+    nodePackages.webpack-cli
+    nodePackages.yalc
+    nodePackages.yarn
+
+    #
+    # DevOps tools
+    #
+
+    docker
+    docker-compose
+
+    pre-commit
+    turbo
 
     # NOTE: TEMP
     # terraform
@@ -115,7 +154,7 @@
     google-cloud-sdk
     kubectl
     redis
-    watchman
+    vultr-cli
 
     # ] ++ (lib.optionals isDarwin [
     #   # This is automatically setup on Linux
