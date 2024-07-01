@@ -4,6 +4,7 @@
   inputs = {
     # Principle inputs
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+
     flake-parts.url = "github:hercules-ci/flake-parts";
     nix-darwin.url = "github:LnL7/nix-darwin";
     nix-darwin.inputs.nixpkgs.follows = "nixpkgs";
@@ -131,11 +132,15 @@
             nixd
           ];
         };
+
         # Make our overlay available to the devShell
         _module.args.pkgs = import inputs.nixpkgs {
           inherit system;
           overlays = [
-            (import ./packages/overlay.nix { inherit system; flake = { inherit inputs; }; })
+            (import ./packages/overlay.nix {
+              inherit system;
+              flake = { inherit inputs; };
+            })
           ];
         };
       };

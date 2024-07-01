@@ -19,6 +19,7 @@
           # ./starship.nix
           # ./terminal.nix
           # ./zellij.nix
+          ./alacritty.nix
           ./bat.nix
           ./direnv.nix
           ./fzf.nix

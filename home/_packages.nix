@@ -67,6 +67,7 @@
     neofetch
     nufmt
     nushell
+    sesh
     silver-searcher
     sqlite
     uutils-coreutils

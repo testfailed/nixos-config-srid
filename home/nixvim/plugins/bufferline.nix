@@ -76,8 +76,53 @@ in
     keymaps = [
       {
         mode = "n";
-        key = "<Tab>";
-        action = "<cmd>BufferLineCycleNext<cr>";
+        key = "<Leader>bb";
+        action = "<Cmd>Telescope buffers<CR>";
+        options = {
+          desc = "Find buffer";
+        };
+      }
+
+      {
+        mode = "n";
+        key = "<Leader>b'";
+        action = ":buffers<CR>";
+        options = {
+          desc = "List buffers";
+        };
+      }
+
+      {
+        mode = "n";
+        key = "<Leader>,";
+        action = "<Cmd>BufferLinePick<CR>";
+        options = {
+          desc = "Pick buffer";
+        };
+      }
+
+      {
+        mode = "n";
+        key = "<Leader>.";
+        action = "<Cmd>BufferLinePickClose<CR>";
+        options = {
+          desc = "Pick buffer to close";
+        };
+      }
+
+      {
+        mode = "n";
+        key = "<Leader>b;";
+        action = "<Cmd>e #<CR>";
+        options = {
+          desc = "Switch to Other Buffer";
+        };
+      }
+
+      {
+        mode = "n";
+        key = "<Leader>bn";
+        action = "<Cmd>BufferLineCycleNext<CR>";
         options = {
           desc = "Cycle to next buffer";
         };
@@ -85,8 +130,8 @@ in
 
       {
         mode = "n";
-        key = "<S-Tab>";
-        action = "<cmd>BufferLineCyclePrev<cr>";
+        key = "<Leader>bp";
+        action = "<Cmd>BufferLineCyclePrev<CR>";
         options = {
           desc = "Cycle to previous buffer";
         };
@@ -94,8 +139,8 @@ in
 
       {
         mode = "n";
-        key = "<S-l>";
-        action = "<cmd>BufferLineCycleNext<cr>";
+        key = "]b";
+        action = "<Cmd>BufferLineCycleNext<CR>";
         options = {
           desc = "Cycle to next buffer";
         };
@@ -103,8 +148,8 @@ in
 
       {
         mode = "n";
-        key = "<S-h>";
-        action = "<cmd>BufferLineCyclePrev<cr>";
+        key = "[b";
+        action = "<Cmd>BufferLineCyclePrev<CR>";
         options = {
           desc = "Cycle to previous buffer";
         };
@@ -112,8 +157,26 @@ in
 
       {
         mode = "n";
-        key = "<leader>bd";
-        action = "<cmd>bdelete<cr>";
+        key = "<M-l>";
+        action = "<Cmd>BufferLineCycleNext<CR>";
+        options = {
+          desc = "Cycle to next buffer";
+        };
+      }
+
+      {
+        mode = "n";
+        key = "<M-h>";
+        action = "<Cmd>BufferLineCyclePrev<CR>";
+        options = {
+          desc = "Cycle to previous buffer";
+        };
+      }
+
+      {
+        mode = "n";
+        key = "<Leader>bd";
+        action = "<Cmd>bdelete<CR>";
         options = {
           desc = "Delete buffer";
         };
@@ -121,26 +184,8 @@ in
 
       {
         mode = "n";
-        key = "<leader>bb";
-        action = "<cmd>e #<cr>";
-        options = {
-          desc = "Switch to Other Buffer";
-        };
-      }
-
-      # {
-      #   mode = "n";
-      #   key = "<leader>`";
-      #   action = "<cmd>e #<cr>";
-      #   options = {
-      #     desc = "Switch to Other Buffer";
-      #   };
-      # }
-
-      {
-        mode = "n";
-        key = "<leader>bl";
-        action = "<cmd>BufferLineCloseRight<cr>";
+        key = "<Leader>bl";
+        action = "<Cmd>BufferLineCloseRight<CR>";
         options = {
           desc = "Delete buffers to the right";
         };
@@ -148,8 +193,8 @@ in
 
       {
         mode = "n";
-        key = "<leader>bh";
-        action = "<cmd>BufferLineCloseLeft<cr>";
+        key = "<Leader>bh";
+        action = "<Cmd>BufferLineCloseLeft<CR>";
         options = {
           desc = "Delete buffers to the left";
         };
@@ -157,8 +202,8 @@ in
 
       {
         mode = "n";
-        key = "<leader>bo";
-        action = "<cmd>BufferLineCloseOthers<cr>";
+        key = "<Leader>bD";
+        action = "<Cmd>BufferLineCloseOthers<CR>";
         options = {
           desc = "Delete other buffers";
         };
@@ -166,8 +211,8 @@ in
 
       {
         mode = "n";
-        key = "<leader>bp";
-        action = "<cmd>BufferLineTogglePin<cr>";
+        key = "<Leader>bp";
+        action = "<Cmd>BufferLineTogglePin<CR>";
         options = {
           desc = "Toggle pin";
         };
@@ -175,7 +220,7 @@ in
 
       {
         mode = "n";
-        key = "<leader>bP";
+        key = "<Leader>bP";
         action = "<Cmd>BufferLineGroupClose ungrouped<CR>";
         options = {
           desc = "Delete non-pinned buffers";

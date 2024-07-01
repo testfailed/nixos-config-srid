@@ -55,8 +55,6 @@
         # Use XDG data directory
         # https://github.com/tmux-plugins/tmux-resurrect/issues/348
         extraConfig = ''
-          # TODO: it saves to '\\/Users/ssm/...'
-          # set -g @resurrect-dir '$HOME/.cache/tmux/resurrect'
           set -g @resurrect-dir '${config.home.homeDirectory}/.cache/tmux/resurrect'
           set -g @resurrect-capture-pane-contents 'on'
           set -g @resurrect-pane-contents-area 'visible'
@@ -100,56 +98,64 @@
       # Key bindings
       # -----------------------------------------------------------------------------
 
-      # Unbind default keys
+      # Unbind unused default keys (to avoid conflicts with other apps)
       unbind C-b
-
       unbind C-h
       unbind C-j
       unbind C-k
       unbind C-l
 
       # some useful <C-a> combinations
-      # bind-key r source-file ~/.tmux.conf \; display "Reloaded from ~/.tmux.conf"
-      bind-key : command-prompt
-      bind-key L clear-history
-      bind-key b display "#{pane_width}x#{pane_height}"
+      bind R \
+        source ~/.config/tmux/tmux.conf \; \
+        display "Reloaded from ~/.config/tmux/tmux.conf"
+      bind : command-prompt
+      bind L clear-history
+      bind b display "#{pane_width}x#{pane_height}"
 
-      bind-key C-l next-window
-      bind-key C-h previous-window
-      bind-key enter next-layout
-      bind-key C-o rotate-window
+      bind -n M-n next-window
+      bind -n M-p previous-window
+      bind -n M-N next-session
+      bind -n M-P previous-session
+
+      # bind enter next-layout
+      bind C-o rotate-window
+
+      bind -n M-x confirm-before -p "kill-pane #P? (y/n)" kill-pane
+      bind -n M-X confirm-before -p "kill-window #W? (y/n)" kill-window
 
       # Split panes, vertical or horizontal
       # create pane/window on CWD
-      bind-key '"' split-window -c "#{pane_current_path}"
-      bind-key % split-window -h -c "#{pane_current_path}"
-      bind-key c new-window -c "#{pane_current_path}"
-      bind-key C-x kill-pane
+      bind '"' split-window -c "#{pane_current_path}"
+      bind % split-window -h -c "#{pane_current_path}"
+      bind \\ split-window -c "#{pane_current_path}"
+      bind | split-window -h -c "#{pane_current_path}"
+      bind c new-window -c "#{pane_current_path}"
 
       # Resize pane (and then enter the resize mode)
       # We make the <, >, +, - key repeatable (with shift hold) by using "resize-pane" keytable
-      bind-key > resize-pane -R 10 \; switch-client -T "resize-pane"
-      bind-key < resize-pane -L 10 \; switch-client -T "resize-pane"
-      bind-key -T "resize-pane" > resize-pane -R 5 \; switch-client -T "resize-pane"
-      bind-key -T "resize-pane" < resize-pane -L 5 \; switch-client -T "resize-pane"
+      bind > resize-pane -R 10 \; switch-client -T "resize-pane"
+      bind < resize-pane -L 10 \; switch-client -T "resize-pane"
+      bind -T "resize-pane" > resize-pane -R 5 \; switch-client -T "resize-pane"
+      bind -T "resize-pane" < resize-pane -L 5 \; switch-client -T "resize-pane"
 
-      bind-key + resize-pane -D 5  \; switch-client -T "resize-pane"
-      bind-key - resize-pane -U 5  \; switch-client -T "resize-pane"
-      bind-key -T "resize-pane" + resize-pane -D \; switch-client -T "resize-pane"
-      # bind-key -T "resize-pane" = resize-pane -D \; switch-client -T "resize-pane"
-      # bind-key -T "resize-pane" - resize-pane -U \; switch-client -T "resize-pane"
-      # bind-key -T "resize-pane" _ resize-pane -U \; switch-client -T "resize-pane"
+      bind + resize-pane -D 5  \; switch-client -T "resize-pane"
+      bind - resize-pane -U 5  \; switch-client -T "resize-pane"
+      bind -T "resize-pane" + resize-pane -D \; switch-client -T "resize-pane"
+      # bind -T "resize-pane" = resize-pane -D \; switch-client -T "resize-pane"
+      # bind -T "resize-pane" - resize-pane -U \; switch-client -T "resize-pane"
+      # bind -T "resize-pane" _ resize-pane -U \; switch-client -T "resize-pane"
 
       # resize-pane mode: support h, j, k, l, and arrow keys
-      bind-key -T "resize-pane" k resize-pane -U \; switch-client -T "resize-pane"
-      bind-key -T "resize-pane" j resize-pane -D \; switch-client -T "resize-pane"
-      bind-key -T "resize-pane" h resize-pane -L \; switch-client -T "resize-pane"
-      bind-key -T "resize-pane" l resize-pane -R \; switch-client -T "resize-pane"
+      bind -T "resize-pane" k resize-pane -U \; switch-client -T "resize-pane"
+      bind -T "resize-pane" j resize-pane -D \; switch-client -T "resize-pane"
+      bind -T "resize-pane" h resize-pane -L \; switch-client -T "resize-pane"
+      bind -T "resize-pane" l resize-pane -R \; switch-client -T "resize-pane"
 
-      bind-key -T "resize-pane" Up    resize-pane -U 5 \; switch-client -T "resize-pane"
-      bind-key -T "resize-pane" Down  resize-pane -D 5 \; switch-client -T "resize-pane"
-      bind-key -T "resize-pane" Left  resize-pane -L 5 \; switch-client -T "resize-pane"
-      bind-key -T "resize-pane" Right resize-pane -R 5 \; switch-client -T "resize-pane"
+      bind -T "resize-pane" Up    resize-pane -U 5 \; switch-client -T "resize-pane"
+      bind -T "resize-pane" Down  resize-pane -D 5 \; switch-client -T "resize-pane"
+      bind -T "resize-pane" Left  resize-pane -L 5 \; switch-client -T "resize-pane"
+      bind -T "resize-pane" Right resize-pane -R 5 \; switch-client -T "resize-pane"
 
       # force Vi mode
       # really you should export VISUAL or EDITOR environment variable, see manual
@@ -158,39 +164,39 @@
 
       # Act like Vim
       set-window-option -g mode-keys vi
-      bind-key h select-pane -L
-      bind-key j select-pane -D
-      bind-key k select-pane -U
-      bind-key l select-pane -R
+      bind h select-pane -L
+      bind j select-pane -D
+      bind k select-pane -U
+      bind l select-pane -R
 
-      # bind-key -n M-h select-pane -L
-      # bind-key -n M-j select-pane -D
-      # bind-key -n M-k select-pane -U
-      # bind-key -n M-l select-pane -R
+      bind -n M-h select-pane -L
+      bind -n M-j select-pane -D
+      bind -n M-k select-pane -U
+      bind -n M-l select-pane -R
 
       # toggle synchronize-panes
-      bind-key C-y set-window-option synchronize-panes\; display-message "synchronize-panes is now #{?pane_synchronized,on,off}"
+      bind C-y set-window-option synchronize-panes\; display-message "synchronize-panes is now #{?pane_synchronized,on,off}"
 
       # switch to last window
-      bind-key n last-window
+      bind n last-window
 
       # switch to last session
-      bind-key C-n switch-client -l
+      bind C-n switch-client -l
 
       # swap window left and right
-      bind-key C-j swap-window -t -1\; select-window -t -1
-      bind-key C-k swap-window -t +1\; select-window -t +1
+      bind C-j swap-window -t -1\; select-window -t -1
+      bind C-k swap-window -t +1\; select-window -t +1
 
       # Save buffer to a file
-      bind-key P command-prompt -p 'save history to filename:' -I '~/tmux.history' 'capture-pane -S -32768 ; save-buffer %1 ; delete-buffer'
+      bind P command-prompt -p 'save history to filename:' -I '~/tmux.history' 'capture-pane -S -32768 ; save-buffer %1 ; delete-buffer'
 
       # Copy-paste between the system and Tmux clipboard
       # REQUIRE: 'brew install xclip'
-      bind-key -T copy-mode-vi y send-keys -X copy-pipe "xclip -sel clip -i"
+      bind -T copy-mode-vi y send-keys -X copy-pipe "xclip -sel clip -i"
 
       # Mouse copying behaviour
       # => Copy but do not clear the selection:
-      bind-key -T copy-mode-vi MouseDragEnd1Pane send -X copy-selection-no-clear
+      bind -T copy-mode-vi MouseDragEnd1Pane send -X copy-selection-no-clear
 
       ###########################################################
       # Configs                                                 #
@@ -248,33 +254,33 @@
       #
 
       # Move around panes with vim-like bindings (h,j,k,l)
-      bind-key -n M-k select-pane -U
-      bind-key -n M-h select-pane -L
-      bind-key -n M-j select-pane -D
-      bind-key -n M-l select-pane -R
+      bind -n M-k select-pane -U
+      bind -n M-h select-pane -L
+      bind -n M-j select-pane -D
+      bind -n M-l select-pane -R
 
       # # Smart pane switching with awareness of Vim splits.
       # # This is copy paste from https://github.com/christoomey/vim-tmux-navigator
       # is_vim="ps -o state= -o comm= -t '#{pane_tty}' \
       #   | grep -iqE '^[^TXZ ]+ +(\\S+\\/)?g?(view|n?vim?x?)(diff)?$'"
-      # bind-key -n 'C-h' if-shell "$is_vim" 'send-keys C-h'  'select-pane -L'
-      # bind-key -n 'C-j' if-shell "$is_vim" 'send-keys C-j'  'select-pane -D'
-      # bind-key -n 'C-k' if-shell "$is_vim" 'send-keys C-k'  'select-pane -U'
-      # bind-key -n 'C-l' if-shell "$is_vim" 'send-keys C-l'  'select-pane -R'
+      # bind -n C-h if-shell "$is_vim" 'send-keys C-h'  'select-pane -L'
+      # bind -n C-j if-shell "$is_vim" 'send-keys C-j'  'select-pane -D'
+      # bind -n C-k if-shell "$is_vim" 'send-keys C-k'  'select-pane -U'
+      # bind -n C-l if-shell "$is_vim" 'send-keys C-l'  'select-pane -R'
 
       tmux_version='$(tmux -V | sed -En "s/^tmux ([0-9]+(.[0-9]+)?).*/\1/p")'
       # if-shell -b '[ "$(echo "$tmux_version < 3.0" | bc)" = 1 ]' \
-      #   "bind-key -n 'C-\\' if-shell \"$is_vim\" 'send-keys C-\\'  'select-pane -l'"
+      #   "bind -n 'C-\\' if-shell \"$is_vim\" 'send-keys C-\\'  'select-pane -l'"
       # if-shell -b '[ "$(echo "$tmux_version >= 3.0" | bc)" = 1 ]' \
-      #   "bind-key -n 'C-\\' if-shell \"$is_vim\" 'send-keys C-\\\\'  'select-pane -l'"
+      #   "bind -n 'C-\\' if-shell \"$is_vim\" 'send-keys C-\\\\'  'select-pane -l'"
 
-      bind-key -n M-\\ select-pane -l
+      bind -n 'M-\;' select-pane -l
 
-      bind-key -T copy-mode-vi 'M-h' select-pane -L
-      bind-key -T copy-mode-vi 'M-j' select-pane -D
-      bind-key -T copy-mode-vi 'M-k' select-pane -U
-      bind-key -T copy-mode-vi 'M-l' select-pane -R
-      bind-key -T copy-mode-vi 'M-\' select-pane -l
+      bind -n -T copy-mode-vi M-h select-pane -L
+      bind -n -T copy-mode-vi M-j select-pane -D
+      bind -n -T copy-mode-vi M-k select-pane -U
+      bind -n -T copy-mode-vi M-l select-pane -R
+      bind -n -T copy-mode-vi M-\; select-pane -l
     '';
   };
 }
