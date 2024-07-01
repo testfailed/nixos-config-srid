@@ -121,7 +121,7 @@ in
 
       {
         mode = "n";
-        key = "<Leader>bn";
+        key = "<Leader>bl";
         action = "<Cmd>BufferLineCycleNext<CR>";
         options = {
           desc = "Cycle to next buffer";
@@ -130,7 +130,7 @@ in
 
       {
         mode = "n";
-        key = "<Leader>bp";
+        key = "<Leader>bh";
         action = "<Cmd>BufferLineCyclePrev<CR>";
         options = {
           desc = "Cycle to previous buffer";
@@ -176,7 +176,7 @@ in
       {
         mode = "n";
         key = "<Leader>bd";
-        action = "<Cmd>bdelete<CR>";
+        action = "<Cmd>bp | bd #<CR>";
         options = {
           desc = "Delete buffer";
         };
@@ -184,7 +184,25 @@ in
 
       {
         mode = "n";
-        key = "<Leader>bl";
+        key = "<Leader>bj";
+        action = "<Cmd>BufferLineMoveNext<CR>";
+        options = {
+          desc = "Move buffer to the right";
+        };
+      }
+
+      {
+        mode = "n";
+        key = "<Leader>bk";
+        action = "<Cmd>BufferLineMovePrev<CR>";
+        options = {
+          desc = "Move buffer to the left";
+        };
+      }
+
+      {
+        mode = "n";
+        key = "<Leader>bL";
         action = "<Cmd>BufferLineCloseRight<CR>";
         options = {
           desc = "Delete buffers to the right";
@@ -193,7 +211,7 @@ in
 
       {
         mode = "n";
-        key = "<Leader>bh";
+        key = "<Leader>bH";
         action = "<Cmd>BufferLineCloseLeft<CR>";
         options = {
           desc = "Delete buffers to the left";

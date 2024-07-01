@@ -48,7 +48,7 @@
         userDefaultOptions.names = false;
       };
 
-      oil.enable = true;
+      # oil.enable = true;
 
       trim = {
         enable = true;
