@@ -17,7 +17,6 @@ in
       # ]
 
       shell = {
-        # program = "zsh";
         program = "${pkgs.zsh}/bin/zsh";
         # args = ["-i" "-l"];
         args = [ "-l" ];

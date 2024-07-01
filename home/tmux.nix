@@ -113,10 +113,17 @@
       bind L clear-history
       bind b display "#{pane_width}x#{pane_height}"
 
-      bind -n M-n next-window
-      bind -n M-p previous-window
+      # session
+      bind C-n switch-client -l
+      bind -n M-, switch-client -l
       bind -n M-N next-session
       bind -n M-P previous-session
+
+      # window
+      bind n last-window
+      bind -n M-\' last-window
+      bind -n M-n next-window
+      bind -n M-p previous-window
 
       # bind enter next-layout
       bind C-o rotate-window
@@ -173,15 +180,16 @@
       bind -n M-j select-pane -D
       bind -n M-k select-pane -U
       bind -n M-l select-pane -R
+      bind -n M-\; select-pane -l
+
+      bind -n -T copy-mode-vi M-h select-pane -L
+      bind -n -T copy-mode-vi M-j select-pane -D
+      bind -n -T copy-mode-vi M-k select-pane -U
+      bind -n -T copy-mode-vi M-l select-pane -R
+      bind -n -T copy-mode-vi M-\; select-pane -l
 
       # toggle synchronize-panes
       bind C-y set-window-option synchronize-panes\; display-message "synchronize-panes is now #{?pane_synchronized,on,off}"
-
-      # switch to last window
-      bind n last-window
-
-      # switch to last session
-      bind C-n switch-client -l
 
       # swap window left and right
       bind C-j swap-window -t -1\; select-window -t -1
@@ -228,8 +236,7 @@
 
       # start window numbers at 1 to match keyboard order with tmux window order
       set -g base-index 1
-      # set-window-option -g pane-base-index 1
-      set -wg pane-base-index 1
+      setw -g pane-base-index 1
 
       # renumber windows sequentially after closing any of them
       set -g renumber-windows on
@@ -237,50 +244,13 @@
       # Align status menu to absolute center.
       set -g status-justify absolute-centre
 
-      # Set status update interval to 10sec.
-      set -g status-interval 10
+      # Set status update interval to 5sec.
+      set -g status-interval 5
 
-      WEATHER='#(curl -s wttr.in/Bucheon:Seoul:Incheon\?format\="%%l:+%%c%%20%%f%%60+%%t%%60+%%h+%%p+%%w+uv:%%u&period=10")'
-      # set -g status-right "#{prefix_highlight} $WEATHER %a"
-      set -g status-right "$WEATHER #{prefix_highlight} | %a %Y-%m-%d %H:%M"
-
-      # soften status bar color from harsh green to light gray
-      # set -g status-style bg='#555555',fg='#dddddd'
+      WEATHER='#(${pkgs.curl}/bin/curl -s wttr.in/Bucheon\?format\="%%c%%f%%60+%%h+%%p+%%u")'
+      set -g status-right "$WEATHER #{prefix_highlight} | %a %Y-%m-%d %H:%M "
 
       set -g window-status-last-style 'underscore'
-
-      #
-      # TODO:
-      #
-
-      # Move around panes with vim-like bindings (h,j,k,l)
-      bind -n M-k select-pane -U
-      bind -n M-h select-pane -L
-      bind -n M-j select-pane -D
-      bind -n M-l select-pane -R
-
-      # # Smart pane switching with awareness of Vim splits.
-      # # This is copy paste from https://github.com/christoomey/vim-tmux-navigator
-      # is_vim="ps -o state= -o comm= -t '#{pane_tty}' \
-      #   | grep -iqE '^[^TXZ ]+ +(\\S+\\/)?g?(view|n?vim?x?)(diff)?$'"
-      # bind -n C-h if-shell "$is_vim" 'send-keys C-h'  'select-pane -L'
-      # bind -n C-j if-shell "$is_vim" 'send-keys C-j'  'select-pane -D'
-      # bind -n C-k if-shell "$is_vim" 'send-keys C-k'  'select-pane -U'
-      # bind -n C-l if-shell "$is_vim" 'send-keys C-l'  'select-pane -R'
-
-      tmux_version='$(tmux -V | sed -En "s/^tmux ([0-9]+(.[0-9]+)?).*/\1/p")'
-      # if-shell -b '[ "$(echo "$tmux_version < 3.0" | bc)" = 1 ]' \
-      #   "bind -n 'C-\\' if-shell \"$is_vim\" 'send-keys C-\\'  'select-pane -l'"
-      # if-shell -b '[ "$(echo "$tmux_version >= 3.0" | bc)" = 1 ]' \
-      #   "bind -n 'C-\\' if-shell \"$is_vim\" 'send-keys C-\\\\'  'select-pane -l'"
-
-      bind -n 'M-\;' select-pane -l
-
-      bind -n -T copy-mode-vi M-h select-pane -L
-      bind -n -T copy-mode-vi M-j select-pane -D
-      bind -n -T copy-mode-vi M-k select-pane -U
-      bind -n -T copy-mode-vi M-l select-pane -R
-      bind -n -T copy-mode-vi M-\; select-pane -l
     '';
   };
 }
