@@ -1,16 +1,25 @@
 {
   programs.nixvim = {
     plugins.auto-session = {
-      enable = true;
+      enable = true; # *: false
 
-      logLevel = "warn";
-      autoRestore.enabled = true; # *: null
-      autoSave.enabled = true; # *: null
+      bypassSessionSaveFileTypes = null;
+      logLevel = "info"; # *: "error"
+
+      autoRestore.enabled = true; # *: false
+
+      autoSave.enabled = true; # *: false
 
       autoSession = {
-        enabled = true;
+        # Enables/disables auto creating, saving and restoring.
+        enabled = true; # _: true
+
+        # Whether to enable the “last session” feature.
+        enableLastSession = true; # *: false
 
         createEnabled = true; # *: null
+        rootDir = { __raw = "vim.fn.stdpath 'data' .. '/sessions/'"; };
+        suppressDirs = null;
         useGitBranch = true; # *: null
       };
 

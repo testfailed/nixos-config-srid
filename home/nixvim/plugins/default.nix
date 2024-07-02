@@ -3,13 +3,14 @@
     # ./efm.nix
     # ./floaterm.nix
     # ./harpoon.nix
+    # ./hop.nix
     # ./markdown-preview.nix
     # ./startify.nix
     ./auto-session.nix
     ./bufferline.nix
     ./comment.nix
     ./copilot-vim.nix
-    ./hop.nix
+    ./leap.nix
     ./lsp.nix
     ./lualine.nix
     ./marks.nix
@@ -22,19 +23,23 @@
   ];
 
   programs.nixvim = {
-    # colorschemes.base16.enable = true;
     # colorschemes.base16.colorscheme = "onedark";
-    colorschemes.catppuccin.enable = true;
-    colorschemes.catppuccin.settings.flavour = "macchiato";
+    # colorschemes.base16.enable = true;
+    # colorschemes.onedark.enable = true;
     # colorschemes.tokyonight.enable = true;
     # colorschemes.tokyonight.settings.style = "storm";
-    # colorschemes.onedark.enable = true;
     # colorschemes.vscode.enable = true;
+    colorschemes.catppuccin.enable = true;
+    colorschemes.catppuccin.settings.flavour = "macchiato";
 
     plugins = {
 
-      conform-nvim.enable = true;
+      # oil.enable = true; # *: false
+      conform-nvim.enable = true; # *: false # TODO: move to a separate file.
+      nix.enable = true; # *: false
+      trouble.enable = true; # *: false # TODO: move to a separate file.
 
+      # TODO: move to a separate file.
       gitsigns = {
         enable = true;
         settings.signs = {
@@ -43,13 +48,13 @@
         };
       };
 
+      # TODO: move to a separate file.
       nvim-colorizer = {
         enable = true;
         userDefaultOptions.names = false;
       };
 
-      # oil.enable = true;
-
+      # TODO: move to a separate file.
       trim = {
         enable = true;
         settings = {
@@ -63,8 +68,6 @@
           ];
         };
       };
-
-      trouble.enable = true;
 
     };
   };

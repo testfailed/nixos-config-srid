@@ -5,14 +5,16 @@
     # Principle inputs
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
 
-    flake-parts.url = "github:hercules-ci/flake-parts";
     nix-darwin.url = "github:LnL7/nix-darwin";
     nix-darwin.inputs.nixpkgs.follows = "nixpkgs";
     home-manager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
-    nixos-hardware.url = "github:NixOS/nixos-hardware";
+
+    flake-parts.url = "github:hercules-ci/flake-parts";
     # nixos-flake.url = "github:srid/nixos-flake";
     nixos-flake.url = "github:testfailed/nixos-flake-srid/dev-testfailed";
+
+    nixos-hardware.url = "github:NixOS/nixos-hardware";
     disko.url = "github:nix-community/disko";
     disko.inputs.nixpkgs.follows = "nixpkgs";
     colmena-flake.url = "github:juspay/colmena-flake";
