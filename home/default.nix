@@ -26,7 +26,9 @@
           ./git.nix
           ./gnutools.nix
           ./nix.nix
-          ./nixvim/default.nix
+          ./nix-index.nix
+          # ./nixvim/default.nix
+          ./nixvim
           ./ripgrep.nix
           ./ssh.nix
           ./tmux.nix

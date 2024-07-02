@@ -35,16 +35,16 @@
               action = "<CMD>LspRestart<Enter>";
               key = "<leader>lr";
             }
-            {
-              action = {
-                __raw = "require('telescope.builtin').lsp_definitions()";
-              };
-              key = "gd";
-            }
-            {
-              action = "<CMD>Lspsaga hover_doc<Enter>";
-              key = "K";
-            }
+            # {
+            #   action = {
+            #     __raw = "require('telescope.builtin').lsp_definitions()";
+            #   };
+            #   key = "gd";
+            # }
+            # {
+            #   action = "<CMD>Lspsaga hover_doc<Enter>";
+            #   key = "K";
+            # }
           ];
         };
 
@@ -71,8 +71,8 @@
           marksman.enable = true; # *: false
           nginx-language-server.enable = true; # *: false
           # nickel-ls.enable = true; # *: false # TODO: error: The option `home-manager.users.ssm.programs.nixvim.plugins.lsp.servers.nickel-ls' does not exist.
-          # nil-ls.enable = true; # *: false
-          nixd.enable = true; # *: false
+          nil-ls.enable = true; # *: false
+          # nixd.enable = true; # *: false
           nushell.enable = true; # *: false
           perlpls.enable = true; # *: false
           prismals.enable = true; # *: false

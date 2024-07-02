@@ -94,9 +94,9 @@
       # Enable full mouse support
       set -g mouse on
 
-      # -----------------------------------------------------------------------------
-      # Key bindings
-      # -----------------------------------------------------------------------------
+      ###########################################################
+      # Keybindings
+      ###########################################################
 
       # Unbind unused default keys (to avoid conflicts with other apps)
       unbind C-b
@@ -113,17 +113,67 @@
       bind L clear-history
       bind b display "#{pane_width}x#{pane_height}"
 
-      # session
-      bind C-n switch-client -l
-      bind -n M-, switch-client -l
-      bind -n M-N next-session
-      bind -n M-P previous-session
+      #
+      # Session
+      #
 
-      # window
-      bind n last-window
-      bind -n M-\' last-window
-      bind -n M-n next-window
+      # bind C-H previous-session
+      # bind C-L next-session
+      bind C-p previous-session
+      bind C-n next-session
+      bind C-\' switch-client -l
+
+      # bind -n M-H previous-session
+      # bind -n M-L next-session
+      # bind -n M-N switch-client -l
+      bind -n M-P previous-session
+      bind -n M-N next-session
+      bind -n M-, switch-client -l
+
+      #
+      # Window
+      #
+
+      # bind h previous-window
+      # bind l next-window
+      # bind n last-window
+      bind p previous-window
+      bind n next-window
+      bind \' last-window
+
+      # bind -n M-h previous-window
+      # bind -n M-l next-window
+      # bind -n M-n last-window
       bind -n M-p previous-window
+      bind -n M-n next-window
+      bind -n M-\' last-window
+
+      # swap window left and right
+      bind C-j swap-window -t +1\; select-window -t +1
+      bind C-k swap-window -t -1\; select-window -t -1
+      bind -n M-j swap-window -t +1\; select-window -t +1
+      bind -n M-k swap-window -t -1\; select-window -t -1
+
+      #
+      # Pane
+      #
+
+      bind h select-pane -L
+      bind j select-pane -D
+      bind k select-pane -U
+      bind l select-pane -R
+
+      bind -n M-h select-pane -L
+      bind -n M-j select-pane -D
+      bind -n M-k select-pane -U
+      bind -n M-l select-pane -R
+      bind -n M-\; select-pane -l
+
+      bind -n -T copy-mode-vi M-h select-pane -L
+      bind -n -T copy-mode-vi M-j select-pane -D
+      bind -n -T copy-mode-vi M-k select-pane -U
+      bind -n -T copy-mode-vi M-l select-pane -R
+      bind -n -T copy-mode-vi M-\; select-pane -l
 
       # bind enter next-layout
       bind C-o rotate-window
@@ -170,30 +220,11 @@
       set -g status-keys vi
 
       # Act like Vim
-      set-window-option -g mode-keys vi
-      bind h select-pane -L
-      bind j select-pane -D
-      bind k select-pane -U
-      bind l select-pane -R
-
-      bind -n M-h select-pane -L
-      bind -n M-j select-pane -D
-      bind -n M-k select-pane -U
-      bind -n M-l select-pane -R
-      bind -n M-\; select-pane -l
-
-      bind -n -T copy-mode-vi M-h select-pane -L
-      bind -n -T copy-mode-vi M-j select-pane -D
-      bind -n -T copy-mode-vi M-k select-pane -U
-      bind -n -T copy-mode-vi M-l select-pane -R
-      bind -n -T copy-mode-vi M-\; select-pane -l
+      # set-window-option -g mode-keys vi
+      setw -g mode-keys vi
 
       # toggle synchronize-panes
       bind C-y set-window-option synchronize-panes\; display-message "synchronize-panes is now #{?pane_synchronized,on,off}"
-
-      # swap window left and right
-      bind C-j swap-window -t -1\; select-window -t -1
-      bind C-k swap-window -t +1\; select-window -t +1
 
       # Save buffer to a file
       bind P command-prompt -p 'save history to filename:' -I '~/tmux.history' 'capture-pane -S -32768 ; save-buffer %1 ; delete-buffer'
@@ -207,7 +238,7 @@
       bind -T copy-mode-vi MouseDragEnd1Pane send -X copy-selection-no-clear
 
       ###########################################################
-      # Configs                                                 #
+      # Configs
       ###########################################################
 
       # True Color (24-bit) and italics with alacritty + tmux + vim (neovim)

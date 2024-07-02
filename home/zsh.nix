@@ -87,6 +87,35 @@
     #   export SSH_AUTH_SOCK=~/Library/Group\ Containers/2BUA8C4S2C.com.1password/t/agent.sock
     # '';
 
+    shellGlobalAliases = {
+      UUID = "$(uuidgen | tr -d \\n)";
+      XC = "| xc";
+
+      L = "| $PAGER";
+      LG = "| $PAGER_BOTTOM";
+
+      BH = "| $BAT_LANG_HELP";
+      BSH = "| $BAT_LANG_SH";
+      HH = "| bat -l=help";
+      HL = "| bat -p -l=help";
+
+      BL = "| $BAT_PAGER";
+      BLG = "| $BAT_PAGER_BOTTOM";
+      BLH = "| $BAT_PAGER_LANG_HELP";
+      BLSH = "| $BAT_PAGER_LANG_SH";
+
+      # G = "| grep";
+      G = "| grp";
+      GH = "| grph";
+      GHL = "| grphl";
+      GL = "| grpl";
+
+      ST = "| gsort";
+      STH = "| gsort -h";
+      STHR = "| gsort -hr";
+      STR = "| gsort -r";
+    };
+
     initExtraFirst = ''
       if [[ -f /nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh ]]; then
         . /nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh
@@ -456,19 +485,19 @@
       # Global Aliases and Functions
       ############################################################
 
-      alias -g "L"='| $PAGER'
-      alias -g "LG"='| $PAGER_BOTTOM'
-
-      alias -g "BH"='| $BAT_LANG_HELP'
-      alias -g "BSH"='| $BAT_LANG_SH'
-      alias -g "HH"='| bat -l=help'
-      alias -g "HL"='| bat -p -l=help'
-
-      # alias -g "LL"='| $BATS_PAGER'
-      # alias -g "LLG"='| $BATS_PAGER_BOTTOM'
-
-      alias -g "BLH"='| $BAT_PAGER_LANG_HELP'
-      alias -g "BLSH"='| $BAT_PAGER_LANG_SH'
+      # alias -g "L"='| $PAGER'
+      # alias -g "LG"='| $PAGER_BOTTOM'
+      #
+      # alias -g "BH"='| $BAT_LANG_HELP'
+      # alias -g "BSH"='| $BAT_LANG_SH'
+      # alias -g "HH"='| bat -l=help'
+      # alias -g "HL"='| bat -p -l=help'
+      #
+      # # alias -g "LL"='| $BATS_PAGER'
+      # # alias -g "LLG"='| $BATS_PAGER_BOTTOM'
+      #
+      # alias -g "BLH"='| $BAT_PAGER_LANG_HELP'
+      # alias -g "BLSH"='| $BAT_PAGER_LANG_SH'
 
       alias grp='_grp'
       function _grp() {
@@ -501,19 +530,19 @@
       #   _pxed eval "grp ''${*} L"
       # }
 
-      alias -g "G"='| grp'
-      alias -g "GH"='| grph'
-      alias -g "GHL"='| grphl'
-      alias -g "GL"='| grpl'
-
-      alias -g 'XC'='| xc'
-
-      TDPP_AL_CMD_SORT="ST"
-      TDPP_AL_BIN_SORT='gsort'
-      alias -g "''${TDPP_AL_CMD_SORT}"='| ''${TDPP_AL_BIN_SORT}'
-      alias -g "''${TDPP_AL_CMD_SORT}H"='| ''${TDPP_AL_BIN_SORT} -h'
-      alias -g "''${TDPP_AL_CMD_SORT}HR"='| ''${TDPP_AL_BIN_SORT} -hr'
-      alias -g "''${TDPP_AL_CMD_SORT}R"='| ''${TDPP_AL_BIN_SORT} -r'
+      # alias -g "G"='| grp'
+      # alias -g "GH"='| grph'
+      # alias -g "GHL"='| grphl'
+      # alias -g "GL"='| grpl'
+      #
+      # alias -g 'XC'='| xc'
+      #
+      # TDPP_AL_CMD_SORT="ST"
+      # TDPP_AL_BIN_SORT='gsort'
+      # alias -g "''${TDPP_AL_CMD_SORT}"='| ''${TDPP_AL_BIN_SORT}'
+      # alias -g "''${TDPP_AL_CMD_SORT}H"='| ''${TDPP_AL_BIN_SORT} -h'
+      # alias -g "''${TDPP_AL_CMD_SORT}HR"='| ''${TDPP_AL_BIN_SORT} -hr'
+      # alias -g "''${TDPP_AL_CMD_SORT}R"='| ''${TDPP_AL_BIN_SORT} -r'
 
       ############################################################
       # Aliases
@@ -599,7 +628,7 @@
       # 	_tdpp_p_func_full "$(_tdpp_p_func_name)" "paths"
       # 	_pxed eval "git diff -- $(_tdpp_p_pathspec_patterns exclude git diff) ''${paths}"
       # }
-      # 
+      #
       # alias gdca='_gdca'
       # function _gdca() {
       # 	local -r paths="''${*}"
@@ -982,10 +1011,10 @@
       # # vi-mode
       # # TODO: above keybindings now working on viins after loading zsh-vi-mode!
       # #
-      # 
+      #
       # typeset -g VI_MODE_RESET_PROMPT_ON_MODE_CHANGE='true'
       # typeset -g VI_MODE_SET_CURSOR='true'
-      # 
+      #
       # export MODE_INDICATOR="%B%F{red}<%b<<%f"
       # export INSERT_MODE_INDICATOR="%F{yellow}+%f"
 

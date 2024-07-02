@@ -51,10 +51,10 @@ in
   # Turn off NIX_PATH warnings now that we're using flakes
   system.checks.verifyNixPath = false;
 
-  environment.systemPackages = with pkgs; [
-    # macOS GUI programs
-    # wezterm
-  ];
+  # environment.systemPackages = with pkgs; [
+  #   # macOS GUI programs
+  #   # wezterm
+  # ];
 
   # Enable fonts dir
   fonts.fontDir.enable = true;

@@ -54,8 +54,8 @@
               # # M = Alt key
               # "<M-k>" = { action = ":move-2<CR>"; };
               # "<M-j>" = { action = ":move+<CR>"; };
-
-              "<Leader>rp" = { action = ":!remi push<CR>"; };
+              #
+              # "<Leader>rp" = { action = ":!remi push<CR>"; };
             };
 
         nnoremap =
