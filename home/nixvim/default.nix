@@ -1,21 +1,24 @@
-{ inputs, pkgs, ... }:
+# { inputs, pkgs, ... }:
+# { self, inputs, config, options, pkgs, lib, flake, specialArgs }:
+# { self, inputs, config, options, pkgs, lib, flake, specialArgs, modulesPath, ... }:
+{ pkgs, ... }:
 {
   imports = [
     # inputs.nixvim.homeManagerModules.nixvim
+
+    ./colors
+    ./plugins
+
+    # ./todo.nix
     ./autocommands.nix
     ./completion.nix
     ./keybindings.nix
     ./options.nix
-    ./plugins
-    # ./todo.nix
   ];
 
   programs.nixvim = {
     enable = pkgs.stdenv.isDarwin; # nixvim uses IFD; so not using it on Linux (breaks colmena apply)
 
-    #   # Theme
-    #   colorschemes.tokyonight.enable = true;
-    #
     #   plugins = {
     #
     #     # UI

@@ -1,94 +1,83 @@
-{ config, lib, ... }:
-let
-  colors = import ../colors/${config.theme}.nix { };
-in
+# { config, lib, ... }:
+# let
+#   colors = import ../colors/${config.theme}.nix { };
+# in
 {
   programs.nixvim = {
-    plugins = {
-      bufferline = {
-        enable = true;
-        separatorStyle = "thick"; # “slant”, “padded_slant”, “slope”, “padded_slope”, “thick”, “thin”
+    plugins.bufferline = {
+      enable = true;
+      separatorStyle = "thick"; # “slant”, “padded_slant”, “slope”, “padded_slope”, “thick”, “thin”
 
-        # highlights = lib.mkIf config.colorschemes.base16.enable {
-        #   fill = {
-        #     fg = colors.base00;
-        #     bg = colors.base00;
-        #   };
-        #   background = {
-        #     fg = colors.base03;
-        #     bg = colors.base01;
-        #   };
-        #   bufferSelected = {
-        #     fg = colors.base05;
-        #     bg = colors.base00;
-        #     italic = false;
-        #   };
-        #   bufferVisible = {
-        #     fg = colors.base03;
-        #     bg = colors.base00;
-        #   };
-        #   closeButton = {
-        #     fg = colors.base03;
-        #     bg = colors.base01;
-        #   };
-        #   closeButtonVisible = {
-        #     fg = colors.base03;
-        #     bg = colors.base01;
-        #   };
-        #   closeButtonSelected = {
-        #     fg = colors.base08;
-        #     bg = colors.base00;
-        #   };
-        #
-        #   indicatorSelected = {
-        #     fg = colors.base00;
-        #     bg = colors.base00;
-        #   };
-        #   indicatorVisible = {
-        #     fg = colors.base00;
-        #     bg = colors.base00;
-        #   };
-        #   separator = {
-        #     fg = colors.base00;
-        #     bg = colors.base00;
-        #   };
-        #   modified = {
-        #     fg = colors.base03;
-        #     bg = colors.base00;
-        #   };
-        #   modifiedVisible = {
-        #     fg = colors.base00;
-        #     bg = colors.base00;
-        #   };
-        #   modifiedSelected = {
-        #     fg = colors.base0B;
-        #     bg = colors.base00;
-        #   };
-        #   tabClose = {
-        #     fg = colors.base00;
-        #     bg = colors.base00;
-        #   };
-        # };
+      # highlights = lib.mkIf config.colorschemes.base16.enable {
+      #   fill = {
+      #     fg = colors.base00;
+      #     bg = colors.base00;
+      #   };
+      #   background = {
+      #     fg = colors.base03;
+      #     bg = colors.base01;
+      #   };
+      #   bufferSelected = {
+      #     fg = colors.base05;
+      #     bg = colors.base00;
+      #     italic = false;
+      #   };
+      #   bufferVisible = {
+      #     fg = colors.base03;
+      #     bg = colors.base00;
+      #   };
+      #   closeButton = {
+      #     fg = colors.base03;
+      #     bg = colors.base01;
+      #   };
+      #   closeButtonVisible = {
+      #     fg = colors.base03;
+      #     bg = colors.base01;
+      #   };
+      #   closeButtonSelected = {
+      #     fg = colors.base08;
+      #     bg = colors.base00;
+      #   };
+      #
+      #   indicatorSelected = {
+      #     fg = colors.base00;
+      #     bg = colors.base00;
+      #   };
+      #   indicatorVisible = {
+      #     fg = colors.base00;
+      #     bg = colors.base00;
+      #   };
+      #   separator = {
+      #     fg = colors.base00;
+      #     bg = colors.base00;
+      #   };
+      #   modified = {
+      #     fg = colors.base03;
+      #     bg = colors.base00;
+      #   };
+      #   modifiedVisible = {
+      #     fg = colors.base00;
+      #     bg = colors.base00;
+      #   };
+      #   modifiedSelected = {
+      #     fg = colors.base0B;
+      #     bg = colors.base00;
+      #   };
+      #   tabClose = {
+      #     fg = colors.base00;
+      #     bg = colors.base00;
+      #   };
+      # };
 
-      };
     };
 
     keymaps = [
       {
         mode = "n";
-        key = "<Leader>bb";
+        key = "<Leader>/";
         action = "<Cmd>Telescope buffers<CR>";
         options = {
-          desc = "Find buffer";
-        };
-      }
-
-      {
-        mode = "n";
-        key = "<Leader>b'";
-        action = ":buffers<CR>";
-        options = {
-          desc = "List buffers";
+          desc = "Search buffers";
         };
       }
 
@@ -112,16 +101,7 @@ in
 
       {
         mode = "n";
-        key = "<Leader>b;";
-        action = "<Cmd>e #<CR>";
-        options = {
-          desc = "Switch to Other Buffer";
-        };
-      }
-
-      {
-        mode = "n";
-        key = "<Leader>bl";
+        key = "<Leader>l";
         action = "<Cmd>BufferLineCycleNext<CR>";
         options = {
           desc = "Cycle to next buffer";
@@ -130,7 +110,7 @@ in
 
       {
         mode = "n";
-        key = "<Leader>bh";
+        key = "<Leader>h";
         action = "<Cmd>BufferLineCyclePrev<CR>";
         options = {
           desc = "Cycle to previous buffer";
@@ -176,7 +156,7 @@ in
       {
         mode = "n";
         key = "<Leader>bd";
-        action = "<Cmd>bp | bd #<CR>";
+        action = "<Cmd>bp <Bar> bd #<CR>";
         options = {
           desc = "Delete buffer";
         };

@@ -1,4 +1,5 @@
 { self, inputs, ... }:
+# { self, inputs, config, options, pkgs, lib, flake, specialArgs }:
 {
   flake = {
     homeModules = {
@@ -19,6 +20,9 @@
           # ./starship.nix
           # ./terminal.nix
           # ./zellij.nix
+
+          ./nixvim
+
           ./alacritty.nix
           ./bat.nix
           ./direnv.nix
@@ -27,8 +31,6 @@
           ./gnutools.nix
           ./nix.nix
           ./nix-index.nix
-          # ./nixvim/default.nix
-          ./nixvim
           ./ripgrep.nix
           ./ssh.nix
           ./tmux.nix
@@ -36,6 +38,11 @@
           ./zsh.nix
         ];
       };
+      home.sessionPath = [
+        "$HOME/.local/bin"
+        # "\${xdg.configHome}/emacs/bin"
+        # ".git/safe/../../bin"
+      ];
       common-linux = {
         imports = [
           self.homeModules.common

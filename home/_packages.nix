@@ -16,31 +16,8 @@
     # bws
     libfido2
 
-    # GNU/core tools
-    bash-completion
-    bashInteractive
-    bc
-    coreutils-prefixed
-    curlFull
-    findutils
-    gawk
-    gnugrep
-    gnumake
-    gnupg
-    gnused
-    gnutar
-    man
-    openssh
-    tree
-    unrar
-    unzip
-    util-linux
-    wget
-    xclip
-    xsel
-    xdg-ninja
-    xdg-utils
-    zip
+    # GNU Tools
+    # NOTE: GNU tools are moved to 'systems/<system>.nix' for prefixing.
 
     # General packages for development and system management
     # aspell
@@ -56,7 +33,6 @@
     du-dust
     eza
     fd
-    fortune
     gdu
     gh
     htop
@@ -73,31 +49,6 @@
     uutils-coreutils
     watchman
     yq-go
-
-    # Media-related packages
-    # dejavu_fonts
-    # hack-font
-    # jetbrains-mono
-    # meslo-lgs-nf
-    # noto-fonts
-    # noto-fonts-emoji
-    emacs-all-the-icons-fonts
-    ffmpeg
-    font-awesome
-    noto-fonts-cjk-sans
-    noto-fonts-cjk-serif
-
-    (nerdfonts.override {
-      fonts = [
-        "DejaVuSansMono"
-        "FantasqueSansMono"
-        "Hack"
-        "IBMPlexMono"
-        "JetBrainsMono"
-        "Meslo"
-        "Noto"
-      ];
-    })
 
     #
     # Development tools
@@ -122,7 +73,6 @@
     nodePackages.patch-package
     nodePackages.pm2
     nodePackages.pnpm
-    nodePackages.prettier
     nodePackages.prettier
     nodePackages.prisma
     nodePackages.semver
@@ -156,6 +106,37 @@
     kubectl
     redis
     vultr-cli
+
+    # Productivity tools
+    # sc-im # TODO: build fails with deprecated error => formats/ods.c:85:9: warning: 'zip_error_to_str' is deprecated: use 'zip_error_strerror' instead [-Wdeprecated-declarations]
+
+    # Media-related packages
+    # dejavu_fonts
+    # hack-font
+    # jetbrains-mono
+    # meslo-lgs-nf
+    # noto-fonts
+    # noto-fonts-emoji
+    emacs-all-the-icons-fonts
+    ffmpeg
+    font-awesome
+    noto-fonts-cjk-sans
+    noto-fonts-cjk-serif
+
+    (nerdfonts.override {
+      fonts = [
+        "DejaVuSansMono"
+        "FantasqueSansMono"
+        "Hack"
+        "IBMPlexMono"
+        "JetBrainsMono"
+        "Meslo"
+        "Noto"
+      ];
+    })
+
+    # Etc.
+    fortune
 
     # ] ++ (lib.optionals isDarwin [
     #   # This is automatically setup on Linux

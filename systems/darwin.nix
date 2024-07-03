@@ -1,4 +1,4 @@
-{ pkgs, flake, ... }:
+{ pkgs, lib, flake, ... }:
 
 let
   inherit (flake) inputs;
@@ -51,10 +51,63 @@ in
   # Turn off NIX_PATH warnings now that we're using flakes
   system.checks.verifyNixPath = false;
 
-  # environment.systemPackages = with pkgs; [
-  #   # macOS GUI programs
-  #   # wezterm
-  # ];
+  environment.systemPackages = with pkgs; [
+    # macOS GUI programs
+    # wezterm
+
+    # GNU Tools
+    # coreutils-full
+    # findutils
+    # gnugrep
+    # gnumake
+    # gnused
+    # gnutar
+    bash-completion
+    bashInteractive
+    bc
+    coreutils-prefixed
+    curlFull
+    gawkInteractive
+    gnupg
+    man
+    openssh
+    tree
+    unrar
+    unzip
+    util-linux
+    wget
+    xclip
+    xdg-ninja
+    xdg-utils
+    xsel
+    zip
+  ];
+
+
+  environment.shellAliases = {
+    # prefixed with 'g' (gnu tools / single).
+    # gsed = lib.getExe pkgs.gnused; # NOTE: gsed executable is required for nvim-spectre plugin.
+    gmake = lib.getExe pkgs.gnumake;
+    gtar = lib.getExe pkgs.gnutar;
+
+    # prefixed with 'g' (nix tools / multiple).
+    gfind = "${pkgs.findutils}/bin/find";
+    ggrep = "${pkgs.gnugrep}/bin/grep";
+
+    nix-output-monitor = lib.getExe pkgs.nix-output-monitor;
+
+    la = "l -a";
+    nv = "nvim";
+    v = "nvim";
+  };
+
+  # environment.shellAliases = {
+  #   # ggrep = lib.getExe pkgs.gnugrep;
+  #   # gsed = lib.getExe pkgs.gnused;
+  #   # nix-output-monitor = lib.getExe pkgs.nix-output-monitor;
+  #
+  #   la = "l -a";
+  # };
 
   # Enable fonts dir
   fonts.fontDir.enable = true;

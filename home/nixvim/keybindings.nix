@@ -11,7 +11,7 @@
         nmap =
           lib.mapAttrsToList
             # (key: action: {
-            (key: { action, desc ? "" }: {
+            (key: { action, desc ? "<undefined>" }: {
               mode = "n";
               inherit action key;
               options = {
@@ -21,15 +21,14 @@
             })
             {
               "<Space>" = { action = "<NOP>"; };
-              "<Esc>" = { action = ":noh<CR>"; desc = "Clear search highlights"; };
-              "<C-x>" = { action = ":close<CR>"; desc = "Close current window"; };
-              "<C-s>" = { action = ":w<CR>"; desc = "Save file"; };
-
-              # back and fourth between the two most recent files
-              "<C-c>" = { action = ":b#<CR>"; };
+              "<Esc>" = { action = "<Cmd>noh<CR>"; desc = "Clear search highlights"; };
+              "<C-x>" = { action = "<Cmd>close<CR>"; desc = "Close current window"; };
+              "<C-s>" = { action = "<Cmd>w<CR>"; desc = "Save file"; };
 
               # manage window
-              "<Leader>wd" = { action = ":q<CR>"; desc = "Close window"; };
+              "<Leader>ws" = { action = "<Cmd>split<CR>"; desc = "Split window"; };
+              "<Leader>wS" = { action = "<Cmd>vsplit<CR>"; desc = "Vsplit window"; };
+              "<Leader>wd" = { action = "<Cmd>q<CR>"; desc = "Close window"; };
               "<Leader>=" = { action = "<C-w>="; desc = "Resize windows equally"; };
 
               # navigate window
@@ -45,22 +44,30 @@
               "Y" = { action = "y$"; desc = "Yank to end of line"; };
 
               # resize with arrows
-              "<C-Up>" = { action = ":resize -2<CR>"; desc = "Resize window up"; };
-              "<C-Down>" = { action = ":resize +2<CR>"; desc = "Resize window down"; };
-              "<C-Left>" = { action = ":vertical resize +2<CR>"; desc = "Resize window left"; };
-              "<C-Right>" = { action = ":vertical resize -2<CR>"; desc = "Resize window right"; };
+              "<C-Up>" = { action = "<Cmd>resize -2<CR>"; desc = "Resize window up"; };
+              "<C-Down>" = { action = "<Cmd>resize +2<CR>"; desc = "Resize window down"; };
+              "<C-Left>" = { action = "<Cmd>vertical resize +2<CR>"; desc = "Resize window left"; };
+              "<C-Right>" = { action = "<Cmd>vertical resize -2<CR>"; desc = "Resize window right"; };
+
+              # Buffer
+              "<Leader>b'" = { action = "<Cmd>buffers<CR>"; desc = "List buffers"; };
+              "<Leader>b;" = { action = "<Cmd>b#<CR>"; desc = "Switch to Other Buffer"; };
+              "<C-;>" = { action = "<Cmd>b#<CR>"; desc = "Switch to Other Buffer"; }; # TODO: not working.
+              # "<Leader>b;" = { action = "<Cmd>e #<CR>"; desc = "Switch to Other Buffer"; };
+              # "<Leader>bn" = { action = "<Cmd>bn<CR>"; desc = "Next buffer"; };
+              # "<Leader>bp" = { action = "<Cmd>bp<CR>"; desc = "Previous buffer"; };
 
               # # move current line up/down
               # # M = Alt key
-              # "<M-k>" = { action = ":move-2<CR>"; };
-              # "<M-j>" = { action = ":move+<CR>"; };
+              # "<M-k>" = { action = "<Cmd>move-2<CR>"; };
+              # "<M-j>" = { action = "<Cmd>move+<CR>"; };
               #
-              # "<Leader>rp" = { action = ":!remi push<CR>"; };
+              # "<Leader>rp" = { action = "<Cmd>!remi push<CR>"; };
             };
 
         nnoremap =
           lib.mapAttrsToList
-            (key: { action, desc ? "" }: {
+            (key: { action, desc ? "<undefined>" }: {
               mode = "n";
               inherit action key;
               options = {
@@ -77,7 +84,7 @@
         vmap =
           lib.mapAttrsToList
             # (key: action: {
-            (key: { action, desc ? "" }: {
+            (key: { action, desc ? "<undefined>" }: {
               mode = "v";
               inherit action key;
               options = {

@@ -47,6 +47,9 @@
       relativenumber = true; # Relative line numbers
       scrolloff = 8; # *: 0 /// start scrolling when the cursor is x lines away from the top/bottom.
       sessionoptions = "buffers,curdir,folds,globals,help,localoptions,skiprtp,resize,tabpages,terminal,winpos,winsize"; # recommended by 'rmagatti/auto-session'.
+      # sessionoptions = "buffers,curdir,folds,help,localoptions,tabpages,terminal,winsize,winpos"; # recommended by 'rmagatti/auto-session'.
+      # sessionoptions = "blank,buffers,curdir,folds,help,tabpages,winsize,winpos,terminal,localoptions"; # recommended by 'rmagatti/auto-session'.
+      # sessionoptions = "buffers,curdir,folds,help,localoptions,skiprtp,resize,tabpages,terminal,winpos,winsize"; # recommended by 'rmagatti/auto-session'.
       shiftwidth = 2; # Number of spaces used for each step of (auto)indent (local to buffer)
       showmode = false; # Hide status messages like --- INSERT ---
       showtabline = 2; # *: 1 /// always show tabs.
