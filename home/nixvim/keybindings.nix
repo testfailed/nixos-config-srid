@@ -26,10 +26,10 @@
               "<C-s>" = { action = "<Cmd>w<CR>"; desc = "Save file"; };
 
               # manage window
-              "<Leader>ws" = { action = "<Cmd>split<CR>"; desc = "Split window"; };
-              "<Leader>wS" = { action = "<Cmd>vsplit<CR>"; desc = "Vsplit window"; };
-              "<Leader>wd" = { action = "<Cmd>q<CR>"; desc = "Close window"; };
               "<Leader>=" = { action = "<C-w>="; desc = "Resize windows equally"; };
+              "<Leader>wd" = { action = "<Cmd>q<CR>"; desc = "Close window"; };
+              "<Leader>ws" = { action = "<Cmd>split<CR>"; desc = "Split window"; };
+              "<Leader>wv" = { action = "<Cmd>vsplit<CR>"; desc = "Vsplit window"; };
 
               # navigate window
               "<C-h>" = { action = "<C-w>h"; desc = "Move to the window on the left"; };
@@ -44,25 +44,22 @@
               "Y" = { action = "y$"; desc = "Yank to end of line"; };
 
               # resize with arrows
-              "<C-Up>" = { action = "<Cmd>resize -2<CR>"; desc = "Resize window up"; };
-              "<C-Down>" = { action = "<Cmd>resize +2<CR>"; desc = "Resize window down"; };
-              "<C-Left>" = { action = "<Cmd>vertical resize +2<CR>"; desc = "Resize window left"; };
-              "<C-Right>" = { action = "<Cmd>vertical resize -2<CR>"; desc = "Resize window right"; };
+              # "<C-Up>" = { action = "<Cmd>resize -2<CR>"; desc = "Resize window up"; };
+              # "<C-Down>" = { action = "<Cmd>resize +2<CR>"; desc = "Resize window down"; };
+              # "<C-Left>" = { action = "<Cmd>vertical resize +2<CR>"; desc = "Resize window left"; };
+              # "<C-Right>" = { action = "<Cmd>vertical resize -2<CR>"; desc = "Resize window right"; };
+              "<C-Up>" = { action = "<Cmd>resize +2<CR>"; desc = "Resize window up"; };
+              "<C-Down>" = { action = "<Cmd>resize -2<CR>"; desc = "Resize window down"; };
+              "<C-Left>" = { action = "<Cmd>vertical resize -2<CR>"; desc = "Resize window left"; };
+              "<C-Right>" = { action = "<Cmd>vertical resize +2<CR>"; desc = "Resize window right"; };
 
               # Buffer
               "<Leader>b'" = { action = "<Cmd>buffers<CR>"; desc = "List buffers"; };
               "<Leader>b;" = { action = "<Cmd>b#<CR>"; desc = "Switch to Other Buffer"; };
-              "<C-;>" = { action = "<Cmd>b#<CR>"; desc = "Switch to Other Buffer"; }; # TODO: not working.
+              "<C-S-;>" = { action = "<Cmd>b#<CR>"; desc = "Switch to Other Buffer"; }; # TODO: not working.
               # "<Leader>b;" = { action = "<Cmd>e #<CR>"; desc = "Switch to Other Buffer"; };
               # "<Leader>bn" = { action = "<Cmd>bn<CR>"; desc = "Next buffer"; };
               # "<Leader>bp" = { action = "<Cmd>bp<CR>"; desc = "Previous buffer"; };
-
-              # # move current line up/down
-              # # M = Alt key
-              # "<M-k>" = { action = "<Cmd>move-2<CR>"; };
-              # "<M-j>" = { action = "<Cmd>move+<CR>"; };
-              #
-              # "<Leader>rp" = { action = "<Cmd>!remi push<CR>"; };
             };
 
         nnoremap =
