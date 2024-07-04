@@ -17,9 +17,10 @@
     nixos-hardware.url = "github:NixOS/nixos-hardware";
     disko.url = "github:nix-community/disko";
     disko.inputs.nixpkgs.follows = "nixpkgs";
-    colmena-flake.url = "github:juspay/colmena-flake";
+    ragenix.url = "github:yaxitech/ragenix";
 
     # Software inputs
+    github-nix-ci.url = "github:juspay/github-nix-ci";
     nixos-vscode-server.flake = false;
     nixos-vscode-server.url = "github:nix-community/nixos-vscode-server";
     nixci.url = "github:srid/nixci";
@@ -38,56 +39,18 @@
   outputs = inputs@{ self, ... }:
     inputs.flake-parts.lib.mkFlake { inherit inputs; } {
 
-      # NOTE: for debugging.
-      debug = true;
+      debug = true; # NOTE: for debugging.
+      systems = [ "x86_64-linux" "aarch64-linux" "aarch64-darwin" ];
 
-      systems = [ "x86_64-linux" "aarch64-linux" "x86_64-darwin" "aarch64-darwin" ];
       imports = [
         inputs.treefmt-nix.flakeModule
         inputs.nixos-flake.flakeModule
-        inputs.colmena-flake.flakeModules.default
+        inputs.nixos-flake.flakeModule
         ./users
         ./home
         ./nixos
         ./nix-darwin
       ];
-
-      # Colmena deployment configuration
-      # See https://github.com/juspay/colmena-flake
-      colmena-flake.deployment =
-        let
-          read1Password = field:
-            [ "op" "read" "op://Personal/nixos-config/${field}" ];
-        in
-        {
-          immediacy = {
-            targetHost = "immediacy";
-            targetUser = "srid";
-            keys."hedgedoc.env" = {
-              user = "hedgedoc";
-              keyCommand = read1Password "hedgedoc.env";
-            };
-          };
-          github-runner =
-            let
-              user = "github-runner";
-            in
-            {
-              targetHost = "github-runner";
-              targetUser = "srid";
-              keys = {
-                "github-runner-token.secret" = {
-                  inherit user;
-                  keyCommand = read1Password "github-runner-token";
-                };
-                "nix-conf-gh-token.secret" = {
-                  user = "root";
-                  permissions = "0440";
-                  keyCommand = read1Password "nix-conf-gh-token";
-                };
-              };
-            };
-        };
 
       flake = {
         # Configuration for my M1 Macbook Max (using nix-darwin)
@@ -95,34 +58,40 @@
           self.nixos-flake.lib.mkMacosSystem
             ./systems/darwin.nix;
 
-        # Configuration for a NixOS VM (running on my Mac)
-        nixosConfigurations.github-runner =
-          self.nixos-flake.lib.mkLinuxSystem
-            ./systems/github-runner.nix;
-
         # Hetzner dedicated
         nixosConfigurations.immediacy =
           self.nixos-flake.lib.mkLinuxSystem
             ./systems/ax41.nix;
       };
 
-      perSystem = { self', pkgs, system, config, ... }: {
+      perSystem = { self', inputs', pkgs, system, config, ... }: {
+        # My Ubuntu VM
+        legacyPackages.homeConfigurations."srid@ubuntu" =
+          self.nixos-flake.lib.mkHomeConfiguration pkgs {
+            imports = [
+              self.homeModules.common-linux
+            ];
+            home.username = "srid";
+            home.homeDirectory = "/home/srid";
+          };
+
         # Flake inputs we want to update periodically
         # Run: `nix run .#update`.
-        nixos-flake.primary-inputs = [
-          "nixpkgs"
-          "home-manager"
-          "nix-darwin"
-          "nixos-flake"
-          "nix-index-database"
-          "nixvim"
-        ];
+        nixos-flake = {
+          primary-inputs = [
+            "nixpkgs"
+            "home-manager"
+            "nix-darwin"
+            "nixos-flake"
+            "nix-index-database"
+            "nixvim"
+          ];
+        };
 
         treefmt.config = {
           projectRootFile = "flake.nix";
           programs.nixpkgs-fmt.enable = true;
         };
-        formatter = config.treefmt.build.wrapper;
 
         packages.default = self'.packages.activate;
 
@@ -132,6 +101,7 @@
             # just
             colmena
             nixd
+            inputs'.ragenix.packages.default
           ];
         };
 

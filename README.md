@@ -50,7 +50,6 @@ Start from `flake.nix` (see [Flakes](https://nixos.wiki/wiki/Flakes)). [`flake-p
 - `nix-darwin`: nix-darwin modules for macOS
 - `users`: user information
 - `systems`: top-level configuration.nix('ish) for various systems
-- `clusters`: Features that span more than 1 system
 
 ## Tips
 
@@ -66,8 +65,8 @@ Start from `flake.nix` (see [Flakes](https://nixos.wiki/wiki/Flakes)). [`flake-p
   sudo nixos-rebuild boot
   ```
 - To autoformat the project tree using nixpkgs-fmt, run `nix fmt`.
-- To build all flake outputs (locally or in CI), run `nix --accept-flake-config run github:srid/nixci`
-- For secrets management, I use [colmena](https://colmena.cli.rs/unstable/features/keys.html) along with 1Password.
+- To build all flake outputs (locally or in CI), run `nix --accept-flake-config run github:srid/nixci build`
+- For secrets management, I use [ragenix](https://github.com/yaxitech/ragenix).
 
 ## Discussion
 

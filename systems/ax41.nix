@@ -1,4 +1,4 @@
-{ flake, pkgs, lib, ... }:
+{ flake, ... }:
 
 let
   inherit (flake) inputs;
@@ -14,8 +14,11 @@ in
     "${self}/nixos/docker.nix"
     "${self}/nixos/actualism-app.nix"
     "${self}/nixos/hedgedoc.nix"
-    # "${self}/nixos/server/harden/basics.nix"
+    "${self}/nixos/github-runner.nix"
+    "${self}/nixos/server/harden/basics.nix"
   ];
+
+  nixos-flake.sshTarget = "srid@immediacy";
 
   system.stateVersion = "23.11";
   networking.hostName = "immediacy";

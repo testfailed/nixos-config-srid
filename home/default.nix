@@ -1,8 +1,9 @@
 { self, inputs, ... }:
-# { self, inputs, config, options, pkgs, lib, flake, specialArgs }:
+
 {
   flake = {
     homeModules = {
+
       common = {
         home.stateVersion = "22.11";
         imports = [
@@ -11,10 +12,10 @@
 
           inputs.nixvim.homeManagerModules.nixvim
           inputs.nix-index-database.hmModules.nix-index
+
           # # ./helix.nix
           # # ./nushell.nix
           # # ./powershell.nix
-          # ./_1password.nix
           # ./juspay.nix
           # ./just.nix
           # ./starship.nix
@@ -38,11 +39,13 @@
           ./zsh.nix
         ];
       };
+
       home.sessionPath = [
         "$HOME/.local/bin"
         # "\${xdg.configHome}/emacs/bin"
         # ".git/safe/../../bin"
       ];
+
       common-linux = {
         imports = [
           self.homeModules.common
@@ -50,14 +53,17 @@
           ./vscode-server.nix
         ];
       };
+
       common-darwin = {
         imports = [
           self.homeModules.common
+          # # ./_1password.nix
           # # ./bash.nix
           # # ./kitty.nix
           # ./himalaya.nix
         ];
       };
+
     };
   };
 }

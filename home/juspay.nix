@@ -1,6 +1,25 @@
 # For Juspay work
-{ pkgs, lib, ... }:
+let
+  # I don't care to connect to VPN on my macbook
+  # So, I'll clone through an office machine
+  gitCloneThroughVanjaram =
+    let
+      host = "vanjaram";
+      port = 5445;
+      gitSshRemote = "ssh.bitbucket.juspay.net";
+    in
+    {
+      programs.ssh.matchBlocks = {
+        ${host}.dynamicForwards = [{ inherit port; }];
+        ${gitSshRemote} = {
+          user = "git";
+          proxyCommand = "nc -x localhost:${builtins.toString port} %h %p";
+        };
+      };
+    };
+in
 {
+  imports = [ gitCloneThroughVanjaram ];
   programs.ssh = {
     matchBlocks = {
       # Juspay machines (through Tailscale)
@@ -19,6 +38,9 @@
       # https://developer.1password.com/docs/ssh/agent/advanced/#match-key-with-host
       "bitbucket.org" = {
         identitiesOnly = true;
+        identityFile = "~/.ssh/juspay.pub";
+      };
+      "ssh.bitbucket.juspay.net" = {
         identityFile = "~/.ssh/juspay.pub";
       };
     };

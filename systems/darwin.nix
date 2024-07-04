@@ -8,7 +8,7 @@ in
   imports = [
     self.darwinModules.default
     "${self}/nix-darwin/zsh-completion-fix.nix"
-    "${self}/clusters/github-runner/darwin-module.nix"
+    "${self}/nixos/github-runner.nix"
   ];
 
   nixpkgs.hostPlatform = "aarch64-darwin";
@@ -82,6 +82,8 @@ in
     xsel
     zip
   ];
+
+  networking.hostName = "clv-mba-m1";
 
 
   environment.shellAliases = {
