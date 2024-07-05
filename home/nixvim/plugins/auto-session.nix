@@ -2,6 +2,7 @@
 # REF: <https://github.com/rmagatti/auto-session#options>
 {
   programs.nixvim = {
+
     plugins.auto-session = {
       enable = true; # *: false
 
@@ -39,9 +40,10 @@
       {
         mode = "n";
         key = "<Leader>qq";
-        action = "<Cmd>SessionSave<CR> <Bar> <Cmd>qa<CR>";
+        action = "<Cmd>qa<CR>";
+        # action = "<Cmd>SessionSave<CR> <Bar> <Cmd>qa<CR>";
         options = {
-          desc = "Save session and quit";
+          desc = "(TODO) Save session and quit";
         };
       }
 

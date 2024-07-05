@@ -1,10 +1,18 @@
 {
   programs.nixvim = {
+
     keymaps = [
       {
         mode = "n";
-        key = "<leader>e";
-        action = ":Neotree action=focus reveal toggle<CR> :wincmd =<CR>";
+        key = "<Leader>e";
+        action = ":Neotree action=focus reveal toggle <Bar> :wincmd =<CR>";
+        options.silent = true;
+      }
+
+      {
+        mode = "n";
+        key = "<M-e>";
+        action = ":Neotree action=focus<CR>";
         options.silent = true;
       }
     ];
@@ -49,5 +57,6 @@
         width = 30; # *: 40
       };
     };
+
   };
 }

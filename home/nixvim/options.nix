@@ -1,23 +1,29 @@
 {
   programs.nixvim = {
+
     globals = {
-      # Disable useless providers
+      # Disable useless providers.
       loaded_ruby_provider = 0; # Ruby
       loaded_perl_provider = 0; # Perl
       loaded_python_provider = 0; # Python 2
     };
 
     clipboard = {
-      # Use system clipboard
+      # Use system clipboard.
       register = "unnamedplus";
 
       providers.wl-copy.enable = true;
     };
 
+    # Neovim Options
     opts = {
+      # clipboard = "unnamedplus"; # NOTE: defined above.
       # completeopt = "menuone,noselect"; # *: "menu,preview" /// set completion options.
       # foldexpr = ""; # set to "nvim_treesitter#foldexpr()" for treesitter based folding.
       # foldmethod = "manual"; # folding set to "expr" for treesitter based folding.
+      # sessionoptions = "blank,buffers,curdir,folds,help,tabpages,winsize,winpos,terminal,localoptions"; # recommended by 'rmagatti/auto-session'.
+      # sessionoptions = "buffers,curdir,folds,help,localoptions,skiprtp,resize,tabpages,terminal,winpos,winsize"; # recommended by 'rmagatti/auto-session'.
+      # sessionoptions = "buffers,curdir,folds,help,localoptions,tabpages,terminal,winsize,winpos"; # recommended by 'rmagatti/auto-session'.
       # undodir = vim.fn.stdpath("cache") .. "/undo"
       autoindent = true; # Do clever autoindenting
       backup = false; # creates a backup file.
@@ -46,11 +52,7 @@
       pumheight = 10; # *: 0 /// pop up menu height.
       relativenumber = true; # Relative line numbers
       scrolloff = 8; # *: 0 /// start scrolling when the cursor is x lines away from the top/bottom.
-      sessionoptions = "buffers,curdir,folds,globals,help,localoptions,skiprtp,resize,tabpages,terminal,winpos,winsize"; # recommended by 'rmagatti/auto-session'.
-      # sessionoptions = "buffers,curdir,folds,help,localoptions,tabpages,terminal,winsize,winpos"; # recommended by 'rmagatti/auto-session'.
-      # sessionoptions = "buffers,curdir,folds,help,localoptions,skiprtp,resize,tabpages,terminal,winpos,winsize"; # recommended by 'rmagatti/auto-session'.
-
-      # sessionoptions = "blank,buffers,curdir,folds,help,tabpages,winsize,winpos,terminal,localoptions"; # recommended by 'rmagatti/auto-session'.
+      sessionoptions = "buffers,curdir,folds,globals,help,localoptions,skiprtp,resize,tabpages,terminal,winpos,winsize"; # recommended by 'rmagatti/auto-session'. # NOTE: it works for preserving pinned tabs.
       shiftwidth = 2; # Number of spaces used for each step of (auto)indent (local to buffer)
       showmode = false; # Hide status messages like --- INSERT ---
       showtabline = 2; # *: 1 /// always show tabs.
@@ -73,14 +75,18 @@
       titlestring = "%<%F%=%l/%L - nvim"; # what the title of the window will be set to
       undofile = true; # enable persistent undo
       updatetime = 100; # faster completion
-      winheight = 5; # *: 1 /// minimum window height
-      winwidth = 30; # *: 1 /// minimum window width
       wrap = false; # Prevent text from wrapping
       writebackup = false; # if a file is being edited by another program (or was written to file while editing with another program) it is not allowed to be edited
 
+      #
       # NOTE: ORDER MATTERS
-      # winminheight = 5; # *: 1 /// minimum window height
-      # winminwidth = 30; # *: 1 /// minimum window width
+      #
+
+      winheight = 5; # *: 1 /// minimum window height
+      winminheight = 5; # *: 1 /// minimum window height
+
+      winwidth = 30; # *: 1 /// minimum window width
+      winminwidth = 30; # *: 1 /// minimum window width
     };
   };
 }

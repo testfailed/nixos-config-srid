@@ -103,14 +103,6 @@ in
     v = "nvim";
   };
 
-  # environment.shellAliases = {
-  #   # ggrep = lib.getExe pkgs.gnugrep;
-  #   # gsed = lib.getExe pkgs.gnused;
-  #   # nix-output-monitor = lib.getExe pkgs.nix-output-monitor;
-  #
-  #   la = "l -a";
-  # };
-
   # Enable fonts dir
   # TODO: Deprecated: not needed anymore!
   # fonts.fontDir.enable = true;

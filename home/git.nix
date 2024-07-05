@@ -1,11 +1,12 @@
 { pkgs, config, flake, ... }:
+
 {
   home.packages = with pkgs; [
     git-filter-repo
   ];
 
   programs.git = {
-    enable = true;
+    enable = true; # ==: false
     package = pkgs.gitAndTools.gitFull;
 
     ignores = [ "*~" "*.swp" ];
@@ -53,7 +54,8 @@
   };
 
   programs.lazygit = {
-    enable = true;
+    enable = true; # ==: false
+
     settings = {
       # This looks better with the kitty theme.
       gui.theme = {

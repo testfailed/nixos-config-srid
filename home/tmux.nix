@@ -1,4 +1,5 @@
 { pkgs, config, ... }:
+
 {
   home.packages = [
     # Open tmux for current project.
@@ -117,17 +118,17 @@
       # Session
       #
 
-      # bind C-H previous-session
-      # bind C-L next-session
-      bind C-p previous-session
-      bind C-n next-session
-      bind C-\' switch-client -l
+      # bind C-H switch-client -p
+      # bind C-L switch-client -n
+      bind C-p switch-client -p
+      bind C-n switch-client -n
+      bind "C-'" switch-client -l
 
-      # bind -n M-H previous-session
-      # bind -n M-L next-session
+      # bind -n M-H switch-client -p
+      # bind -n M-L switch-client -n
       # bind -n M-N switch-client -l
-      bind -n M-P previous-session
-      bind -n M-N next-session
+      bind -n M-P switch-client -p
+      bind -n M-N switch-client -n
       bind -n M-, switch-client -l
 
       #
@@ -149,8 +150,8 @@
       bind -n M-\' last-window
 
       # swap window left and right
-      bind C-j swap-window -t +1\; select-window -t +1
-      bind C-k swap-window -t -1\; select-window -t -1
+      bind j swap-window -t +1\; select-window -t +1
+      bind k swap-window -t -1\; select-window -t -1
       bind -n M-j swap-window -t +1\; select-window -t +1
       bind -n M-k swap-window -t -1\; select-window -t -1
 
