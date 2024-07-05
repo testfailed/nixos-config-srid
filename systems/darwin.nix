@@ -112,7 +112,8 @@ in
   # };
 
   # Enable fonts dir
-  fonts.fontDir.enable = true;
+  # TODO: Deprecated: not needed anymore!
+  # fonts.fontDir.enable = true;
 
   # For home-manager to work.
   users.users.${flake.config.people.myself} = {
