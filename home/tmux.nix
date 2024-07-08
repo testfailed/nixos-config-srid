@@ -122,7 +122,9 @@
       # bind C-L switch-client -n
       bind C-p switch-client -p
       bind C-n switch-client -n
-      bind "C-'" switch-client -l
+      # bind C-\; switch-client -l
+      # bind C-' switch-client -l
+      bind C-, switch-client -l
 
       # bind -n M-H switch-client -p
       # bind -n M-L switch-client -n

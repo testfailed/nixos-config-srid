@@ -82,11 +82,11 @@
       # NOTE: ORDER MATTERS
       #
 
+      # winminheight = 5; # *: 1 /// minimum window height
       winheight = 5; # *: 1 /// minimum window height
-      winminheight = 5; # *: 1 /// minimum window height
 
+      # winminwidth = 30; # *: 1 /// minimum window width
       winwidth = 30; # *: 1 /// minimum window width
-      winminwidth = 30; # *: 1 /// minimum window width
     };
   };
 }

@@ -5,7 +5,8 @@
       {
         mode = "n";
         key = "<Leader>e";
-        action = ":Neotree action=focus reveal toggle <Bar> :wincmd =<CR>";
+        # action = ":Neotree action=focus reveal toggle <Bar> :wincmd =<CR>";
+        action = ":Neotree action=focus reveal toggle<CR>";
         options.silent = true;
       }
 

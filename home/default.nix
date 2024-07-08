@@ -22,7 +22,7 @@
           # ./terminal.nix
           # ./zellij.nix
 
-          # ./nixvim
+          ./nixvim
 
           ./alacritty.nix
           ./bat.nix
