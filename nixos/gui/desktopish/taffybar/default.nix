@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ pkgs, ... }:
 let
   taffyPkg = pkgs.callPackage ./taffybar-srid { inherit pkgs; };
 in

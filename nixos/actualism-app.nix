@@ -1,9 +1,5 @@
-{ flake, pkgs, lib, ... }:
+{ pkgs, lib, ... }:
 
-let
-  inherit (flake) inputs;
-  inherit (inputs) self;
-in
 {
 
   networking.firewall = {
@@ -39,7 +35,7 @@ in
         lib.getExe (pkgs.writeShellApplication {
           name = "actualism-app-start";
           text = ''
-            cd ${pkgs.actualism-app}/ 
+            cd ${pkgs.actualism-app}/
             ${pkgs.actualism-app}/bin/actualism-app
           '';
         });

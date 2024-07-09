@@ -1,4 +1,4 @@
-{ pkgs, flake, ... }:
+{ flake, ... }:
 {
   imports = [
     "${flake.inputs.nixos-vscode-server}/modules/vscode-server/home.nix"

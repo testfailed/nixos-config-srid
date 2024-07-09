@@ -12,6 +12,8 @@ in
     "${self}/nixos/github-runner.nix"
   ];
 
+  networking.hostName = "clv-mba-m1";
+
   nixpkgs.hostPlatform = "aarch64-darwin";
 
   # Set your time zone.
@@ -29,25 +31,6 @@ in
 
   # Auto upgrade nix package and the daemon service.
   services.nix-daemon.enable = true;
-
-  # # Setup user, packages, programs
-  # nix = {
-  #   package = pkgs.nix;
-  #   # package = pkgs.nixVersions.nix_2_21;
-  #   # settings.trusted-users = [ "@admin" "${user}" ]; # TODO: not working
-  #
-  #   gc = {
-  #     user = "root";
-  #     automatic = true;
-  #     interval = { Weekday = 0; Hour = 2; Minute = 0; };
-  #     options = "--delete-older-than 30d";
-  #   };
-  #
-  #   # Turn this on to make command line easier
-  #   extraOptions = ''
-  #     experimental-features = nix-command flakes
-  #   '';
-  # };
 
   # Turn off NIX_PATH warnings now that we're using flakes
   system.checks.verifyNixPath = false;
@@ -83,9 +66,6 @@ in
     xsel
     zip
   ];
-
-  networking.hostName = "clv-mba-m1";
-
 
   environment.shellAliases = {
     # prefixed with 'g' (gnu tools / single).

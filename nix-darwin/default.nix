@@ -6,7 +6,7 @@
       my-home = {
 
         # home-manager configs
-        home-manager.backupFileExtension = "before-home-manager";
+        home-manager.backupFileExtension = "bak-nix-hm";
 
         home-manager.users.${config.people.myself} = {
           imports = [ self.homeModules.common-darwin ];

@@ -16,7 +16,7 @@
 
     # WMish things
     ./xmonad
-    #./taffybar # Disabled, because it rarely works (and memory hungry)
+    # ./taffybar # Disabled, because it rarely works (and memory hungry)
     # ./xmobar # shit UX
   ];
 

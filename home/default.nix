@@ -18,6 +18,7 @@
           # # ./powershell.nix
           # ./juspay.nix
           # ./just.nix
+          # ./nix.nix
           # ./starship.nix
           # ./terminal.nix
           # ./zellij.nix
@@ -30,7 +31,6 @@
           ./fzf.nix
           ./git.nix
           ./gnutools.nix
-          ./nix.nix
           ./nix-index.nix
           ./ripgrep.nix
           ./ssh.nix

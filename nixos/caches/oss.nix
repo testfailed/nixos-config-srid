@@ -5,7 +5,7 @@
     # "cache.garnix.io:CTFPyKSLcx5RMJKfLo5EEPUObbA78b0YQ2DTCJXqr9g="
   ];
   nix.settings.substituters = [
-    #"https://nix-community.cachix.org"
+    # "https://nix-community.cachix.org"
     # "https://cache.garnix.io?priority=41"
     "https://nammayatri.cachix.org?priority=42"
   ];

@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ pkgs, ... }:
 let
   xmobarPkg = pkgs.callPackage ./xmobar-srid { inherit pkgs; };
 in

@@ -1,6 +1,6 @@
 { pkgs, ... }:
 
-(self: super:
+(self: _super:
 let
   justFuckingBuild = drv: with pkgs.haskell.lib; dontHaddock (dontCheck drv);
 in

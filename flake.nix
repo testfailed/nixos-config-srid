@@ -172,9 +172,29 @@
           };
         };
 
-        treefmt.config = {
+        # treefmt.config = {
+        treefmt = {
+          flakeCheck = true; # ==: true
+          flakeFormatter = true; # ==: true
           projectRootFile = "flake.nix";
-          programs.nixpkgs-fmt.enable = true;
+
+          settings = {
+            formatters = [
+              pkgs.nixpkgs-fmt
+              # pkgs.ruff
+            ]; # ==: [ ]
+          };
+
+          programs = {
+            deadnix.enable = true; # ==: false
+            nixpkgs-fmt.enable = true; # ==: false
+            # prettier.enable = true; # ==: false
+            # ruff.enable = true; # ==: false
+            # shellcheck.enable = true; # ==: false
+            # shfmt.enable = true; # ==: false
+            # taplo.enable = true; # ==: false
+            # yamlfmt.enable = true; # ==: false
+          };
         };
 
         packages.default = self'.packages.activate;

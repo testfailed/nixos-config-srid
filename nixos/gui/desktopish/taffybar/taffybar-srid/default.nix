@@ -15,5 +15,5 @@ pkgs.haskellPackages.developPackage {
       ghcid
       haskell-language-server
     ]);
-  overrides = self: super: with pkgs.haskell.lib; { };
+  overrides = _self: _super: with pkgs.haskell.lib; { };
 }

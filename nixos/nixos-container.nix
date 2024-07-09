@@ -18,7 +18,7 @@ in
     inherit localAddress;
     autoStart = true;
     hostAddress = "192.168.100.10";
-    config = { config, pkgs, ... }: {
+    config = { pkgs, ... }: {
       environment.systemPackages = with pkgs; [
         hello
       ];

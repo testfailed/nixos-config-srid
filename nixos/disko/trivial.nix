@@ -7,13 +7,16 @@
         # TODO: Don't hardcode (this file is used by multiple systems)
         device = "/dev/nvme0n1";
         type = "disk";
+
         content = {
           type = "gpt";
           partitions = {
+
             boot = {
               size = "1M";
               type = "EF02"; # for grub MBR
             };
+
             ESP = {
               size = "512M";
               type = "EF00";
@@ -23,6 +26,7 @@
                 mountpoint = "/boot";
               };
             };
+
             root = {
               size = "100%";
               content = {
@@ -31,8 +35,10 @@
                 mountpoint = "/";
               };
             };
+
           };
         };
+
       };
     };
   };
