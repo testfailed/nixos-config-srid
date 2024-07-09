@@ -89,8 +89,10 @@
     # DevOps tools
     #
 
-    docker
-    docker-compose
+    # NOTE: docker is install/configured in 'nixos/docker.nix'
+    # docker
+    # docker-compose
+    # docker_27
 
     pre-commit
     turbo
@@ -111,6 +113,7 @@
     # Productivity tools
     # sc-im # TODO: build fails with deprecated error => formats/ods.c:85:9: warning: 'zip_error_to_str' is deprecated: use 'zip_error_strerror' instead [-Wdeprecated-declarations]
     # obsidian # TODO: outdated for darwin.
+    graphviz
 
     # Media-related packages
     # dejavu_fonts

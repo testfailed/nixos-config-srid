@@ -71,3 +71,32 @@ Start from `flake.nix` (see [Flakes](https://nixos.wiki/wiki/Flakes)). [`flake-p
 ## Discussion
 
 If you wish to discuss about this config, [join the Zulip](https://nixos.zulipchat.com/login/?next=/).
+
+## Examples & Tutorials
+
+- [Learn Nix the Fun Way](https://fzakaria.com/2024/07/05/learn-nix-the-fun-way.html)
+
+Build into the nix store.
+
+```bash
+nix-build ./examples/what-is-my-ip.nix
+
+# Visualize the dependency graph.
+nix-store --query --graph $(nix-build ./examples/what-is-my-ip.nix) | \
+  dot -Tsvg -o what-is-my-ip-deps.svg
+```
+
+Build and include in a shell environment.
+
+```bash
+nix-shell ./examples/what-is-my-ip-shell.nix
+```
+
+Build into a docker image and run it.
+
+```bash
+docker load < $(nix-build ./examples/what-is-my-ip-docker.nix)
+# => Loaded image: what-is-my-ip-docker:c9g6x30invdq1bjfah3w1aw5w52vkdfn
+
+docker run -it --rm what-is-my-ip-docker:c9g6x30invdq1bjfah3w1aw5w52vkdfn
+```

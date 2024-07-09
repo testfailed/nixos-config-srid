@@ -1,11 +1,18 @@
-.direnv/**/*
-result/**/*
-result
-
-.vscode/**/*
+.vscode/
 !.vscode/extensions.json
 !.vscode/launch.json
 !.vscode/settings.json
 !.vscode/tasks.json
 
 *.qcow2
+
+#
+# NixOS
+#
+
+.direnv/
+out/
+result
+result/
+
+.pre-commit-config.yaml

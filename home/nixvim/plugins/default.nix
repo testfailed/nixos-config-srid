@@ -7,6 +7,7 @@
     ./auto-session.nix
     ./bufferline.nix
     ./comment.nix
+    ./conform-nvim.nix
     ./copilot-vim.nix
     ./indent-blankline.nix
     ./leap.nix
@@ -26,7 +27,7 @@
     plugins = {
 
       # oil.enable = true; # *: false
-      conform-nvim.enable = true; # *: false # TODO: move to a separate file.
+      # conform-nvim.enable = true; # *: false # TODO: move to a separate file.
       nix.enable = true; # *: false
       sleuth.enable = true; # *: false
       trouble.enable = true; # *: false # TODO: move to a separate file.
