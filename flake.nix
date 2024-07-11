@@ -50,32 +50,6 @@
   };
 
 
-  # outputs = inputs@{ self, ... }: {
-  #   # Configuration for my Android Tablet Y700 (using nix-on-droid, termux)
-  #   # nixOnDroidConfigurations.clv-andt-y700 =
-  #   #   self.nixos-flake.lib.mkAndroidSystem
-  #   #     ./systems/nix-on-droid.nix;
-  #   nixOnDroidConfigurations.default =
-  #     inputs.nix-on-droid.lib.nixOnDroidConfiguration {
-  #       # system = "aarch64-linux";
-  #       # inherit system;
-  #       # pkgs = inputs.nixpkgs-android;
-  #       modules = [ ./systems/nix-on-droid.nix ];
-  #
-  #       # set nixpkgs instance, it is recommended to apply `nix-on-droid.overlays.default`
-  #       pkgs = import inputs.nixpkgs {
-  #         system = "aarch64-linux";
-  #
-  #         overlays = [
-  #           inputs.nix-on-droid.overlays.default
-  #         ];
-  #       };
-  #
-  #       # set path to home-manager flake
-  #       home-manager-path = inputs.home-manager.outPath;
-  #     };
-  # };
-
   outputs = inputs@{ self, ... }:
     inputs.flake-parts.lib.mkFlake { inherit inputs; } {
 
@@ -90,8 +64,8 @@
 
         ./users
         ./home
-        ./nixos
-        ./nix-darwin
+        # ./nixos
+        # ./nix-darwin
       ];
 
       flake = {
@@ -99,6 +73,23 @@
         darwinConfigurations.clv-mba-m1 =
           self.nixos-flake.lib.mkMacosSystem
             ./systems/darwin.nix;
+
+        # Configuration for my Android Tablet (using nix-on-droid)
+        nixOnDroidConfigurations.default =
+          inputs.nix-on-droid.lib.nixOnDroidConfiguration {
+            modules = [ ./systems/nix-on-droid.nix ];
+
+            # set nixpkgs instance. it's recommended to apply `nix-on-droid.overlays.default`
+            pkgs = import inputs.nixpkgs {
+              system = "aarch64-linux";
+              overlays = [
+                inputs.nix-on-droid.overlays.default
+              ];
+            };
+
+            # set path to home-manager flake
+            home-manager-path = inputs.home-manager.outPath;
+          };
 
         # # Hetzner dedicated
         # nixosConfigurations.immediacy =

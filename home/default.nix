@@ -40,12 +40,6 @@
         ];
       };
 
-      home.sessionPath = [
-        "$HOME/.local/bin"
-        # "\${xdg.configHome}/emacs/bin"
-        # ".git/safe/../../bin"
-      ];
-
       common-linux = {
         imports = [
           self.homeModules.common
@@ -63,6 +57,13 @@
           # ./himalaya.nix
         ];
       };
+
+      # TODO: impl
+      # common-android = {
+      #   imports = [
+      #     self.homeModules.common
+      #   ];
+      # };
 
     };
   };

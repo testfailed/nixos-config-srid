@@ -2,7 +2,8 @@
 
 let
   myself = flake.config.people.myself;
-in {
+in
+{
   nixpkgs = {
     config = {
       allowBroken = true;
