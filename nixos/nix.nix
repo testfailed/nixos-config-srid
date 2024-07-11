@@ -37,11 +37,6 @@ in
       options = "--delete-older-than 60d";
     };
 
-    # # Turn this on to make command line easier
-    # extraOptions = ''
-    #   experimental-features = nix-command flakes
-    # '';
-
     settings = {
       max-jobs = "auto";
       experimental-features = "nix-command flakes repl-flake";

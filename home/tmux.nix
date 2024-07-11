@@ -152,10 +152,10 @@
       bind -n M-\' last-window
 
       # swap window left and right
-      bind j swap-window -t +1\; select-window -t +1
-      bind k swap-window -t -1\; select-window -t -1
-      bind -n M-j swap-window -t +1\; select-window -t +1
-      bind -n M-k swap-window -t -1\; select-window -t -1
+      bind C-j swap-window -t +1\; select-window -t +1
+      bind C-k swap-window -t -1\; select-window -t -1
+      bind -n M-J swap-window -t +1\; select-window -t +1
+      bind -n M-K swap-window -t -1\; select-window -t -1
 
       #
       # Pane

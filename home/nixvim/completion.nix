@@ -54,7 +54,8 @@
       };
 
       # cuda
-      cmp-tabby.host = "http://10.10.10.5:8080";
+      # cmp-tabby.host = "http://10.10.10.5:8080";
+      cmp-tabby.settings.host = "http://10.10.10.5:8080";
     };
   };
 }

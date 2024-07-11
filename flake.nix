@@ -64,8 +64,8 @@
 
         ./users
         ./home
-        # ./nixos
-        # ./nix-darwin
+        ./nixos
+        ./nix-darwin
       ];
 
       flake = {

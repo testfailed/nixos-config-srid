@@ -42,7 +42,9 @@
 
   home.packages = with pkgs; [
 
+    # TODO: handle it with home-manager.
     bat
+    neovim
     tmux
 
     # Nix-related tools
@@ -63,13 +65,13 @@
     # NOTE: GNU tools are moved to 'systems/<system>.nix' for prefixing.
 
     # General packages for development and system management
+    # asciinema # TODO: broken # REF: <https://discourse.nixos.org/t/error-nose-1-3-7-not-supported-for-interpreter-python3-12/48703/3?u=testfailed>
     # aspell
     # aspellDicts.en
     # hunspell
     # just # TODO: use it
     # ncdu
     # zsh-vi-mode # TODO: use it
-    asciinema
     btop
     cheat
     cht-sh
@@ -85,7 +87,6 @@
     killall
     lesspipe
     neofetch
-    neovim
     nufmt
     nushell
     sesh

@@ -18,7 +18,7 @@
     just
 
     # Publishing
-    asciinema
+    # asciinema # TODO: broken # REF: <https://discourse.nixos.org/t/error-nose-1-3-7-not-supported-for-interpreter-python3-12/48703/3?u=testfailed>
     twitter-convert
 
     # Dev

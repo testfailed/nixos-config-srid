@@ -1,8 +1,8 @@
-# Make flake.config.peope.myself the admin of the machine
+# Make flake.config.people.myself the admin of the machine.
 { flake, pkgs, lib, ... }:
 
 {
-  # Login via SSH with my SSH key
+  # Login via SSH with my SSH key.
   users.users =
     let
       people = flake.config.people;
@@ -18,7 +18,7 @@
       };
     };
 
-  # Make me a sudoer without password
+  # Make me a sudoer without password.
   security = lib.optionalAttrs pkgs.stdenv.isLinux {
     sudo.execWheelOnly = true;
     sudo.wheelNeedsPassword = false;
