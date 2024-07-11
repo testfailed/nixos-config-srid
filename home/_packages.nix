@@ -4,6 +4,8 @@
   home.packages = with pkgs; [
 
     # Nix-related tools
+    cachix
+    devenv
     nh
     nix-output-monitor
     nix-prefetch
@@ -103,7 +105,6 @@
     ansible
     awscli2
     buf
-    cachix
     chezmoi
     google-cloud-sdk
     kubectl

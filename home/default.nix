@@ -1,18 +1,12 @@
 { self, inputs, ... }:
-
 {
   flake = {
     homeModules = {
 
       common = {
         home.stateVersion = "22.11";
+
         imports = [
-          ./_packages.nix
-          ./xdg.nix
-
-          inputs.nixvim.homeManagerModules.nixvim
-          inputs.nix-index-database.hmModules.nix-index
-
           # # ./helix.nix
           # # ./nushell.nix
           # # ./powershell.nix
@@ -22,6 +16,12 @@
           # ./starship.nix
           # ./terminal.nix
           # ./zellij.nix
+
+          ./_packages.nix
+          ./xdg.nix
+
+          inputs.nixvim.homeManagerModules.nixvim
+          inputs.nix-index-database.hmModules.nix-index
 
           ./nixvim
 

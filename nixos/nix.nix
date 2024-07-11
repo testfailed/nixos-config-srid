@@ -4,6 +4,10 @@ let
   myself = flake.config.people.myself;
 in
 {
+
+# { flake, pkgs, ... }:
+#
+# {
   nixpkgs = {
     config = {
       allowBroken = true;
@@ -33,16 +37,22 @@ in
       user = "root";
       automatic = true;
       # interval = { Weekday = 0; Hour = 2; Minute = 0; };
+      interval = { Weekday = 1; Hour = 0; Minute = 0; };
       # options = "--delete-older-than 30d";
       options = "--delete-older-than 60d";
     };
+
+    # # Turn this on to make command line easier
+    # extraOptions = ''
+    #   experimental-features = nix-command flakes repl-flake
+    # '';
 
     settings = {
       max-jobs = "auto";
       experimental-features = "nix-command flakes repl-flake";
       trusted-users = [
-        # "root"
-        "@admin"
+        "root"
+        # "@admin"
         (if pkgs.stdenv.isDarwin then myself else "@wheel")
       ];
 

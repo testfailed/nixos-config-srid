@@ -8,7 +8,7 @@
     ./bufferline.nix
     ./comment.nix
     ./conform-nvim.nix
-    ./copilot-vim.nix
+    # ./copilot-vim.nix # TODO: disabled due to the issue with building nodejs-18_x
     ./indent-blankline.nix
     ./leap.nix
     ./lsp.nix
@@ -49,8 +49,8 @@
           bottom_search = true;
           command_palette = true;
           long_message_to_split = true;
-          #inc_rename = false;
-          #lsp_doc_border = false;
+          # inc_rename = false;
+          # lsp_doc_border = false;
         };
       };
 

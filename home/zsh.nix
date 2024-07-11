@@ -117,10 +117,15 @@
     };
 
     initExtraFirst = ''
-      if [[ -f /nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh ]]; then
-        . /nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh
-        . /nix/var/nix/profiles/default/etc/profile.d/nix.sh
-      fi
+      # if [[ -f /nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh ]]; then
+      #   . /nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh
+      #   . /nix/var/nix/profiles/default/etc/profile.d/nix.sh
+      # fi
+
+      [[ ! $(command -v nix) && -e "/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh" ]] \
+        && . "/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh"
+      [[ ! $(command -v nix) && -e "$HOME/.nix-profile/etc/profile.d/nix.sh" ]] \
+        && . "$HOME/.nix-profile/etc/profile.d/nix.sh"
 
       # Define variables for directories
       export PATH=$HOME/.pnpm-packages/bin:$HOME/.pnpm-packages:$PATH

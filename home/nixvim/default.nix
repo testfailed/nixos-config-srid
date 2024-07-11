@@ -1,5 +1,3 @@
-{ pkgs, ... }:
-
 {
   imports = [
     # inputs.nixvim.homeManagerModules.nixvim
@@ -15,7 +13,9 @@
   ];
 
   programs.nixvim = {
-    # enable = true; # ==: false
-    enable = pkgs.stdenv.isDarwin; # nixvim uses IFD; so not using it on Linux (breaks colmena apply)
+    enable = true; # ==: false
+
+    # nixvim uses IFD; so not using it on Linux (breaks colmena apply)
+    # enable = pkgs.stdenv.isDarwin;
   };
 }
