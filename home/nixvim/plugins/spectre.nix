@@ -1,8 +1,7 @@
 {
   programs.nixvim = {
-    # keymaps = [];
-
     plugins.spectre = {
+
       enable = true; # *: false
 
       settings = {
@@ -55,6 +54,7 @@
         is_insert_mode = false;
         live_update = true;
       };
+
     };
   };
 }

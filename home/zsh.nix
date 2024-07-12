@@ -27,10 +27,10 @@
       highlight = "fg=8"; # *: null
     };
     # cdpath = [ "~/.local/share/src" ];
-    completionInit = "autoload -U compinit && compinit";
+    # completionInit = "autoload -U compinit && compinit";
     defaultKeymap = "viins"; # *: null
-    enableCompletion = true;
-    enableVteIntegration = true; # *: false
+    # enableCompletion = true;
+    # enableVteIntegration = true; # *: false
 
     history = {
       extended = true; # *: false
@@ -128,17 +128,14 @@
         && . "$HOME/.nix-profile/etc/profile.d/nix.sh"
 
       # Define variables for directories
-      export PATH=$HOME/.pnpm-packages/bin:$HOME/.pnpm-packages:$PATH
-      export PATH=$HOME/.npm-packages/bin:$HOME/bin:$PATH
+      # export PATH=$HOME/.pnpm-packages/bin:$HOME/.pnpm-packages:$PATH
+      # export PATH=$HOME/.npm-packages/bin:$HOME/bin:$PATH
       export PATH=$HOME/.local/share/bin:$PATH
 
       setopt prompt_subst
 
       setopt histignorespace
       # export HISTIGNORE="pwd:ls:cd"
-
-      export EDITOR="nvim"
-      export VISUAL="nvim"
 
       ############################################################
       # GNU command shims for compatibility
@@ -349,16 +346,12 @@
       export LC_ALL='en_US.UTF-8'
       export TZ='Asia/Seoul'
 
-      export VIM_EDITOR='nvim'
-      export GIT_EDITOR='nvim'
-      export VISUAL='nvim'
 
-      # Preferred editor for local and remote sessions
-      if [[ -n $SSH_CONNECTION ]]; then
-        export EDITOR='nvim'
-      else
-        export EDITOR='nvim'
-      fi
+      export EDITOR="nvim"
+      export VISUAL="nvim"
+
+      export GIT_EDITOR='nvim'
+      export VIM_EDITOR='nvim'
 
       # key timeout (used in vi-mode)
       export KEYTIMEOUT=15
@@ -561,6 +554,15 @@
       # Ripgrep alias
       alias rgs=rg -p --glob '!node_modules/*' $@
 
+      # ALIAS: NAVIGATION
+      alias ".."='cd ..'
+      alias "..."='cd ../..'
+      alias "...."='cd ../../..'
+      alias "....."='cd ../../../..'
+      alias "~"='cd ~'
+      alias "pd"='popd'
+      alias "ud"='pushd'
+
       ############################################################
       # ALIAS: g*: *
       ############################################################
@@ -603,6 +605,8 @@
       alias gcnv_='git commit --verbose --no-verify'
       alias gcnvm_='git commit --verbose --no-verify -m'
 
+      # function gcmp
+
       # ALIAS: gcl: 'git clone'
       alias gcl='git clone'
       alias gclr='git clone --recurse-submodules'
@@ -622,6 +626,7 @@
       # ALIAS: gd: 'git diff'
       alias gd='git diff'
       alias gdca='git diff --cached'
+      alias gdl='git diff HEAD~'
       alias gds='git diff --stat'
       alias gdsl='git diff --stat HEAD~'
       alias gdst='git diff --stat --staged'
@@ -700,6 +705,7 @@
       alias grshao='git remote set-head --auto ''${TDPP_GIT_REMOTE_ORIGIN}'
       alias grshd='git remote set-head --delete'
       alias grshdo='git remote set-head --delete ''${TDPP_GIT_REMOTE_ORIGIN}'
+      alias grup='git remote update'
       alias grv='git remote -v'
       alias grvv='git remote -vv'
 

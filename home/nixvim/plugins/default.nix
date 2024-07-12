@@ -1,80 +1,39 @@
 {
   imports = [
-    # ./efm.nix
-    # ./floaterm.nix
-    # ./markdown-preview.nix
-    # ./startify.nix
+    ./cmp.nix
+    ./lsp.nix
+    ./telescope.nix
+    ./treesitter.nix
+
     ./auto-session.nix
     ./bufferline.nix
     ./comment.nix
     ./conform-nvim.nix
+    ./copilot-lua.nix
     # ./copilot-vim.nix # TODO: disabled due to the issue with building nodejs-18_x
+    ./gitsigns.nix
     ./indent-blankline.nix
     ./leap.nix
-    ./lsp.nix
     ./lualine.nix
     ./marks.nix
+    ./navic.nix
     ./neo-tree.nix
+    # ./noice.nix
+    ./nvim-colorizer.nix
     ./spectre.nix
     ./tagbar.nix
-    ./telescope.nix
-    ./treesitter.nix
+    ./trim.nix
     ./vimtex.nix
     ./which-key.nix
   ];
 
   programs.nixvim = {
     plugins = {
-
-      # oil.enable = true; # *: false
-      # conform-nvim.enable = true; # *: false # TODO: move to a separate file.
-      nix.enable = true; # *: false
-      sleuth.enable = true; # *: false
-      trouble.enable = true; # *: false # TODO: move to a separate file.
-
-      # TODO: move to a separate file.
-      gitsigns = {
-        enable = true;
-        settings.signs = {
-          add.text = "+";
-          change.text = "~";
-        };
-      };
-
-      # TODO: move to a separate file.
-      noice = {
-        # WARNING: This is considered experimental feature, but provides nice UX
-        enable = true;
-        presets = {
-          bottom_search = true;
-          command_palette = true;
-          long_message_to_split = true;
-          # inc_rename = false;
-          # lsp_doc_border = false;
-        };
-      };
-
-      # TODO: move to a separate file.
-      nvim-colorizer = {
-        enable = true;
-        userDefaultOptions.names = false;
-      };
-
-      # TODO: move to a separate file.
-      trim = {
-        enable = true;
-        settings = {
-          highlight = true;
-          ft_blocklist = [
-            "checkhealth"
-            "floaterm"
-            "lspinfo"
-            "neo-tree"
-            "TelescopePrompt"
-          ];
-        };
-      };
-
+      # One-line plugin configs
+      nix.enable = true; # ==: false
+      sleuth.enable = true; # ==: false
+      surround.enable = true; # ==: false
+      trouble.enable = true; # ==: false # TODO: move to a separate file.
     };
   };
 }

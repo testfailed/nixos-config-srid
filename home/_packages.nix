@@ -34,8 +34,12 @@
     cheat
     cht-sh
     du-dust
+    dua
     eza
     fd
+    hexyl
+    hwatch
+    hyperfine
     gdu
     gh
     htop
@@ -51,11 +55,15 @@
     sqlite
     uutils-coreutils
     watchman
+    xsv
     yq-go
 
     #
     # Development tools
     #
+
+    nickel
+    nls
 
     # Python packages
     python311 # NOTE: try python-rewrite

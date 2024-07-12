@@ -6,6 +6,7 @@
       enable = true; # ==: false
 
       # Map of filetype to formatters
+      # TODO: set project-specific configs.
       formattersByFt = {
         # Use the "*" filetype to run formatters on all filetypes.
         "*" = [ "codespell" ];
@@ -39,12 +40,9 @@
       # This can also be a function that returns the table.
       # See :help conform.format for details.
       formatOnSave = {
-        # enable = true; # ==: null
-
         # Configure if and when LSP should be used for formatting.
         # Defaults to "never".
         lspFallback = true; # ==: true # ==: "never"
-
         timeoutMs = 500; # ==: 500 # ==: 1000
       }; # ==: null
     };

@@ -11,6 +11,7 @@
         cmp = {
           enable = true;
           menu = {
+            copilot = "";
             nvim_lsp = "[LSP]";
             nvim_lua = "[api]";
             path = "[path]";
@@ -22,8 +23,24 @@
         };
       };
 
+      # Github Copilot Completion
+      copilot-cmp = {
+        enable = true; # ==: false
+
+        event = [
+          "InsertEnter"
+          "LspAttach"
+        ];
+      };
+
+      # cuda
+      # cmp-tabby.host = "http://10.10.10.5:8080";
+      cmp-tabby.settings.host = "http://10.10.10.5:8080";
+
       cmp = {
-        enable = true;
+        enable = true; # ==: false
+
+        autoEnableSources = true; # ==: true
 
         settings = {
           snippet.expand = "function(args) require('luasnip').lsp_expand(args.body) end";
@@ -36,26 +53,27 @@
             "<Tab>" = "cmp.mapping(cmp.mapping.select_next_item(), {'i', 's'})";
             "<S-Tab>" = "cmp.mapping(cmp.mapping.select_prev_item(), {'i', 's'})";
             "<CR>" = "cmp.mapping.confirm({ select = true })";
+            "<C-;>" = "cmp.mapping.confirm({ select = true })";
+            "<M-i>" = "cmp.mapping.confirm({ select = true })";
           };
 
           sources = [
-            { name = "path"; }
-            { name = "nvim_lsp"; }
-            { name = "cmp_tabby"; }
-            { name = "luasnip"; }
+            { name = "path"; group_index = 1; }
+            { name = "copilot"; group_index = 1; }
+
+            { name = "nvim_lsp"; group_index = 2; }
+            { name = "cmp_tabby"; group_index = 2; }
+            { name = "luasnip"; group_index = 2; }
             {
               name = "buffer";
               # Words from other open buffers can also be suggested.
               option.get_bufnrs.__raw = "vim.api.nvim_list_bufs";
+              group_index = 3;
             }
-            { name = "neorg"; }
+            { name = "neorg"; group_index = 3; }
           ];
         };
       };
-
-      # cuda
-      # cmp-tabby.host = "http://10.10.10.5:8080";
-      cmp-tabby.settings.host = "http://10.10.10.5:8080";
     };
   };
 }

@@ -5,9 +5,7 @@
     ./colors
     ./plugins
 
-    # ./todo.nix
     ./autocommands.nix
-    ./completion.nix
     ./keybindings.nix
     ./options.nix
   ];

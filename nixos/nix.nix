@@ -5,9 +5,9 @@ let
 in
 {
 
-# { flake, pkgs, ... }:
-#
-# {
+  # { flake, pkgs, ... }:
+  #
+  # {
   nixpkgs = {
     config = {
       allowBroken = true;
@@ -41,11 +41,6 @@ in
       # options = "--delete-older-than 30d";
       options = "--delete-older-than 60d";
     };
-
-    # # Turn this on to make command line easier
-    # extraOptions = ''
-    #   experimental-features = nix-command flakes repl-flake
-    # '';
 
     settings = {
       max-jobs = "auto";
