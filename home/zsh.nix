@@ -562,6 +562,7 @@
       alias "~"='cd ~'
       alias "pd"='popd'
       alias "ud"='pushd'
+      mkcd() { mkdir -p "$@" && cd "$@"; }
 
       ############################################################
       # ALIAS: g*: *
@@ -605,7 +606,7 @@
       alias gcnv_='git commit --verbose --no-verify'
       alias gcnvm_='git commit --verbose --no-verify -m'
 
-      # function gcmp
+      gcmp() { gcm "$@" && gp }
 
       # ALIAS: gcl: 'git clone'
       alias gcl='git clone'

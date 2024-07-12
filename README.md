@@ -1,6 +1,6 @@
 [![AGPL](https://img.shields.io/badge/License-AGPL%20v3-blue.svg)](https://en.wikipedia.org/wiki/Affero_General_Public_License)
 [![project chat](https://img.shields.io/badge/zulip-join_chat-brightgreen.svg)](https://nixos.zulipchat.com/#narrow/stream/413948-nixos)
-[![Harmeless Code of Conduct](https://img.shields.io/badge/harmless-8A2BE2)](https://srid.ca/coc "This project follows the 'Harmlessness Code of Conduct'")
+[![Harmless Code of Conduct](https://img.shields.io/badge/harmless-8A2BE2)](https://srid.ca/coc "This project follows the 'Harmlessness Code of Conduct'")
 
 This repository contains the Nix / NixOS configuration for all of my systems. See [nixos-flake](https://community.flake.parts/nixos-flake) if you want to create your own configuration from scratch.
 
@@ -72,7 +72,52 @@ Start from `flake.nix` (see [Flakes](https://nixos.wiki/wiki/Flakes)). [`flake-p
 
 If you wish to discuss about this config, [join the Zulip](https://nixos.zulipchat.com/login/?next=/).
 
-## Examples & Tutorials
+## Deploying on Remote Server
+
+Using [nixos-infect](https://github.com/elitak/nixos-infect) (Successful on Ubuntu 24.04 LTS x64)
+
+To install Manually,
+
+```bash
+  curl https://raw.githubusercontent.com/elitak/nixos-infect/master/nixos-infect | NIX_CHANNEL=nixos-23.05 bash -x
+```
+
+Or Automatically using `Cloud-Init User-Data`,
+
+```bash
+#!/bin/sh
+
+curl https://raw.githubusercontent.com/elitak/nixos-infect/master/nixos-infect | NIX_CHANNEL=nixos-23.05 bash
+```
+
+After nix is instantiated, change and update nix channels.
+
+```bash
+nix-channel --add https://channels.nixos.org/nixos-24.05 nixos
+nix-channel --add https://channels.nixos.org/nixos-unstable nixos-unstable
+nix-channel --update
+```
+
+And then bootstrap with manual script `./manual_scripts/init-configuration.nix`.
+
+```bash
+nixos-rebuild switch
+```
+
+After bootstrapping, install further with flake configs with created user.
+
+```bash
+mkdir -p ~/repos/nixos/config && cd $_
+
+git clone https://github.com/testfailed/nixos-config-srid
+cd nixos-config-srid
+
+nixos-rebuild switch
+```
+
+## Reference
+
+### Examples & Tutorials
 
 - [Learn Nix the Fun Way](https://fzakaria.com/2024/07/05/learn-nix-the-fun-way.html)
 
