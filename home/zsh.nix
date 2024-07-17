@@ -620,7 +620,7 @@
       alias gcnv_='git commit --verbose --no-verify'
       alias gcnvm_='git commit --verbose --no-verify -m'
 
-      gcmp() { gcm "$@" && gp }
+      gcmp() { gcm "$@" && git push }
 
       # ALIAS: gcl: 'git clone'
       alias gcl='git clone'
