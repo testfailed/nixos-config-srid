@@ -1,9 +1,5 @@
 {
   programs.nixvim = {
-    plugins.tagbar = {
-      enable = true;
-      settings.width = 50;
-    };
 
     keymaps = [
       {
@@ -13,5 +9,11 @@
         options.silent = true;
       }
     ];
+
+    plugins.tagbar = {
+      enable = true;
+      settings.width = 50;
+    };
+
   };
 }

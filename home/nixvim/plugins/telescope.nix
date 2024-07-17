@@ -53,8 +53,10 @@
 
         # Frecency Algorithm
         # "<Leader>sf" = "frecency";
-        "<Leader>sf" = "frecency path_display={\"shorten\"} theme=ivy";
-        "<Leader>f" = "frecency workspace=CWD path_display={\"shorten\"} theme=ivy";
+        # "<Leader>sf" = "frecency path_display={\"shorten\"} theme=ivy";
+        # "<Leader>f" = "frecency workspace=CWD path_display={\"shorten\"} theme=ivy";
+        "<Leader>sf" = "frecency";
+        "<Leader>f" = "frecency workspace=CWD";
 
         # FZF like bindings
         "<C-p>" = "git_files";

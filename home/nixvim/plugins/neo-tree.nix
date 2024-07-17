@@ -5,16 +5,18 @@
       {
         mode = "n";
         key = "<Leader>e";
-        # action = ":Neotree action=focus reveal toggle <Bar> :wincmd =<CR>";
-        action = ":Neotree action=focus reveal toggle<CR>";
-        options.silent = true;
+        # action = ":Neotree action=focus reveal toggle<CR>";
+        action = ":Neotree action=focus reveal toggle<CR><C-w>=";
+        # action = "<Cmd>Neotree action=focus reveal toggle<CR><C-w>=";
+        options.silent = false;
       }
 
       {
         mode = "n";
         key = "<M-e>";
-        action = ":Neotree action=focus<CR>";
-        options.silent = true;
+        action = ":Neotree action=focus reveal<CR><C-w>=";
+        # action = "<Cmd>Neotree action=focus reveal<CR><C-w>=";
+        options.silent = false;
       }
     ];
 

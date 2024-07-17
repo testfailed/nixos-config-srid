@@ -57,11 +57,11 @@
 
               # Buffer
               "<Leader>b'" = { action = "<Cmd>buffers<CR>"; desc = "List buffers"; };
-              "<Leader>b;" = { action = "<Cmd>b#<CR>"; desc = "Switch to Other Buffer"; };
-              "<C-S-;>" = { action = "<Cmd>b#<CR>"; desc = "Switch to Other Buffer"; }; # TODO: not working.
-              # "<Leader>b;" = { action = "<Cmd>e #<CR>"; desc = "Switch to Other Buffer"; };
-              # "<Leader>bn" = { action = "<Cmd>bn<CR>"; desc = "Next buffer"; };
-              # "<Leader>bp" = { action = "<Cmd>bp<CR>"; desc = "Previous buffer"; };
+              # "<Leader>b," = { action = ":ls<CR>:b<Space>"; desc = "List buffers and jump to"; };
+              "<Leader>b," = { action = ":set nomore <Bar> :ls <Bar> :set more <CR>:b<Space>"; desc = "List buffers and jump to"; };
+              "<M-w>" = { action = "<Cmd>b#<CR>"; desc = "Switch to Other Buffer"; }; # TODO: not working.
+              "<Leader>bn" = { action = "<Cmd>bn<CR>"; desc = "Next buffer"; };
+              "<Leader>bp" = { action = "<Cmd>bp<CR>"; desc = "Previous buffer"; };
             };
 
         nnoremap =

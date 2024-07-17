@@ -21,16 +21,30 @@
     #   ];
     # };
 
-    # autocd = null;
+    autocd = null; # ==: null
     autosuggestion = {
       enable = true; # *: false
       highlight = "fg=8"; # *: null
     };
     # cdpath = [ "~/.local/share/src" ];
-    # completionInit = "autoload -U compinit && compinit";
+    completionInit = ''
+      autoload -Uz bashcompinit && bashcompinit
+      autoload -Uz promptinit && promptinit
+      autoload -Uz compinit compdef && compinit
+    '';
     defaultKeymap = "viins"; # *: null
-    # enableCompletion = true;
-    # enableVteIntegration = true; # *: false
+    dirHashes = {
+      repo = "$HOME/repos";
+      repom = "$HOME/repos/testfailed";
+      repox = "$HOME/repos/nixos";
+      repoxc = "$HOME/repos/nixos/config";
+
+      docs = "$HOME/Documents";
+      vids = "$HOME/Videos";
+      dl = "$HOME/Downloads";
+    };
+    enableCompletion = true;
+    enableVteIntegration = true; # *: false
 
     history = {
       extended = true; # *: false
@@ -989,8 +1003,13 @@
       # Keybindings for zsh-autosuggestions
       #
 
-      bindkey -M vicmd "^L" autosuggest-accept
-      bindkey -M viins "^L" autosuggest-accept
+      # bindkey -M vicmd "^L" autosuggest-accept
+      # bindkey -M viins "^L" autosuggest-accept
+      bindkey -M vicmd "^['" autosuggest-accept
+      bindkey -M viins "^['" autosuggest-accept
+
+      bindkey -M vicmd "^[;" forward-word
+      bindkey -M viins "^[;" forward-word
 
       #
       # Keybindings for zsh-history-substring-search
@@ -1008,8 +1027,13 @@
 
       bindkey -M vicmd "^[l" forward-word
       bindkey -M viins "^[l" forward-word
+      bindkey -M vicmd "^L" forward-word
+      bindkey -M viins "^L" forward-word
+
       bindkey -M vicmd "^[h" backward-word
       bindkey -M viins "^[h" backward-word
+      bindkey -M vicmd "^H" backward-word
+      bindkey -M viins "^H" backward-word
 
       # HISTORY_SUBSTRING_SEARCH_HIGHLIGHT_FOUND=
       # HISTORY_SUBSTRING_SEARCH_HIGHLIGHT_NOT_FOUND=
@@ -1065,11 +1089,51 @@
       zstyle ':completion:*' rehash true
       zstyle ':completion::complete:*' gain-privileges 1
 
+      zstyle ':completion:*:descriptions' format '%U%F{yellow}%d%f%u'
+      # zstyle ':completion:*:descriptions' format '%U%B%d%b%u'
+      # zstyle ':completion:*:descriptions' format $'\033[1;34m%d\033[0m'
+      zstyle ':completion:*' menu select=2
+      zstyle ':completion:*' preserve-prefix '//[^/]##/'
+      zstyle ':completion:*' squeeze-slashes true
+
+      # This way the completion script does not have to parse Bazel's options
+      # repeatedly. The directory in cache-path must be created manually.
+      zstyle ':completion:*' use-cache on
+      # zstyle ':completion:*' cache-path "$HOME/.zsh/cache"
+      zstyle ':completion:*' cache-path "$XDG_CACHE_HOME/zsh/.zcompcache"
+
+      # case-insensitive (uppercase from lowercase) completion
+      zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
+
+      # process completion
+      zstyle ':completion:*:processes' command "ps -au$USER"
+      zstyle ':completion:*:*:kill:*:processes' list-colors '=(#b) #([0-9]#)*=36=31'
+
       fpath=(
           "''${TDPP_LIB_SH_ZSH_COMPLETION_PATH}"
           "''${HOME}/.zfunc"
           ''${fpath}
       )
+
+      ############################################################
+      # Other Settings                                           #
+      ############################################################
+
+      # Disable unused options
+      unsetopt autocd
+      unsetopt correct_all
+
+      ############################################################
+      # Source other scripts                                     #
+      ############################################################
+
+      # Completions
+      autoload -Uz bashcompinit && bashcompinit
+      autoload -Uz promptinit && promptinit
+      # autoload -Uz compinit compdef && compinit
+      autoload -Uz compinit compdef && compinit -u
+
+
     '';
   };
 }

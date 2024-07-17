@@ -73,8 +73,6 @@
     nodejs
     # nodePackages.lerna # NOTE: build error
     nodePackages.cspell
-    nodePackages.dotenv-cli
-    nodePackages.dotenv-vault
     nodePackages.eslint
     nodePackages.graphql-cli
     nodePackages.neovim
@@ -94,6 +92,12 @@
     nodePackages.webpack-cli
     nodePackages.yalc
     nodePackages.yarn
+
+    nodePackages.dotenv-cli
+    nodePackages.dotenv-vault
+    # TODO: error: undefined variable 'dotenvx'
+    # dotenvx
+    # nodePackages.dotenvx
 
     #
     # DevOps tools

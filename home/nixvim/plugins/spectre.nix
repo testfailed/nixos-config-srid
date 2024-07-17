@@ -1,8 +1,21 @@
 {
   programs.nixvim = {
-    plugins.spectre = {
 
-      enable = true; # *: false
+    keymaps = [
+      {
+        key = "<Leader>sR";
+        action = "<Cmd>Spectre<CR>";
+        mode = [ "n" ];
+        options = {
+          desc = "Spectre (Find and Replace)";
+          noremap = true;
+          silent = true;
+        };
+      }
+    ];
+
+    plugins.spectre = {
+      enable = true; # ==: false
 
       settings = {
         default = {

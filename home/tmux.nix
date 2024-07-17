@@ -149,7 +149,8 @@
       # bind -n M-n last-window
       bind -n M-p previous-window
       bind -n M-n next-window
-      bind -n M-\' last-window
+      # bind -n M-\' last-window
+      # bind -n M-S-\' last-window
 
       # swap window left and right
       bind C-j swap-window -t +1\; select-window -t +1
@@ -170,7 +171,8 @@
       bind -n M-j select-pane -D
       bind -n M-k select-pane -U
       bind -n M-l select-pane -R
-      bind -n M-\; select-pane -l
+      # bind -n M-\; select-pane -l
+      # bind -n M-S-\; select-pane -l
 
       bind -n -T copy-mode-vi M-h select-pane -L
       bind -n -T copy-mode-vi M-j select-pane -D
