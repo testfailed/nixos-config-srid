@@ -4,6 +4,7 @@
         "b4dm4n.nixpkgs-fmt",
         "bbenoist.nix",
         "jnoortheen.nix-ide",
+        "kdl-org.kdl",
         "mattn.lisp",
         "mkhl.direnv",
         "pinage404.nix-extension-pack"

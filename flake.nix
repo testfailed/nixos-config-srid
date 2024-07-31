@@ -60,12 +60,12 @@
     # CI Inputs
     pre-commit-hooks-nix.url = "github:cachix/pre-commit-hooks.nix";
     github-nix-ci.url = "github:juspay/github-nix-ci";
-    nixci.url = "github:srid/nixci";
 
     # Application Inputs
     nixos-vscode-server.flake = false;
     nixos-vscode-server.url = "github:nix-community/nixos-vscode-server";
     actualism-app.url = "github:srid/actualism-app";
+    omnix.url = "github:juspay/omnix";
 
     # Neovim
     nixvim.url = "github:nix-community/nixvim";
@@ -83,7 +83,6 @@
       systems = [ "x86_64-linux" "aarch64-linux" "aarch64-darwin" ];
 
       imports = [
-        inputs.nixos-flake.flakeModule
         inputs.nixos-flake.flakeModule
         inputs.pre-commit-hooks-nix.flakeModule
         inputs.treefmt-nix.flakeModule
