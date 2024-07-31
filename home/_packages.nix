@@ -69,6 +69,16 @@
     python311 # NOTE: try python-rewrite
     python311Packages.virtualenv # globally install virtualenv
 
+    # Java packages
+    temurin-bin-21
+    gradle
+    maven
+
+    # Android development tools
+    android-tools
+    # android-studio
+    # android-studio-full
+
     # Node.js development tools
     nodejs
     # nodePackages.lerna # NOTE: build error

@@ -26,12 +26,12 @@
   inputs = {
     # Nixpkgs Inputs
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
-    nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
+    # nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
 
-    nixpkgs-darwin.url = "github:nixos/nixpkgs/nixos-unstable";
+    # nixpkgs-darwin.url = "github:nixos/nixpkgs/nixos-unstable";
     # nixpkgs-darwin.url = "github:NixOS/nixpkgs/nixpkgs-24.05-darwin";
     nix-darwin.url = "github:LnL7/nix-darwin";
-    nix-darwin.inputs.nixpkgs.follows = "nixpkgs-darwin";
+    nix-darwin.inputs.nixpkgs.follows = "nixpkgs";
 
     home-manager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
@@ -40,6 +40,9 @@
     nix-on-droid.url = "github:t184256/nix-on-droid/release-24.05";
     nix-on-droid.inputs.nixpkgs.follows = "nixpkgs-android";
     nix-on-droid.inputs.home-manager.follows = "home-manager";
+
+    android-nixpkgs.url = "github:tadfisher/android-nixpkgs";
+    android-nixpkgs.inputs.nixpkgs.follows = "nixpkgs";
 
     # Nix Utility Inputs
     flake-parts.url = "github:hercules-ci/flake-parts";
@@ -84,6 +87,8 @@
         inputs.nixos-flake.flakeModule
         inputs.pre-commit-hooks-nix.flakeModule
         inputs.treefmt-nix.flakeModule
+        # inputs.androidSdkModule
+        # inputs.android-nixpkgs
 
         ./users
         ./home
@@ -121,15 +126,6 @@
       };
 
       perSystem = { self', inputs', pkgs, system, config, ... }: {
-        # My Ubuntu VM
-        legacyPackages.homeConfigurations."srid@ubuntu" =
-          self.nixos-flake.lib.mkHomeConfiguration pkgs {
-            imports = [
-              self.homeModules.common-linux
-            ];
-            home.username = "srid";
-            home.homeDirectory = "/home/srid";
-          };
 
         # Flake inputs we want to update periodically
         # Run: `nix run .#update`.
@@ -143,6 +139,25 @@
             "nixvim"
           ];
         };
+
+        # # Android Development Environment (using nixpkgs-android)
+        # android-sdk = .android-nixpkgs.sdk (sdkPkgs: with sdkPkgs; [
+        #   cmdline-tools-latest
+        #   build-tools-34-0-0
+        #   platform-tools
+        #   platforms-android-34
+        #   emulator
+        # ]);
+
+        # My Ubuntu VM
+        legacyPackages.homeConfigurations."srid@ubuntu" =
+          self.nixos-flake.lib.mkHomeConfiguration pkgs {
+            imports = [
+              self.homeModules.common-linux
+            ];
+            home.username = "srid";
+            home.homeDirectory = "/home/srid";
+          };
 
         # checks.eval-tests =
         #   let tests = import ./tests/eval-tests.nix;

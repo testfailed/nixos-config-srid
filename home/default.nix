@@ -55,6 +55,9 @@
           # # ./bash.nix
           # # ./kitty.nix
           # ./himalaya.nix
+
+          # TODO: impl
+          # ./android.nix
         ];
       };
 
