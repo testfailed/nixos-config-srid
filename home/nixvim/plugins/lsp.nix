@@ -10,8 +10,8 @@
 
         diagnostic = {
           # Navigate in diagnostics
-          "<leader>j" = "goto_next";
-          "<leader>k" = "goto_prev";
+          "<Leader>dn" = "goto_next";
+          "<Leader>dp" = "goto_prev";
         };
 
         lspBuf = {
@@ -25,16 +25,16 @@
 
         extra = [
           {
-            action = "<CMD>LspStop<Enter>";
-            key = "<leader>lx";
+            action = "<Cmd>LspStop<CR>";
+            key = "<Leader>lx";
           }
           {
-            action = "<CMD>LspStart<Enter>";
-            key = "<leader>ls";
+            action = "<Cmd>LspStart<CR>";
+            key = "<Leader>ls";
           }
           {
-            action = "<CMD>LspRestart<Enter>";
-            key = "<leader>lr";
+            action = "<Cmd>LspRestart<CR>";
+            key = "<Leader>lr";
           }
           # {
           #   action = {
@@ -43,7 +43,7 @@
           #   key = "gd";
           # }
           # {
-          #   action = "<CMD>Lspsaga hover_doc<Enter>";
+          #   action = "<Cmd>Lspsaga hover_doc<CR>";
           #   key = "K";
           # }
         ];

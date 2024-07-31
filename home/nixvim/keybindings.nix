@@ -10,6 +10,10 @@
 
     keymaps =
       let
+
+        #
+        # Normal Mode
+        #
         nmap =
           lib.mapAttrsToList
             # (key: action: {
@@ -64,6 +68,9 @@
               "<Leader>bp" = { action = "<Cmd>bp<CR>"; desc = "Previous buffer"; };
             };
 
+        #
+        # Normal Mode (noremap)
+        #
         nnoremap =
           lib.mapAttrsToList
             (key: { action, desc ? "<undefined>" }: {
@@ -77,9 +84,13 @@
             {
               "q" = { action = "@"; desc = "Execute macro"; };
               "qq" = { action = "@@"; desc = "Execute last macro"; };
+              "q;" = { action = "@:"; desc = "Execute last command-line command"; };
               "@" = { action = "q"; desc = "Record macro"; };
             };
 
+        #
+        # Visual Mode
+        #
         vmap =
           lib.mapAttrsToList
             # (key: action: {

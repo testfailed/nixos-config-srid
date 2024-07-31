@@ -1,7 +1,11 @@
 {
   programs.nixvim = {
+
     # keymaps = [ ... ];
 
-    # plugins.PLUGIN_NAME = { ... };
+    # plugins.PLUGIN_NAME = {
+    #   enable = true;
+    # };
+
   };
 }

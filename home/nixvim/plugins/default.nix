@@ -7,6 +7,7 @@
     ./cmp.nix
     ./conform-nvim.nix
     ./copilot-lua.nix
+    ./fugitive.nix
     ./gitsigns.nix
     ./leap.nix
     ./lsp.nix

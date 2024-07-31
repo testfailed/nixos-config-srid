@@ -104,7 +104,7 @@
         key = "<Leader>l";
         action = "<Cmd>BufferLineCycleNext<CR>";
         options = {
-          desc = "To next buffer";
+          desc = "Next buffer";
         };
       }
 
@@ -113,7 +113,7 @@
         key = "<Leader>h";
         action = "<Cmd>BufferLineCyclePrev<CR>";
         options = {
-          desc = "To previous buffer";
+          desc = "Previous buffer";
         };
       }
 
@@ -122,7 +122,7 @@
         key = "]b";
         action = "<Cmd>BufferLineCycleNext<CR>";
         options = {
-          desc = "To next buffer";
+          desc = "Next buffer";
         };
       }
 
@@ -131,7 +131,7 @@
         key = "[b";
         action = "<Cmd>BufferLineCyclePrev<CR>";
         options = {
-          desc = "To previous buffer";
+          desc = "Previous buffer";
         };
       }
 
@@ -140,7 +140,7 @@
         key = "<M-l>";
         action = "<Cmd>BufferLineCycleNext<CR>";
         options = {
-          desc = "To next buffer";
+          desc = "Next buffer";
         };
       }
 
@@ -149,7 +149,7 @@
         key = "<M-h>";
         action = "<Cmd>BufferLineCyclePrev<CR>";
         options = {
-          desc = "To previous buffer";
+          desc = "Previous buffer";
         };
       }
 

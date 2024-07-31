@@ -32,6 +32,11 @@
       registrations = {
         # "<Leader>p" = "Find git files with telescope";
         "<Leader>b" = "[Buffer]";
+        "<Leader>d" = "[Debug]";
+        "<Leader>g" = "[Git]";
+        "<Leader>gc" = "[Git Commit]";
+        "<Leader>gt" = "[Gitsigns Toggle]";
+        "<Leader>h" = "[Git Hunk]";
         "<Leader>q" = "[Session]";
         "<Leader>s" = "[Search]";
         "<Leader>w" = "[Window]";

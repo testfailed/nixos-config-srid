@@ -29,7 +29,7 @@
         "<Leader>'" = "marks";
         "<Leader>\"" = "registers";
         "<Leader>," = "jump_list";
-        "<Leader>:" = "command_history";
+        "<Leader>;" = "command_history";
         "<Leader>s/" = "search_history";
         "<Leader>s0" = "builtin";
         "<Leader>s?" = "current_buffer_fuzzy_find";
