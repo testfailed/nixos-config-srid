@@ -200,7 +200,6 @@
           };
         };
 
-        # treefmt.config = {
         treefmt = {
           flakeCheck = true; # ==: true
           flakeFormatter = true; # ==: true

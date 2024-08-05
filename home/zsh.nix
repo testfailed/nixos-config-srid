@@ -113,7 +113,7 @@
       HH = "| bat -l=help";
       HL = "| bat -p -l=help";
 
-      BL = "| $BAT_PAGER";
+      BL = "| $BAT_PAGER_CUSTOM";
       BLG = "| $BAT_PAGER_BOTTOM";
       BLH = "| $BAT_PAGER_LANG_HELP";
       BLSH = "| $BAT_PAGER_LANG_SH";
@@ -469,6 +469,7 @@
       export BAT_PAGER_BOTTOM="$BAT_PAGER_APP --pager='$PAGER_ARG_BOTTOM'"
 
       export BAT_PAGER_PLAIN="$BAT_PAGER_APP --plain --pager='$PAGER_ARG'"
+      export BAT_PAGER_CUSTOM="$BAT_PAGER_PLAIN"
       # NOTE: PAGER_ARG_BOTTOM is not working properly as a bat pager.
       export BAT_PAGER_PLAIN_BOTTOM="$BAT_PAGER_APP --plain --pager='$PAGER_ARG'"
 
@@ -505,8 +506,8 @@
       # alias -g "HH"='| bat -l=help'
       # alias -g "HL"='| bat -p -l=help'
       #
-      # # alias -g "LL"='| $BATS_PAGER'
-      # # alias -g "LLG"='| $BATS_PAGER_BOTTOM'
+      # # alias -g "LL"='| $BAT_PAGER'
+      # # alias -g "LLG"='| $BAT_PAGER_BOTTOM'
       #
       # alias -g "BLH"='| $BAT_PAGER_LANG_HELP'
       # alias -g "BLSH"='| $BAT_PAGER_LANG_SH'

@@ -33,6 +33,8 @@
     btop
     cheat
     cht-sh
+    delta
+    difftastic
     du-dust
     dua
     eza
