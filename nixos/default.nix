@@ -9,6 +9,8 @@
         ./nix.nix
         ./caches
         ./self/primary-as-admin.nix
+
+        ./postgres.nix
       ];
 
       my-home = {
