@@ -6,24 +6,39 @@
     plugins.auto-session = {
       enable = true; # *: false
 
-      logLevel = "info"; # *: "error"
-      bypassSessionSaveFileTypes = null;
+      # logLevel = "info"; # *: "error"
+      # bypassSessionSaveFileTypes = null;
+      #
+      # autoRestore.enabled = true; # *: false
+      #
+      # autoSave.enabled = true; # *: false
+      #
+      # autoSession = {
+      #   # Enables/disables auto creating, saving and restoring.
+      #   enabled = true; # _: true
+      #
+      #   # Whether to enable the “last session” feature.
+      #   enableLastSession = false; # ==: false
+      #
+      #   createEnabled = true; # *: null
+      #   rootDir = { __raw = "vim.fn.stdpath 'data' .. '/sessions/'"; };
+      #   suppressDirs = null;
+      #   useGitBranch = true; # *: null
+      # };
 
-      autoRestore.enabled = true; # *: false
+      settings = {
+        enabled = true; # ==: false
 
-      autoSave.enabled = true; # *: false
+        auto_create = true; # ==: null # ==: true
+        auto_restore = true; # ==: null # ==: true
+        auto_restore_last_session = null; # ==: null # ==: false
+        auto_save = true; # ==: null # ==: true
 
-      autoSession = {
-        # Enables/disables auto creating, saving and restoring.
-        enabled = true; # _: true
-
-        # Whether to enable the “last session” feature.
-        enableLastSession = false; # ==: false
-
-        createEnabled = true; # *: null
-        rootDir = { __raw = "vim.fn.stdpath 'data' .. '/sessions/'"; };
-        suppressDirs = null;
-        useGitBranch = true; # *: null
+        log_level = "info"; # ==: "error"
+        # root_dir = { __raw = "vim.fn.stdpath 'data' .. '/sessions/'"; };
+        root_dir.__raw = "vim.fn.stdpath 'data' .. '/sessions/'";
+        suppressed_dirs = null;
+        use_git_branch = true; # ==: null # ==: false
       };
 
       # sessionLens = {

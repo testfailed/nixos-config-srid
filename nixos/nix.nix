@@ -44,7 +44,7 @@ in
 
     settings = {
       max-jobs = "auto";
-      experimental-features = "nix-command flakes repl-flake";
+      experimental-features = "nix-command flakes";
       trusted-users = [
         "root"
         # "@admin"
