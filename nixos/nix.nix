@@ -32,10 +32,6 @@ in
     # Make `nix shell` etc use pinned nixpkgs.
     registry.nixpkgs.flake = flake.inputs.nixpkgs;
 
-
-    # # Set Git commit hash for darwin-version.
-    # system.configurationRevision = self.rev or self.dirtyRev or null;
-
     # Garbage collect automatically every week
     gc = {
       user = "root";

@@ -12,7 +12,7 @@ in
     "${self}/nixos/nix.nix"
     "${self}/nixos/self/primary-as-admin.nix"
     "${self}/nixos/docker.nix"
-    "${self}/nixos/actualism-app.nix"
+    # "${self}/nixos/actualism-app.nix" # TODO: actualism-app is not available
     "${self}/nixos/hedgedoc.nix"
     "${self}/nixos/github-runner.nix"
     "${self}/nixos/server/harden/basics.nix"

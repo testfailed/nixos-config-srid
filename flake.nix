@@ -64,7 +64,7 @@
     # Application Inputs
     nixos-vscode-server.flake = false;
     nixos-vscode-server.url = "github:nix-community/nixos-vscode-server";
-    actualism-app.url = "github:srid/actualism-app";
+    # actualism-app.url = "github:srid/actualism-app"; # TODO: actualism-app is not available
     omnix.url = "github:juspay/omnix";
 
     # Neovim

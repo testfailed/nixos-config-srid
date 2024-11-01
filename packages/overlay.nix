@@ -7,6 +7,6 @@ final: _: {
   om-ci-build-remote = final.callPackage (import ./om-ci-build-remote.nix { inherit (flake) inputs; }) { };
   ci = final.callPackage ./ci { };
   # nix-health = flake.inputs.nix-browser.packages.${system}.nix-health;
-  actualism-app = flake.inputs.actualism-app.packages.${system}.default;
+  # actualism-app = flake.inputs.actualism-app.packages.${system}.default; # TODO: actualism-app is not available
   omnix = flake.inputs.omnix.packages.${system}.default;
 }
