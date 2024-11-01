@@ -128,6 +128,7 @@
 
       in
       config.nixvim.helpers.keymaps.mkKeymaps
+        # lib.nixvim.lib.nixvim.keymaps.mkKeymaps
         { options.silent = true; }
         (nmap ++ nnoremap ++ vmap);
   };

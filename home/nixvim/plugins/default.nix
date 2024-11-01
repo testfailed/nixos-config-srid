@@ -35,8 +35,17 @@
       comment.enable = true; # ==: false
       nix.enable = true; # ==: false
       sleuth.enable = true; # ==: false
-      surround.enable = true; # ==: false
       trouble.enable = true; # ==: false # TODO: move to a separate file.
+      vim-surround.enable = true; # ==: false
+
+      # trace: warning: ssm profile: Nixvim: `plugins.web-devicons` was enabled automatically because the following plugins are enabled.
+      # This behaviour is deprecated. Please explicitly define `plugins.web-devicons.enable` or alternatively
+      #  enable `plugins.mini.enable` with `plugins.mini.modules.icons` and `plugins.mini.mockDevIcons`.
+      # plugins.telescope
+      # plugins.neo-tree
+      # plugins.trouble
+      # plugins.bufferline
+      web-devicons.enable = true; # ==: false
     };
   };
 }

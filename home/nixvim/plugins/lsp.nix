@@ -54,37 +54,41 @@
         bashls.enable = true; # *: false
         clangd.enable = true; # *: false
         cmake.enable = true; # *: false
-        csharp-ls.enable = true; # *: false
+        csharp_ls.enable = true; # *: false
         cssls.enable = true; # *: false
-        docker-compose-language-service.enable = true; # *: false
+        docker_compose_language_service.enable = true; # *: false
         dockerls.enable = true; # *: false
-        emmet-ls.enable = true; # *: false
+        emmet_ls.enable = true; # *: false
         eslint.enable = true; # *: false
-        golangci-lint-ls.enable = true; # *: false
+        golangci_lint_ls.enable = true; # *: false
         gopls.enable = true; # *: false
         graphql.enable = true; # *: false
-        hls.enable = true; # *: false
+        hls = {
+          enable = true; # *: false
+
+          installGhc = true; # ==: false # TODO: change to false.
+        };
         html.enable = true; # *: false
-        java-language-server.enable = true; # *: false
+        java_language_server.enable = true; # *: false
         jsonls.enable = true; # *: false
-        kotlin-language-server.enable = true; # *: false
-        lua-ls.enable = true; # *: false
+        kotlin_language_server.enable = true; # *: false
+        lua_ls.enable = true; # *: false
         marksman.enable = true; # *: false
-        nginx-language-server.enable = true; # *: false
-        # nickel-ls.enable = true; # *: false # TODO: error: The option `home-manager.users.ssm.programs.nixvim.plugins.lsp.servers.nickel-ls' does not exist.
-        nil-ls.enable = true; # *: false
+        nginx_language_server.enable = true; # *: false
+        # nickel_ls.enable = true; # *: false # TODO: error: The option `home-manager.users.ssm.programs.nixvim.plugins.lsp.servers.nickel_ls' does not exist.
+        nil_ls.enable = true; # *: false
         # nixd.enable = true; # *: false
         nushell.enable = true; # *: false
         perlpls.enable = true; # *: false
-        prismals.enable = true; # *: false
+        # prismals.enable = true; # *: false # TODO: .*.package is needed
         pylsp.enable = true; # *: false
         # pylyzer.enable = true; # *: false
         pyright.enable = true; # *: false
-        # rnix-lsp.enable = true; # *: false
-        ruby-lsp.enable = true; # *: false
+        # rnix.enable = true; # *: false
+        ruby_lsp.enable = true; # *: false
         ruff.enable = true; # *: false
-        # ruff-lsp.enable = true; # *: false
-        rust-analyzer = {
+        # ruff_lsp.enable = true; # *: false
+        rust_analyzer = {
           enable = true; # *: false
 
           installCargo = true; # *: null # TODO: change to false.
@@ -96,8 +100,8 @@
         taplo.enable = true; # *: false
         terraformls.enable = true; # *: false
         texlab.enable = true; # *: false
-        tsserver.enable = true; # *: false
-        vuels.enable = true; # *: false
+        ts_ls.enable = true; # *: false
+        # vuels.enable = true; # *: false # TODO: .*.package is needed
         yamlls.enable = true; # *: false
       };
 

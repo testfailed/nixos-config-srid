@@ -5,30 +5,56 @@
     treesitter = {
       enable = true; # ==: false
 
-      ensureInstalled = "all"; # ==: "all"
-      folding = true; # ==: false
-      indent = true; # ==: false
-      languageRegister = {
-        cpp = "onelab";
-        python = [
-          "myFiletype"
-          "anotherFiletype"
-        ];
-      }; # ==: { }
-      nixGrammars = true; # ==: true
+      # TODO: Check if these options are still valid.
+      # folding = true; # ==: false
+      # languageRegister = {
+      #   cpp = "onelab";
+      #   python = [
+      #     "myFiletype"
+      #     "anotherFiletype"
+      #   ];
+      # }; # ==: { }
+      # nixGrammars = true; # ==: true
 
       # Whether to enable nixvim specific injections,
       # like lua highlighting in extraConfigLua.
       nixvimInjections = true; # ==: false
 
-      incrementalSelection = {
-        enable = true; # ==: false
+      settings = {
+        auto_install = false;
+        ensureInstalled = "all"; # ==: "all"
+        sync_install = false;
 
-        keymaps = {
-          initSelection = "gni"; # ==: "gnn"
-          scopeIncremental = "gnc"; # ==: "grc"
-          nodeIncremental = "gnn"; # ==: "grn"
-          nodeDecremental = "gnp"; # ==: "grm"
+        highlight = {
+          additional_vim_regex_highlighting = true;
+          custom_captures = { };
+          disable = [
+            # "rust"
+          ];
+          enable = true;
+        };
+
+        ignore_install = [
+          "rust"
+        ];
+
+        incremental_selection = {
+          enable = true; # ==: false
+
+          keymaps = {
+            init_selection = "gni";
+            node_decremental = "grm";
+            node_incremental = "grn";
+            scope_incremental = "grc";
+          };
+        };
+
+        indent = {
+          enable = true;
+        };
+
+        parser_install_dir = {
+          __raw = "vim.fs.joinpath(vim.fn.stdpath('data'), 'treesitter')";
         };
       };
     };

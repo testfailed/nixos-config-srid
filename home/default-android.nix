@@ -128,7 +128,7 @@
     # nodePackages.vercel
     nodePackages.webpack-cli
     nodePackages.yalc
-    nodePackages.yarn
+    # nodePackages.yarn
 
     #
     # DevOps tools
