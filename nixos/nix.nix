@@ -32,6 +32,10 @@ in
     # Make `nix shell` etc use pinned nixpkgs.
     registry.nixpkgs.flake = flake.inputs.nixpkgs;
 
+
+    # # Set Git commit hash for darwin-version.
+    # system.configurationRevision = self.rev or self.dirtyRev or null;
+
     # Garbage collect automatically every week
     gc = {
       user = "root";
@@ -44,20 +48,34 @@ in
 
     settings = {
       max-jobs = "auto";
-      experimental-features = "nix-command flakes repl-flake";
+      experimental-features = "nix-command flakes";
       trusted-users = [
         "root"
         # "@admin"
+        # "ssm"
         (if pkgs.stdenv.isDarwin then myself else "@wheel")
+      ];
+
+      # trusted-substituters = https://cache.nixos.org https://nammayatri.cachix.org?priority=42 https://cache.nixos.org/ https://nix-community.cachix.org
+      # trusted-public-keys = cache.nixos.org-1:6NCHdD59X431o0gWypbMrAURkbJ16ZPMQFGspcDShjY= nammayatri.cachix.org-1:PiVlgB8hKyYwVtCAGpzTh2z9RsFPhIES6UKs0YB662I= nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs=
+      trusted-substituters = [
+        https://cache.nixos.org
+        # https://nammayatri.cachix.org?priority=42
+        https://nix-community.cachix.org
+      ];
+      trusted-public-keys = [
+        cache.nixos.org-1:6NCHdD59X431o0gWypbMrAURkbJ16ZPMQFGspcDShjY=
+        # nammayatri.cachix.org-1:PiVlgB8hKyYwVtCAGpzTh2z9RsFPhIES6UKs0YB662I=
+        nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs=
       ];
 
       # I don't have an Intel mac.
       extra-platforms = lib.mkIf pkgs.stdenv.isDarwin "aarch64-darwin x86_64-darwin";
 
-      # Nullify the registry for purity.
-      flake-registry = builtins.toFile "empty-flake-registry.json" ''
-        {"flakes":[],"version":2}
-      '';
+      # # Nullify the registry for purity.
+      # flake-registry = builtins.toFile "empty-flake-registry.json" ''
+      #   {"flakes":[],"version":2}
+      # '';
     };
   };
 }
