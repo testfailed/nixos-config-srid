@@ -92,22 +92,22 @@
       #     "tabs"
       #   ];
       # };
-      #
-      # winbar = {
-      #   lualine_c = [
-      #     {
-      #       __unkeyed-1 = "navic";
-      #     }
-      #   ];
-      #   lualine_x = [
-      #     {
-      #       __unkeyed-1 = "filename";
-      #       newfile_status = true;
-      #       path = 3;
-      #       shorting_target = 150;
-      #     }
-      #   ];
-      # };
+
+      winbar = {
+        lualine_c = [
+          {
+            __unkeyed-1 = "navic";
+          }
+        ];
+        lualine_x = [
+          {
+            __unkeyed-1 = "filename";
+            newfile_status = true;
+            path = 3;
+            shorting_target = 150;
+          }
+        ];
+      };
     };
   };
 }
