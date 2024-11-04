@@ -9,7 +9,7 @@ in
     # "${self}/nixos/docker.nix" # TODO: not working
     self.darwinModules.default
     "${self}/nix-darwin/zsh-completion-fix.nix"
-    "${self}/nixos/github-runner.nix"
+    # "${self}/nixos/github-runner.nix" # TODO: not working
   ];
 
   networking.hostName = "clv-mba-m1";

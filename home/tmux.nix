@@ -24,6 +24,7 @@
     escapeTime = 0; # Stop tmux+escape craziness.
     newSession = true;
     secureSocket = false; # Force tmux to use /tmp for sockets (WSL2 compat)
+    shell = "${pkgs.zsh}/bin/zsh";
     shortcut = "a";
 
     # TODO: conflicts with zsh-completions

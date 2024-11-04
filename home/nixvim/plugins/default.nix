@@ -11,7 +11,7 @@
     ./gitsigns.nix
     ./leap.nix
     ./lsp.nix
-    ./lualine.nix
+    # ./lualine.nix
     ./marks.nix
     ./navic.nix
     ./neo-tree.nix

@@ -91,7 +91,7 @@
     nodePackages.node-gyp
     nodePackages.nodemon
     nodePackages.npm
-    nodePackages.patch-package
+    # nodePackages.patch-package
     nodePackages.pm2
     nodePackages.pnpm
     nodePackages.prettier
@@ -103,10 +103,10 @@
     nodePackages.vercel
     nodePackages.webpack-cli
     nodePackages.yalc
-    nodePackages.yarn
+    # nodePackages.yarn
 
-    nodePackages.dotenv-cli
-    nodePackages.dotenv-vault
+    # nodePackages.dotenv-cli
+    # nodePackages.dotenv-vault
     # TODO: error: undefined variable 'dotenvx'
     # dotenvx
     # nodePackages.dotenvx
