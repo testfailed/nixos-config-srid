@@ -71,6 +71,9 @@
 
       p = "push";
 
+      rs = "restore";
+      rst = "restore --staged";
+
       s = "status";
       st = "status";
 

@@ -35,6 +35,8 @@ in
   # Turn off NIX_PATH warnings now that we're using flakes
   system.checks.verifyNixPath = false;
 
+  nix.configureBuildUsers = true;
+
   environment.systemPackages = with pkgs; [
     # macOS GUI programs
     # wezterm

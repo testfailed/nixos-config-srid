@@ -67,21 +67,21 @@
     nickel
     nls
 
-    # Python packages
+    # Python
     python311 # NOTE: try python-rewrite
     python311Packages.virtualenv # globally install virtualenv
 
-    # Java packages
+    # Java
     temurin-bin-21
     gradle
     maven
 
-    # Android development tools
+    # Android
     android-tools
     # android-studio
     # android-studio-full
 
-    # Node.js development tools
+    # Node.js
     nodejs
     # nodePackages.lerna # NOTE: build error
     nodePackages.cspell
@@ -91,12 +91,11 @@
     nodePackages.node-gyp
     nodePackages.nodemon
     nodePackages.npm
-    # nodePackages.patch-package
+    patch-package
     nodePackages.pm2
     nodePackages.pnpm
     nodePackages.prettier
     nodePackages.prisma
-    # @prisma/language-server"
     nodePackages."@prisma/language-server"
     nodePackages.semver
     nodePackages.speed-test
@@ -107,11 +106,16 @@
     nodePackages.yalc
     # nodePackages.yarn
 
-    # nodePackages.dotenv-cli
-    # nodePackages.dotenv-vault
-    # TODO: error: undefined variable 'dotenvx'
-    # dotenvx
-    # nodePackages.dotenvx
+    dotenv-cli
+    dotenvx
+    nodePackages.dotenv-vault
+
+    # Rust
+    # TODO: setup with fenix
+    # REF: <https://github.com/nix-community/fenix/>
+    # cargo
+    # rust
+    # rustfmt
 
     #
     # DevOps tools

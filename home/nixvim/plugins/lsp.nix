@@ -82,14 +82,8 @@
         # nixd.enable = true; # *: false
         nushell.enable = true; # *: false
         perlpls.enable = true; # *: false
-        # prismals.enable = true; # *: false # TODO: .*.package is needed
-        prismals = {
-          enable = true; # *: false
-
-          # package = pkgs.nodePackages.prisma;
-          # package = pkgs.nodePackages [ "@prisma/language-server" ];
-          package = pkgs.nodePackages."@prisma/language-server";
-        };
+        prismals.enable = true; # ==: false
+        prismals.package = pkgs.nodePackages."@prisma/language-server"; # ==: null
         pylsp.enable = true; # *: false
         # pylyzer.enable = true; # *: false
         pyright.enable = true; # *: false

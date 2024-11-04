@@ -33,6 +33,7 @@
           ./gnutools.nix
           ./nix-index.nix
           ./ripgrep.nix
+          ./ruff.nix
           ./ssh.nix
           ./tmux.nix
           ./zoxide.nix

@@ -745,19 +745,25 @@
       alias grhs_='git reset --soft'
 
       # ALIAS: grm: 'git rm'
-      alias grm='git rm'
-      alias grma='git rm --all'
-      alias grmc='git rm --cached'
-      alias grmca='git rm --cached .'
+      alias grm='git rm -r'
+      alias grma='git rm -r --all'
+      alias grmc='git rm -r --cached'
+      alias grmca='git rm -r --cached .'
       alias grmcaa='grmca && gaa'
-      alias grmcr='git rm --cached -r'
 
       # ALIAS: grs: 'git restore'
       alias grs='g rs'
+      alias grst='g rst'
       alias grss='g rss'
       alias grssd='g rss $(git_develop_branch)'
       alias grssm='g rss $(git_main_branch)'
       alias grsta='grst ''${LA_FILES_ALL}'
+
+      # alias grsts='grst $target && grs $target'
+      function grsts() {
+          local -r target="$1"
+          grst "$target" && grs "$target"
+      }
 
       # ALIAS: gsm: 'git submodule'
       alias gsm='g sm'
