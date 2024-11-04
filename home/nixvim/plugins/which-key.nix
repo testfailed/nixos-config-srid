@@ -46,6 +46,26 @@
 
         spec = [
           {
+            __unkeyed-1 = " ";
+            group = "<Leader>";
+            icon = " ";
+          }
+          {
+            __unkeyed-1 = "<Leader><Tab>";
+            group = "[Tabpage]";
+            icon = " ";
+          }
+          {
+            __unkeyed-1 = "[";
+            group = "[Previous ...]";
+            icon = " ";
+          }
+          {
+            __unkeyed-1 = "]";
+            group = "[Next ...]";
+            icon = " ";
+          }
+          {
             __unkeyed-1 = "<Leader>b";
             group = "[Buffer]";
             icon = "󰓩 ";
@@ -82,17 +102,17 @@
           {
             __unkeyed-1 = "<Leader>q";
             group = "[Session]";
-            # icon = " ";
+            icon = " ";
           }
           {
             __unkeyed-1 = "<Leader>s";
             group = "[Search]";
-            # icon = " ";
+            icon = " ";
           }
           {
             __unkeyed-1 = "<Leader>w";
             group = "[Window]";
-            # icon = " ";
+            icon = " ";
             # proxy = "<C-w>";
           }
         ];

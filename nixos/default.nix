@@ -10,7 +10,7 @@
         ./caches
         ./self/primary-as-admin.nix
 
-        ./postgres.nix
+        # ./postgres.nix # TODO: resolve the issue and enable it
       ];
 
       my-home = {

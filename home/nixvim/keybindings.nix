@@ -30,6 +30,7 @@
               "<Esc>" = { action = "<Cmd>noh<CR>"; desc = "Clear search highlights"; };
               "<C-x>" = { action = "<Cmd>close<CR>"; desc = "Close current window"; };
               "<C-s>" = { action = "<Cmd>w<CR>"; desc = "Save file"; };
+              "<C-.>" = { action = "<Cmd>@:<CR>"; desc = "Repeat last command"; };
 
               # manage window
               "<Leader>=" = { action = "<C-w>="; desc = "Resize windows equally"; };
@@ -66,6 +67,16 @@
               "<M-w>" = { action = "<Cmd>b#<CR>"; desc = "Switch to Other Buffer"; }; # TODO: not working.
               "<Leader>bn" = { action = "<Cmd>bn<CR>"; desc = "Next buffer"; };
               "<Leader>bp" = { action = "<Cmd>bp<CR>"; desc = "Previous buffer"; };
+
+              # Tabpage
+              "<Leader><Tab>d" = { action = "<Cmd>tabclose<CR>"; desc = "Close tab"; };
+              "<Leader><Tab>h" = { action = "<Cmd>tabprevious<CR>"; desc = "Previous tab"; };
+              "<Leader><Tab>j" = { action = "<Cmd>tabmove +1<CR>"; desc = "Move tab right"; };
+              "<Leader><Tab>k" = { action = "<Cmd>tabmove -1<CR>"; desc = "Move tab left"; };
+              "<Leader><Tab>l" = { action = "<Cmd>tabnext<CR>"; desc = "Next tab"; };
+              "<Leader><Tab>n" = { action = "<Cmd>tabnew<CR>"; desc = "New tab"; };
+              "[<Tab>" = { action = "<Cmd>tabprevious<CR>"; desc = "Previous tab"; };
+              "]<Tab>" = { action = "<Cmd>tabnext<CR>"; desc = "Next tab"; };
             };
 
         #
