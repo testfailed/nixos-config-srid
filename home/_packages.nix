@@ -96,6 +96,8 @@
     nodePackages.pnpm
     nodePackages.prettier
     nodePackages.prisma
+    # @prisma/language-server"
+    nodePackages."@prisma/language-server"
     nodePackages.semver
     nodePackages.speed-test
     nodePackages.svgo

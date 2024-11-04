@@ -1,3 +1,5 @@
+{ pkgs, ... }:
+
 {
   programs.nixvim = {
 
@@ -81,6 +83,13 @@
         nushell.enable = true; # *: false
         perlpls.enable = true; # *: false
         # prismals.enable = true; # *: false # TODO: .*.package is needed
+        prismals = {
+          enable = true; # *: false
+
+          # package = pkgs.nodePackages.prisma;
+          # package = pkgs.nodePackages [ "@prisma/language-server" ];
+          package = pkgs.nodePackages."@prisma/language-server";
+        };
         pylsp.enable = true; # *: false
         # pylyzer.enable = true; # *: false
         pyright.enable = true; # *: false
