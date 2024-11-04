@@ -10,6 +10,7 @@
       # +-------------------------------------------------+
       # | A | B | C                             X | Y | Z |
       # +-------------------------------------------------+
+
       sections = {
         lualine_a = [ "mode" ];
         lualine_b = [ "branch" ];
@@ -20,7 +21,7 @@
 
           # Show active language server
           {
-            name.__raw = ''
+            __unkeyed-1.__raw = ''
               function()
                   local msg = ""
                   local buf_ft = vim.api.nvim_buf_get_option(0, 'filetype')
@@ -78,35 +79,35 @@
         ];
       };
 
-      tabline = {
-        lualine_a = [
-          {
-            __unkeyed-1 = "buffers";
-            symbols = {
-              alternate_file = "";
-            };
-          }
-        ];
-        lualine_z = [
-          "tabs"
-        ];
-      };
-
-      winbar = {
-        lualine_c = [
-          {
-            __unkeyed-1 = "navic";
-          }
-        ];
-        lualine_x = [
-          {
-            __unkeyed-1 = "filename";
-            newfile_status = true;
-            path = 3;
-            shorting_target = 150;
-          }
-        ];
-      };
+      # tabline = {
+      #   lualine_a = [
+      #     {
+      #       __unkeyed-1 = "buffers";
+      #       symbols = {
+      #         alternate_file = "";
+      #       };
+      #     }
+      #   ];
+      #   lualine_z = [
+      #     "tabs"
+      #   ];
+      # };
+      #
+      # winbar = {
+      #   lualine_c = [
+      #     {
+      #       __unkeyed-1 = "navic";
+      #     }
+      #   ];
+      #   lualine_x = [
+      #     {
+      #       __unkeyed-1 = "filename";
+      #       newfile_status = true;
+      #       path = 3;
+      #       shorting_target = 150;
+      #     }
+      #   ];
+      # };
     };
   };
 }

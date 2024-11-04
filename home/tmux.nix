@@ -17,24 +17,27 @@
   ];
 
   programs.tmux = {
-    enable = true;
+    enable = true; # ==: false
 
     # aggressiveResize = true; -- Disabled to be iTerm-friendly
-    baseIndex = 1;
-    escapeTime = 0; # Stop tmux+escape craziness.
-    newSession = true;
-    secureSocket = false; # Force tmux to use /tmp for sockets (WSL2 compat)
-    shell = "${pkgs.zsh}/bin/zsh";
-    shortcut = "a";
+    baseIndex = 1; # ==: 0
+    clock24 = true; # ==: false
+    customPaneNavigationAndResize = true; # ==: false
+    disableConfirmationPrompt = false; # ==: false
+    escapeTime = 0; # ==: 500 # Stop tmux+escape craziness.
+    historyLimit = 20000; # ==: 2000
+    keyMode = "vi"; # ==: "emacs"
+    mouse = true; # ==: false
+    newSession = true; # ==: false
+    secureSocket = false; # ==: true # Force tmux to use /tmp for sockets (WSL2 compat)
+    sensibleOnTop = true; # ==: true
+    # shell = "${pkgs.zsh}/bin/zsh";
+    shortcut = "a"; # ==: "b"
+    terminal = "tmux-256color"; # ==: "screen"
 
     # TODO: conflicts with zsh-completions
-    # tmuxinator = {
-    #   enable = true; # *: false
-    # };
-
-    tmuxp = {
-      enable = true; # *: false
-    };
+    # tmuxinator.enable = true; # ==: false
+    tmuxp.enable = true; # ==: false
 
     plugins = with pkgs.tmuxPlugins; [
       # vim-tmux-navigator # NOTE: it cause <C-hjkl> not working on tmux.
@@ -259,7 +262,7 @@
       set -sa terminal-overrides ',xterm-256color:RGB'
 
       # increase history size
-      set -g history-limit 20000
+      # set -g history-limit 20000
 
       # start with mouse mode enabled
       set -g mouse on
@@ -272,8 +275,8 @@
       set -g focus-events on
 
       # start window numbers at 1 to match keyboard order with tmux window order
-      set -g base-index 1
-      setw -g pane-base-index 1
+      # set -g base-index 1
+      # setw -g pane-base-index 1
 
       # renumber windows sequentially after closing any of them
       set -g renumber-windows on
