@@ -17,8 +17,9 @@
           # ./terminal.nix
           # ./zellij.nix
 
-          ./_packages.nix
           ./xdg.nix
+          ./_packages.nix
+          ./_path.nix
 
           inputs.nixvim.homeManagerModules.nixvim
           inputs.nix-index-database.hmModules.nix-index

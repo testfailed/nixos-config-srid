@@ -24,7 +24,7 @@
     clock24 = true; # ==: false
     customPaneNavigationAndResize = true; # ==: false
     disableConfirmationPrompt = false; # ==: false
-    escapeTime = 0; # ==: 500 # Stop tmux+escape craziness.
+    escapeTime = 200; # ==: 500 # Stop tmux+escape craziness.
     historyLimit = 20000; # ==: 2000
     keyMode = "vi"; # ==: "emacs"
     mouse = true; # ==: false
@@ -68,13 +68,13 @@
           set -g @resurrect-strategy-nvim 'session'
         '';
       }
-      {
-        plugin = continuum;
-        extraConfig = ''
-          set -g @continuum-restore 'on'
-          set -g @continuum-save-interval '3' # minutes
-        '';
-      }
+      # {
+      #   plugin = continuum;
+      #   extraConfig = ''
+      #     set -g @continuum-restore 'on'
+      #     set -g @continuum-save-interval '3' # minutes
+      #   '';
+      # }
     ];
 
     # extraConfig = ''
@@ -105,10 +105,15 @@
 
       # Unbind unused default keys (to avoid conflicts with other apps)
       unbind C-b
+
       unbind C-h
       unbind C-j
       unbind C-k
       unbind C-l
+
+      # unbind \;
+      unbind C-\;
+      unbind C-,
 
       # some useful <C-a> combinations
       bind R \
@@ -126,7 +131,8 @@
       # bind C-L switch-client -n
       bind C-p switch-client -p
       bind C-n switch-client -n
-      # bind C-\; switch-client -l
+      # bind \; switch-client -l
+      bind C-\; switch-client -l
       # bind C-' switch-client -l
       bind C-, switch-client -l
 

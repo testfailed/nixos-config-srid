@@ -69,6 +69,7 @@ in
     zip
   ];
 
+  # TODO: not working
   environment.shellAliases = {
     # prefixed with 'g' (gnu tools / single).
     # gsed = lib.getExe pkgs.gnused; # NOTE: gsed executable is required for nvim-spectre plugin.
@@ -81,9 +82,9 @@ in
 
     nix-output-monitor = lib.getExe pkgs.nix-output-monitor;
 
-    la = "l -a";
-    nv = "nvim";
-    v = "nvim";
+    # la = "l -a";
+    # nv = "nvim";
+    # v = "nvim";
   };
 
   # Enable fonts dir
