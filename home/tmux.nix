@@ -99,6 +99,9 @@
       # Enable full mouse support
       set -g mouse on
 
+      # Move to another session on detach
+      set -g detach-on-destroy off
+
       ###########################################################
       # Keybindings
       ###########################################################
@@ -111,7 +114,7 @@
       unbind C-k
       unbind C-l
 
-      # unbind \;
+      unbind \;
       unbind C-\;
       unbind C-,
 
@@ -131,7 +134,7 @@
       # bind C-L switch-client -n
       bind C-p switch-client -p
       bind C-n switch-client -n
-      # bind \; switch-client -l
+      bind \; switch-client -l
       bind C-\; switch-client -l
       # bind C-' switch-client -l
       bind C-, switch-client -l
