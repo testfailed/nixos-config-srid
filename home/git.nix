@@ -74,10 +74,11 @@
       rs = "restore";
       rst = "restore --staged";
 
-      s = "status";
-      st = "status";
+      j = "status";
 
+      st = "stash";
       stap = "stash apply";
+      stc = "stash clear";
       std = "stash drop";
       sth = "stash";
       stk = "stash --keep-index";

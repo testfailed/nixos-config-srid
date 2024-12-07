@@ -617,10 +617,10 @@
 
       # ALIAS: gc: 'git commit --verbose'
       alias gc='git commit --verbose'
-      alias gca_='git commit --verbose --amend'
+      alias gca='git commit --verbose --amend'
       alias gcm='git commit --verbose -m'
-      alias gcnv_='git commit --verbose --no-verify'
-      alias gcnvm_='git commit --verbose --no-verify -m'
+      alias gcnv='git commit --verbose --no-verify'
+      alias gcnvm='git commit --verbose --no-verify -m'
 
       gcmp() { gcm "$@" && git push }
 
@@ -670,6 +670,12 @@
       alias gfa='git fetch --all --jobs=10'
       alias gfap='git fetch --all --jobs=10 --prune'
 
+      # ALIAS: ginit: 'git init'
+      alias ginit='git init'
+
+      # ALIAS: gj: 'git status'
+      alias gj='git status'
+
       # ALIAS: gl: 'git log --graph --decorate --abbrev-commit'
       alias gl='git log --graph --decorate --abbrev-commit'
       alias gla="gl --all --tags --branches --remotes --perl-regexp --author='^((?!Renovate Bot|dependabot).*)$'"
@@ -688,13 +694,16 @@
       alias gmod='gm ''${TDPP_GIT_REMOTE_ORIGIN}/$(git_develop_branch)'
       alias gmom='gm ''${TDPP_GIT_REMOTE_ORIGIN}/$(git_main_branch)'
 
+      # ALIAS: gmv: 'git mv'
+      alias gmv='git mv'
+
       # ALIAS: gp: 'git push'
       alias gp='git push'
       alias gpa='git push --all'
-      alias gpd_='git push --delete'
-      alias gpdo_='gpd_ ''${TDPP_GIT_REMOTE_ORIGIN}'
-      alias gpf_='git push --force-with-lease'
-      alias gpnv_='git push --no-verify'
+      alias gpd='git push --delete'
+      alias gpdo='gpd_ ''${TDPP_GIT_REMOTE_ORIGIN}'
+      alias gpf='git push --force-with-lease'
+      alias gpnv='git push --no-verify'
       alias gpo='git push ''${TDPP_GIT_REMOTE_ORIGIN}'
       alias gpt='git push --tags'
       alias gpta='git push --tags --all'
@@ -708,7 +717,7 @@
       # ALIAS: gr: 'git remote'
       alias gr='git remote'
       alias gra='git remote add'
-      alias grmv='git remote remove'
+      alias grmv='git remote rename'
       alias grrm='git remote remove'
       alias grrmo='git remote remove ''${TDPP_GIT_REMOTE_ORIGIN}'
       alias grrmu='git remote remove ''${TDPP_GIT_REMOTE_UPSTREAM}'
@@ -733,17 +742,17 @@
       alias grbom='git rebase ''${TDPP_GIT_REMOTE_ORIGIN}/$(git_main_branch)'
 
       # ALIAS: grh: 'git reset'
-      alias grh_='git reset'
-      alias grhh_='git reset --hard'
-      alias grhhl_='git reset --hard HEAD~'
-      alias grhho_='grhh ''${TDPP_GIT_REMOTE_ORIGIN}'
-      alias grhhod_='grhh ''${TDPP_GIT_REMOTE_ORIGIN}/$(git_develop_branch)'
-      alias grhhoh_='git reset --hard ORIG_HEAD' # NOTE: for undoing rebase mistake
-      alias grhhom_='grhh ''${TDPP_GIT_REMOTE_ORIGIN}/$(git_main_branch)'
-      alias grhk_='git reset --keep'
-      alias grhl_='git reset HEAD~'
-      alias grhom_='grh ''${TDPP_GIT_REMOTE_ORIGIN}/$(git_main_branch)'
-      alias grhs_='git reset --soft'
+      alias grh='git reset'
+      alias grhh='git reset --hard'
+      alias grhhl='git reset --hard HEAD~'
+      alias grhho='grhh ''${TDPP_GIT_REMOTE_ORIGIN}'
+      alias grhhod='grhh ''${TDPP_GIT_REMOTE_ORIGIN}/$(git_develop_branch)'
+      alias grhhoh='git reset --hard ORIG_HEAD' # NOTE: for undoing rebase mistake
+      alias grhhom='grhh ''${TDPP_GIT_REMOTE_ORIGIN}/$(git_main_branch)'
+      alias grhk='git reset --keep'
+      alias grhl='git reset HEAD~'
+      alias grhom='grh ''${TDPP_GIT_REMOTE_ORIGIN}/$(git_main_branch)'
+      alias grhs='git reset --soft'
 
       # ALIAS: grm: 'git rm'
       alias grm='git rm -r'
@@ -753,12 +762,16 @@
       alias grmcaa='grmca && gaa'
 
       # ALIAS: grs: 'git restore'
-      alias grs='g rs'
-      alias grst='g rst'
-      alias grss='g rss'
-      alias grssd='g rss $(git_develop_branch)'
-      alias grssm='g rss $(git_main_branch)'
-      alias grsta='grst ''${LA_FILES_ALL}'
+      # alias grs='g rs'
+      # alias grst='g rst'
+      # alias grss='g rss'
+      # alias grssd='g rss $(git_develop_branch)'
+      # alias grssm='g rss $(git_main_branch)'
+      # alias grsta='grst ''${LA_FILES_ALL}'
+      alias grs='git restore'
+      alias grsa='git restore .'
+      alias grst='git restore --staged'
+      alias grsta='git restore --staged .'
 
       # alias grsts='grst $target && grs $target'
       function grsts() {
@@ -767,38 +780,34 @@
       }
 
       # ALIAS: gsm: 'git submodule'
-      alias gsm='g sm'
-      alias gsma='g sma'
-      alias gsmhh='g smhh'
-      alias gsmhl='g smhl'
-      alias gsmj='g smj'
-      alias gsmu='g smu'
-
-      # ALIAS: gst: 'git status'
-      alias gst='git status'
+      alias gsm='git submodule'
+      alias gsma='git submodule add'
+      alias gsmj='git submodule status'
+      alias gsmu='git submodule update'
 
       # ALIAS: gsts: 'git stash'
-      alias gstap_='g stap'
-      alias gstk='g stk'
-      alias gstkm='g stkm'
-      alias gstkt='g stkm "''${TDPP_GIT_COMMIT_MSG_TEMP}"'
-      alias gstkw='g stkm "''${TDPP_GIT_COMMIT_MSG_WIP}"'
-      alias gstl='g stl'
-      alias gstp_='g stp'
-      alias gsts='g sts'
-      alias gstu_='g stu'
+      alias gst='git stash'
+      alias gstap='git stash apply'
+      alias gstc='git stash clear'
+      alias gstd='git stash drop'
+      alias gstk='git stash --keep-index'
+      alias gstkm='git stash --keep-index -m'
+      alias gstkmt='gstkm "''${TDPP_GIT_COMMIT_MSG_TEMP}"'
+      alias gstkmw='gstkm "''${TDPP_GIT_COMMIT_MSG_WIP}"'
+      alias gstl='git stash list'
+      alias gstp='git stash pop'
+      alias gstinf='git stash show'
+      alias gstu='git stash push'
 
       # ALIAS: gt: 'git tag'
-      alias gt='g t'
-      alias gtd='g td'
-      alias gtdf_='g tdf'
-      # alias gtdf_='gt -D'
-
+      alias gt='git tag'
+      alias gtd='git tag -d'
+      alias gtdf='git tag -d -f'
+      alias gtdfo='gtdf ''${TDPP_GIT_REMOTE_ORIGIN}'
       alias gtdo='gtd ''${TDPP_GIT_REMOTE_ORIGIN}'
-      alias gtdo_='gtd_ ''${TDPP_GIT_REMOTE_ORIGIN}'
 
-      # ALIAS: gui: 'git update'-index
-      alias gui='g ui'
+      # ALIAS: gui: 'git update-index'
+      alias gui='git update-index'
 
       ############################################################
       # ALIAS: h: *
@@ -981,7 +990,8 @@
 
       function magic-enter-cmd {
         if command git rev-parse --is-inside-work-tree &>/dev/null; then
-          echo "git status -sb ."
+          # echo "git status -sb ."
+          echo "git status ."
           # echo "$MAGIC_ENTER_GIT_COMMAND"
         else
           # echo "ls -laFh ."
