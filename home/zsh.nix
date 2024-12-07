@@ -786,7 +786,8 @@
       alias gsmu='git submodule update'
 
       # ALIAS: gsts: 'git stash'
-      alias gst='git stash'
+      # alias gst='git stash' # TODO: uncomment it later
+      alias gst='git status'
       alias gstap='git stash apply'
       alias gstc='git stash clear'
       alias gstd='git stash drop'

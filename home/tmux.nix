@@ -24,7 +24,7 @@
     clock24 = true; # ==: false
     customPaneNavigationAndResize = true; # ==: false
     disableConfirmationPrompt = false; # ==: false
-    escapeTime = 200; # ==: 500 # Stop tmux+escape craziness.
+    escapeTime = 0; # ==: 500 # Stop tmux+escape craziness.
     historyLimit = 20000; # ==: 2000
     keyMode = "vi"; # ==: "emacs"
     mouse = true; # ==: false
@@ -175,10 +175,10 @@
       # Pane
       #
 
-      bind h select-pane -L
-      bind j select-pane -D
-      bind k select-pane -U
-      bind l select-pane -R
+      bind -r h select-pane -L
+      bind -r j select-pane -D
+      bind -r k select-pane -U
+      bind -r l select-pane -R
 
       bind -n M-h select-pane -L
       bind -n M-j select-pane -D
@@ -279,7 +279,7 @@
       set -g mouse on
 
       # reduce repeat-delay
-      set -g repeat-time 300
+      set -g repeat-time 200
       set -sg escape-time 0
 
       # REF: https://github.com/tmux-plugins/vim-tmux-focus-events
