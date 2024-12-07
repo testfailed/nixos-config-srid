@@ -67,6 +67,10 @@
     nickel
     nls
 
+    # REST API Testing Tools
+    # postman
+    newman
+
     # Python
     python311 # NOTE: try python-rewrite
     python311Packages.virtualenv # globally install virtualenv
@@ -140,6 +144,12 @@
     kubectl
     redis
     vultr-cli
+
+    #
+    # Other Development tools
+    #
+    elixir
+    go
 
     # Productivity tools
     # sc-im # TODO: build fails with deprecated error => formats/ods.c:85:9: warning: 'zip_error_to_str' is deprecated: use 'zip_error_strerror' instead [-Wdeprecated-declarations]
