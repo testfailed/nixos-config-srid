@@ -32,6 +32,9 @@
               "<C-s>" = { action = "<Cmd>w<CR>"; desc = "Save file"; };
               "<C-.>" = { action = "<Cmd>@:<CR>"; desc = "Repeat last command"; };
 
+              # Reload Neovim Configs
+              "<Leader>R" = { action = "<Cmd>:so $MYVIMRC<CR>"; desc = "Reload Neovim configs"; };
+
               # manage window
               "<Leader>=" = { action = "<C-w>="; desc = "Resize windows equally"; };
               "<Leader>wd" = { action = "<Cmd>q<CR>"; desc = "Close window"; };
@@ -64,6 +67,7 @@
               "<Leader>b'" = { action = "<Cmd>buffers<CR>"; desc = "List buffers"; };
               # "<Leader>b," = { action = ":ls<CR>:b<Space>"; desc = "List buffers and jump to"; };
               "<Leader>b," = { action = ":set nomore <Bar> :ls <Bar> :set more <CR>:b<Space>"; desc = "List buffers and jump to"; };
+              "<Leader>bb" = { action = "<Cmd>b#<CR>"; desc = "Switch to Other Buffer"; }; # TODO: not working.
               "<M-w>" = { action = "<Cmd>b#<CR>"; desc = "Switch to Other Buffer"; }; # TODO: not working.
               "<Leader>bn" = { action = "<Cmd>bn<CR>"; desc = "Next buffer"; };
               "<Leader>bp" = { action = "<Cmd>bp<CR>"; desc = "Previous buffer"; };
