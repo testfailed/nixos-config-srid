@@ -78,6 +78,7 @@ in
 
     # prefixed with 'g' (nix tools / multiple).
     gfind = "${pkgs.findutils}/bin/find";
+    # gdate = "${pkgs.coreutils}/bin/date";
     ggrep = "${pkgs.gnugrep}/bin/grep";
 
     nix-output-monitor = lib.getExe pkgs.nix-output-monitor;

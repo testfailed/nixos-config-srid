@@ -849,6 +849,7 @@
       ############################################################
 
       alias l='eza -1lhm -F --color=auto --icons=auto --git --group-directories-first'
+      alias la='l -a'
 
       # pnpm is a javascript package manager
       alias pn=pnpm
