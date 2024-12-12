@@ -141,11 +141,11 @@
     turbo
 
     # NOTE: TEMP
+    # buf
     # terraform
     # terraform-ls
     ansible
     awscli2
-    buf
     cachix
     chezmoi
     google-cloud-sdk
@@ -181,6 +181,15 @@
         "Noto"
       ];
     })
+
+    # NOTE: for nixpkgs-25.05
+    # nerd-fonts.blex-mono
+    # nerd-fonts.dejavu-sans-mono
+    # nerd-fonts.fantasque-sans-mono
+    # nerd-fonts.hack
+    # nerd-fonts.jetbrains-mono
+    # nerd-fonts.meslo-lg
+    # nerd-fonts.noto
 
     # Etc.
     fortune

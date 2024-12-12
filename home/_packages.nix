@@ -6,6 +6,7 @@
     # Nix-related tools
     cachix
     devenv
+    fh
     nh
     nix-output-monitor
     nix-prefetch
@@ -87,20 +88,21 @@
 
     # Node.js
     nodejs
+
     # nodePackages.lerna # NOTE: build error
+    # nodePackages.neovim
+    # nodePackages.yarn
+    nodePackages."@prisma/language-server"
     nodePackages.cspell
     nodePackages.eslint
     nodePackages.graphql-cli
-    nodePackages.neovim
     nodePackages.node-gyp
     nodePackages.nodemon
     nodePackages.npm
-    patch-package
     nodePackages.pm2
     nodePackages.pnpm
     nodePackages.prettier
     nodePackages.prisma
-    nodePackages."@prisma/language-server"
     nodePackages.semver
     nodePackages.speed-test
     nodePackages.svgo
@@ -108,7 +110,7 @@
     nodePackages.vercel
     nodePackages.webpack-cli
     nodePackages.yalc
-    # nodePackages.yarn
+    patch-package
 
     dotenv-cli
     dotenvx
@@ -134,16 +136,19 @@
     turbo
 
     # NOTE: TEMP
+    # buf
     # terraform
     # terraform-ls
     ansible
     awscli2
-    buf
     chezmoi
     google-cloud-sdk
     kubectl
+    # mosh
     redis
+    tailscale
     vultr-cli
+    nginx
 
     #
     # Other Development tools
@@ -180,6 +185,15 @@
         "Noto"
       ];
     })
+
+    # NOTE: for nixpkgs-25.05
+    # nerd-fonts.blex-mono
+    # nerd-fonts.dejavu-sans-mono
+    # nerd-fonts.fantasque-sans-mono
+    # nerd-fonts.hack
+    # nerd-fonts.jetbrains-mono
+    # nerd-fonts.meslo-lg
+    # nerd-fonts.noto
 
     # Etc.
     fortune
