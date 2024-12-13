@@ -22,7 +22,14 @@
           "!src/**.py" = [ "D" ];
         }; # ==: { }
         # On top of the defaults (`E4`, E7`, `E9`, and `F`), enable flake8-bugbear (`B`) and flake8-quotes (`Q`).
-        select = [ "E4" "E7" "E9" "F" "B" "Q" ]; # ==: [ "E4" "E7" "E9" "F" ]
+        select = [
+          "E4"
+          "E7"
+          "E9"
+          "F"
+          "B"
+          "Q"
+        ]; # ==: [ "E4" "E7" "E9" "F" ]
       };
     };
   };

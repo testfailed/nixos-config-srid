@@ -1,4 +1,9 @@
-{ pkgs, config, flake, ... }:
+{
+  pkgs,
+  config,
+  flake,
+  ...
+}:
 
 {
   home.packages = with pkgs; [
@@ -9,7 +14,10 @@
     enable = true; # ==: false
     package = pkgs.gitAndTools.gitFull;
 
-    ignores = [ "*~" "*.swp" ];
+    ignores = [
+      "*~"
+      "*.swp"
+    ];
     lfs.enable = true;
     userEmail = flake.config.people.users.${config.home.username}.email;
     userName = flake.config.people.users.${config.home.username}.name;
@@ -237,9 +245,15 @@
       # This looks better with the kitty theme.
       gui.theme = {
         lightTheme = false;
-        activeBorderColor = [ "white" "bold" ];
+        activeBorderColor = [
+          "white"
+          "bold"
+        ];
         inactiveBorderColor = [ "white" ];
-        selectedLineBgColor = [ "reverse" "white" ];
+        selectedLineBgColor = [
+          "reverse"
+          "white"
+        ];
       };
     };
   };

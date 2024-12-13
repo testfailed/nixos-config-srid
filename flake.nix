@@ -1,28 +1,6 @@
 {
   description = "testfailed's NixOS / nix-darwin configuration";
 
-  # TODO: use a single source of truth for substituters settings.
-  # nixConfig = (import ./nixos/caches/oss.nix).nix.settings;
-
-  # nixConfig = {
-  #   substituters = [
-  #     "https://cache.nixos.org?priority=10"
-  #     "https://nix-community.cachix.org?priority=20"
-  #     "https://cachix.cachix.org?priority=30"
-  #     "https://devenv.cachix.org?priority=30"
-  #     # "https://nammayatri.cachix.org?priority=42"
-  #     # "https://cache.garnix.io?priority=41"
-  #   ];
-  #   trusted-public-keys = [
-  #     "cache.nixos.org-1:6NCHdD59X431o0gWypbMrAURkbJ16ZPMQFGspcDShjY="
-  #     "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="
-  #     "cachix.cachix.org-1:eWNHQldwUO7G2VkjpnjDbWwy4KQ/HNxht7H4SSoMckM="
-  #     "devenv.cachix.org-1:w1cLUi8dv3hnoSPGAuibQv+f9TZLr6cv/Hm9XgU50cw="
-  #     # "nammayatri.cachix.org-1:PiVlgB8hKyYwVtCAGpzTh2z9RsFPhIES6UKs0YB662I="
-  #     # "cache.garnix.io:CTFPyKSLcx5RMJKfLo5EEPUObbA78b0YQ2DTCJXqr9g="
-  #   ];
-  # };
-
   inputs = {
     # Nixpkgs Inputs
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
@@ -65,7 +43,9 @@
     ragenix.url = "github:yaxitech/ragenix";
 
     # CI Inputs
-    pre-commit-hooks-nix.url = "github:cachix/pre-commit-hooks.nix";
+    # pre-commit-hooks-nix.url = "github:cachix/pre-commit-hooks.nix";
+    git-hooks-nix.url = "github:cachix/git-hooks.nix";
+    git-hooks-nix.inputs.nixpkgs.follows = "nixpkgs";
     github-nix-ci.url = "github:juspay/github-nix-ci";
 
     # Application Inputs
@@ -82,16 +62,21 @@
     treefmt-nix.url = "github:numtide/treefmt-nix";
   };
 
-
-  outputs = inputs@{ self, ... }:
+  outputs =
+    inputs@{ self, ... }:
     inputs.flake-parts.lib.mkFlake { inherit inputs; } {
 
       debug = true; # NOTE: for debugging.
-      systems = [ "x86_64-linux" "aarch64-linux" "aarch64-darwin" ];
+      systems = [
+        "x86_64-linux"
+        "aarch64-linux"
+        "aarch64-darwin"
+      ];
 
       imports = [
         inputs.nixos-flake.flakeModule
-        inputs.pre-commit-hooks-nix.flakeModule
+        # inputs.pre-commit-hooks-nix.flakeModule
+        inputs.git-hooks-nix.flakeModule
         inputs.treefmt-nix.flakeModule
         # inputs.androidSdkModule
         # inputs.android-nixpkgs
@@ -111,26 +96,23 @@
 
       flake = {
         # Configuration for my M1 Macbook Max (using nix-darwin)
-        darwinConfigurations.clv-mba-m1 =
-          self.nixos-flake.lib.mkMacosSystem
-            ./systems/darwin.nix;
+        darwinConfigurations.clv-mba-m1 = self.nixos-flake.lib.mkMacosSystem ./systems/darwin.nix;
 
         # Configuration for my Android Tablet (using nix-on-droid)
-        nixOnDroidConfigurations.default =
-          inputs.nix-on-droid.lib.nixOnDroidConfiguration {
-            modules = [ ./systems/nix-on-droid.nix ];
+        nixOnDroidConfigurations.default = inputs.nix-on-droid.lib.nixOnDroidConfiguration {
+          modules = [ ./systems/nix-on-droid.nix ];
 
-            # set nixpkgs instance. it's recommended to apply `nix-on-droid.overlays.default`
-            pkgs = import inputs.nixpkgs {
-              system = "aarch64-linux";
-              overlays = [
-                inputs.nix-on-droid.overlays.default
-              ];
-            };
-
-            # set path to home-manager flake
-            home-manager-path = inputs.home-manager.outPath;
+          # set nixpkgs instance. it's recommended to apply `nix-on-droid.overlays.default`
+          pkgs = import inputs.nixpkgs {
+            system = "aarch64-linux";
+            overlays = [
+              inputs.nix-on-droid.overlays.default
+            ];
           };
+
+          # set path to home-manager flake
+          home-manager-path = inputs.home-manager.outPath;
+        };
 
         # # Hetzner dedicated
         # nixosConfigurations.immediacy =
@@ -138,33 +120,41 @@
         #     ./systems/ax41.nix;
       };
 
-      perSystem = { self', inputs', pkgs, system, config, ... }: {
+      perSystem =
+        {
+          self',
+          inputs',
+          pkgs,
+          system,
+          config,
+          ...
+        }:
+        {
 
-        # Flake inputs we want to update periodically
-        # Run: `nix run .#update`.
-        nixos-flake = {
-          primary-inputs = [
-            "nixpkgs"
-            "home-manager"
-            "nix-darwin"
-            "nixos-flake"
-            "nix-index-database"
-            "nixvim"
-          ];
-        };
+          # Flake inputs we want to update periodically
+          # Run: `nix run .#update`.
+          nixos-flake = {
+            primary-inputs = [
+              "nixpkgs"
+              "home-manager"
+              "nix-darwin"
+              "nixos-flake"
+              "nix-index-database"
+              "nixvim"
+            ];
+          };
 
-        # # Android Development Environment (using nixpkgs-android)
-        # android-sdk = .android-nixpkgs.sdk (sdkPkgs: with sdkPkgs; [
-        #   cmdline-tools-latest
-        #   build-tools-34-0-0
-        #   platform-tools
-        #   platforms-android-34
-        #   emulator
-        # ]);
+          # # Android Development Environment (using nixpkgs-android)
+          # android-sdk = .android-nixpkgs.sdk (sdkPkgs: with sdkPkgs; [
+          #   cmdline-tools-latest
+          #   build-tools-34-0-0
+          #   platform-tools
+          #   platforms-android-34
+          #   emulator
+          # ]);
 
-        # My Ubuntu VM
-        legacyPackages.homeConfigurations."srid@ubuntu" =
-          self.nixos-flake.lib.mkHomeConfiguration pkgs {
+          # My Ubuntu VM
+          legacyPackages.homeConfigurations."srid@ubuntu" = self.nixos-flake.lib.mkHomeConfiguration pkgs {
             imports = [
               self.homeModules.common-linux
             ];
@@ -172,104 +162,132 @@
             home.homeDirectory = "/home/srid";
           };
 
-        # checks.eval-tests =
-        #   let tests = import ./tests/eval-tests.nix;
-        #   in tests.runTests pkgs.emptyFile // { internals = tests; };
+          # checks.eval-tests =
+          #   let tests = import ./tests/eval-tests.nix;
+          #   in tests.runTests pkgs.emptyFile // { internals = tests; };
 
-        pre-commit = {
-          inherit pkgs;
-          check.enable = true; # ==: true
+          # pre-commit = {
+          #   inherit pkgs;
+          #   check.enable = true; # ==: true
+          #
+          #   settings = {
+          #     enabledPackages = [ ]; # ==: [ ]
+          #     package = pkgs.pre-commit; # ==: pkgs.pre-commit
+          #     default_stages = [
+          #       "pre-commit"
+          #       "manual"
+          #     ]; # ==: [ "pre-commit" ]
+          #     excludes = [ ]; # ==: [ ]
+          #
+          #     hooks = {
+          #       # nixpkgs-fmt.enable = true;
+          #       treefmt = {
+          #         enable = true; # ==: false
+          #         # package = null; # ==: null
+          #
+          #         excludes = [ ]; # ==: [ ]
+          #         extraPackages = [ ]; # ==: [ ]
+          #         fail_fast = false; # ==: false
+          #         files = ""; # ==: ""
+          #         language = "system"; # ==: "system"
+          #         pass_filenames = true; # ==: true
+          #         require_serial = false; # ==: false
+          #         stages = [
+          #           "pre-commit"
+          #           "manual"
+          #         ]; # ==: default_stages
+          #         types = [ "file" ]; # ==: [ "file" ]
+          #         verbose = false; # ==: false
+          #
+          #         settings = {
+          #           formatters = [
+          #             # pkgs.nixpkgs-fmt
+          #             # pkgs.ruff
+          #             pkgs.nixfmt
+          #             # pkgs.nixfmt-classic
+          #             # pkgs.nixfmt-rfc-style
+          #           ]; # ==: [ ]
+          #         };
+          #       };
+          #     };
+          #   };
+          # };
 
-          settings = {
-            enabledPackages = [ ]; # ==: [ ]
-            package = pkgs.pre-commit; # ==: pkgs.pre-commit
-            default_stages = [ "pre-commit" "manual" ]; # ==: [ "pre-commit" ]
-            excludes = [ ]; # ==: [ ]
-
+          pre-commit.settings = {
             hooks = {
-              # nixpkgs-fmt.enable = true;
-              treefmt = {
-                enable = true; # ==: false
-                # package = null; # ==: null
-
-                excludes = [ ]; # ==: [ ]
-                extraPackages = [ ]; # ==: [ ]
-                fail_fast = false; # ==: false
-                files = ""; # ==: ""
-                language = "system"; # ==: "system"
-                pass_filenames = true; # ==: true
-                require_serial = false; # ==: false
-                stages = [ "pre-commit" "manual" ]; # ==: default_stages
-                types = [ "file" ]; # ==: [ "file" ]
-                verbose = false; # ==: false
-
-                settings = {
-                  formatters = [
-                    pkgs.nixpkgs-fmt
-                    # pkgs.ruff
-                  ]; # ==: [ ]
-                };
-              };
+              # nixfmt-rfc-style.enable = true; # ==: false # *:
+              treefmt.enable = true; # ==: false # *:
+              # treefmt-nix.enable = true; # ==: false # *:
             };
           };
-        };
 
-        treefmt = {
-          flakeCheck = true; # ==: true
-          flakeFormatter = true; # ==: true
-          projectRootFile = "flake.nix";
+          treefmt = {
+            flakeCheck = true; # ==: true
+            flakeFormatter = true; # ==: true
+            projectRootFile = "flake.nix";
 
-          settings = {
-            formatters = [
-              pkgs.nixpkgs-fmt
-              # pkgs.ruff
-            ]; # ==: [ ]
+            settings = {
+              formatters = [
+                # pkgs.nixpkgs-fmt
+                # pkgs.ruff
+                # pkgs.nixfmt
+                # pkgs.nixfmt-classic
+                # pkgs.nixfmt-rfc-style
+                "nixfmt-rfc-style"
+              ]; # ==: [ ]
+            };
+
+            programs = {
+              deadnix.enable = true; # ==: false
+              # nixpkgs-fmt.enable = true; # ==: false
+              # nixfmt.enable = true; # ==: false
+              # nixfmt.package = pkgs.nixfmt; # ==: null
+              # nixfmt.package = pkgs.nixfmt-rfc-style; # ==: null
+              nixfmt-rfc-style.enable = true; # ==: false
+              nixfmt-rfc-style.package = pkgs.nixfmt-rfc-style;
+              # prettier.enable = true; # ==: false
+              # ruff.enable = true; # ==: false
+              # shellcheck.enable = true; # ==: false
+              # shfmt.enable = true; # ==: false
+              # taplo.enable = true; # ==: false
+              # yamlfmt.enable = true; # ==: false
+            };
           };
 
-          programs = {
-            deadnix.enable = true; # ==: false
-            nixpkgs-fmt.enable = true; # ==: false
-            # prettier.enable = true; # ==: false
-            # ruff.enable = true; # ==: false
-            # shellcheck.enable = true; # ==: false
-            # shfmt.enable = true; # ==: false
-            # taplo.enable = true; # ==: false
-            # yamlfmt.enable = true; # ==: false
+          packages.default = self'.packages.activate;
+
+          devShells.default = pkgs.mkShell {
+            inputsFrom = [ config.treefmt.build.devShell ];
+
+            nativeBuildInputs = with pkgs; [
+              # hci
+              # nixpkgs-fmt
+              # nixfmt
+              nixfmt-rfc-style
+              pre-commit
+            ];
+
+            packages = with pkgs; [
+              # just
+              colmena
+              nixd
+              inputs'.ragenix.packages.default
+            ];
+
+            shellHook = ''
+              ${config.pre-commit.installationScript}
+            '';
+          };
+
+          # Make our overlay available to the devShell
+          _module.args.pkgs = import inputs.nixpkgs {
+            inherit system;
+            overlays = [
+              inputs.nix-on-droid.overlays.default
+              # add other overlays
+            ];
           };
         };
-
-        packages.default = self'.packages.activate;
-
-        devShells.default = pkgs.mkShell {
-          inputsFrom = [ config.treefmt.build.devShell ];
-
-          nativeBuildInputs = with pkgs; [
-            # hci
-            nixpkgs-fmt
-            pre-commit
-          ];
-
-          packages = with pkgs; [
-            # just
-            colmena
-            nixd
-            inputs'.ragenix.packages.default
-          ];
-
-          shellHook = ''
-            ${config.pre-commit.installationScript}
-          '';
-        };
-
-        # Make our overlay available to the devShell
-        _module.args.pkgs = import inputs.nixpkgs {
-          inherit system;
-          overlays = [
-            inputs.nix-on-droid.overlays.default
-            # add other overlays
-          ];
-        };
-      };
     };
 
 }

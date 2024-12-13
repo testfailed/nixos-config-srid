@@ -1,5 +1,10 @@
 # Make flake.config.people.myself the admin of the machine.
-{ flake, pkgs, lib, ... }:
+{
+  flake,
+  pkgs,
+  lib,
+  ...
+}:
 
 {
   # Login via SSH with my SSH key.
@@ -10,12 +15,14 @@
     in
     {
       root.openssh.authorizedKeys.keys = myKeys;
-      ${people.myself} = {
-        openssh.authorizedKeys.keys = myKeys;
-      } // lib.optionalAttrs pkgs.stdenv.isLinux {
-        isNormalUser = true;
-        extraGroups = [ "wheel" ];
-      };
+      ${people.myself} =
+        {
+          openssh.authorizedKeys.keys = myKeys;
+        }
+        // lib.optionalAttrs pkgs.stdenv.isLinux {
+          isNormalUser = true;
+          extraGroups = [ "wheel" ];
+        };
     };
 
   # Make me a sudoer without password.

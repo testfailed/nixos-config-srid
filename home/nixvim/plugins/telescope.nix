@@ -82,9 +82,14 @@
           settings = {
             auto_validate = true; # ==: null # ==: true
             # db_root = "${config.xdg.dataHome}/nvim/telescope_frecency/db";
-            db_root = { __raw = "vim.fn.stdpath 'data'"; }; # ==: { __raw = ... }
+            db_root = {
+              __raw = "vim.fn.stdpath 'data'";
+            }; # ==: { __raw = ... }
             disable_devicons = false;
-            ignore_patterns = [ "*.git/*" "*/tmp/*" ];
+            ignore_patterns = [
+              "*.git/*"
+              "*/tmp/*"
+            ];
             show_scores = false;
             show_unindexed = true;
             workspaces = {

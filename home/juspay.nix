@@ -2,7 +2,8 @@
 let
   # I don't care to connect to VPN on my macbook
   # So, I'll clone through an office machine
-  gitCloneThrough = { host, user }:
+  gitCloneThrough =
+    { host, user }:
     let
       port = 5445;
       gitSshRemote = "ssh.bitbucket.juspay.net";
@@ -11,7 +12,7 @@ let
       programs.ssh.matchBlocks = {
         ${host} = {
           inherit user;
-          dynamicForwards = [{ inherit port; }];
+          dynamicForwards = [ { inherit port; } ];
         };
         ${gitSshRemote} = {
           user = "git";
@@ -22,7 +23,10 @@ let
 in
 {
   imports = [
-    (gitCloneThrough { host = "vanjaram"; user = "srid"; })
+    (gitCloneThrough {
+      host = "vanjaram";
+      user = "srid";
+    })
   ];
   programs.ssh = {
     matchBlocks = {
@@ -52,12 +56,13 @@ in
 
   programs.git = {
     # Bitbucket git access and policies
-    includes = [{
-      condition = "gitdir:~/juspay/**";
-      contents = {
-        user.email = "sridhar.ratnakumar@juspay.in";
-      };
-    }];
+    includes = [
+      {
+        condition = "gitdir:~/juspay/**";
+        contents = {
+          user.email = "sridhar.ratnakumar@juspay.in";
+        };
+      }
+    ];
   };
 }
-

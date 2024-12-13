@@ -20,8 +20,22 @@
     # TODO: use 'config.lib.nixvim.keymaps.mkKeymaps' instead.
     keymaps = [
       # { mode = "n"; key = "<Leader>mG"; action = "<Cmd>MarksListGlobal<CR>"; options = { desc = "List global marks"; }; }
-      { mode = "n"; key = "<Leader>mL"; action = "<Cmd>MarksListAll<CR>"; options = { desc = "List all marks"; }; }
-      { mode = "n"; key = "<Leader>ml"; action = "<Cmd>MarksListBuf<CR>"; options = { desc = "List marks in buffer"; }; }
+      {
+        mode = "n";
+        key = "<Leader>mL";
+        action = "<Cmd>MarksListAll<CR>";
+        options = {
+          desc = "List all marks";
+        };
+      }
+      {
+        mode = "n";
+        key = "<Leader>ml";
+        action = "<Cmd>MarksListBuf<CR>";
+        options = {
+          desc = "List marks in buffer";
+        };
+      }
     ];
   };
 }

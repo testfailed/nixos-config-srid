@@ -57,7 +57,10 @@
 
           # persist_buffer_sort = true;
           right_trunc_marker = "";
-          separator_style = [ "|" "|" ];
+          separator_style = [
+            "|"
+            "|"
+          ];
           # separator_style = "thick"; # “slant”, “padded_slant”, “slope”, “padded_slope”, “thick”, “thin”
           show_buffer_close_icons = false;
           show_buffer_icons = true;
@@ -69,19 +72,110 @@
 
     # TODO: use 'config.lib.nixvim.keymaps.mkKeymaps' instead.
     keymaps = [
-      { mode = "n"; key = "<Leader>/"; action = "<Cmd>Telescope buffers<CR>"; options = { desc = "Search buffers"; }; }
-      { mode = "n"; key = "<Leader>,"; action = "<Cmd>BufferLinePick<CR>"; options = { desc = "Pick buffer"; }; }
-      { mode = "n"; key = "<Leader>."; action = "<Cmd>BufferLinePickClose<CR>"; options = { desc = "Pick buffer to close"; }; }
-      { mode = "n"; key = "]b"; action = "<Cmd>BufferLineCycleNext<CR>"; options = { desc = "Next buffer"; }; }
-      { mode = "n"; key = "[b"; action = "<Cmd>BufferLineCyclePrev<CR>"; options = { desc = "Previous buffer"; }; }
-      { mode = "n"; key = "<Leader>bd"; action = "<Cmd>bp <Bar> bd #<CR>"; options = { desc = "Delete buffer"; }; }
-      { mode = "n"; key = "<Leader>bj"; action = "<Cmd>BufferLineMoveNext<CR>"; options = { desc = "Move buffer to the right"; }; }
-      { mode = "n"; key = "<Leader>bk"; action = "<Cmd>BufferLineMovePrev<CR>"; options = { desc = "Move buffer to the left"; }; }
-      { mode = "n"; key = "<Leader>bL"; action = "<Cmd>BufferLineCloseRight<CR>"; options = { desc = "Delete buffers to the right"; }; }
-      { mode = "n"; key = "<Leader>bH"; action = "<Cmd>BufferLineCloseLeft<CR>"; options = { desc = "Delete buffers to the left"; }; }
-      { mode = "n"; key = "<Leader>bO"; action = "<Cmd>BufferLineCloseOthers<CR>"; options = { desc = "Delete other buffers"; }; }
-      { mode = "n"; key = "<Leader>bp"; action = "<Cmd>BufferLineTogglePin<CR>"; options = { desc = "Toggle pin"; }; }
-      { mode = "n"; key = "<Leader>bP"; action = "<Cmd>BufferLineGroupClose ungrouped<CR>"; options = { desc = "Delete non-pinned buffers"; }; }
+      {
+        mode = "n";
+        key = "<Leader>/";
+        action = "<Cmd>Telescope buffers<CR>";
+        options = {
+          desc = "Search buffers";
+        };
+      }
+      {
+        mode = "n";
+        key = "<Leader>,";
+        action = "<Cmd>BufferLinePick<CR>";
+        options = {
+          desc = "Pick buffer";
+        };
+      }
+      {
+        mode = "n";
+        key = "<Leader>.";
+        action = "<Cmd>BufferLinePickClose<CR>";
+        options = {
+          desc = "Pick buffer to close";
+        };
+      }
+      {
+        mode = "n";
+        key = "]b";
+        action = "<Cmd>BufferLineCycleNext<CR>";
+        options = {
+          desc = "Next buffer";
+        };
+      }
+      {
+        mode = "n";
+        key = "[b";
+        action = "<Cmd>BufferLineCyclePrev<CR>";
+        options = {
+          desc = "Previous buffer";
+        };
+      }
+      {
+        mode = "n";
+        key = "<Leader>bd";
+        action = "<Cmd>bp <Bar> bd #<CR>";
+        options = {
+          desc = "Delete buffer";
+        };
+      }
+      {
+        mode = "n";
+        key = "<Leader>bj";
+        action = "<Cmd>BufferLineMoveNext<CR>";
+        options = {
+          desc = "Move buffer to the right";
+        };
+      }
+      {
+        mode = "n";
+        key = "<Leader>bk";
+        action = "<Cmd>BufferLineMovePrev<CR>";
+        options = {
+          desc = "Move buffer to the left";
+        };
+      }
+      {
+        mode = "n";
+        key = "<Leader>bL";
+        action = "<Cmd>BufferLineCloseRight<CR>";
+        options = {
+          desc = "Delete buffers to the right";
+        };
+      }
+      {
+        mode = "n";
+        key = "<Leader>bH";
+        action = "<Cmd>BufferLineCloseLeft<CR>";
+        options = {
+          desc = "Delete buffers to the left";
+        };
+      }
+      {
+        mode = "n";
+        key = "<Leader>bO";
+        action = "<Cmd>BufferLineCloseOthers<CR>";
+        options = {
+          desc = "Delete other buffers";
+        };
+      }
+      {
+        mode = "n";
+        key = "<Leader>bp";
+        action = "<Cmd>BufferLineTogglePin<CR>";
+        options = {
+          desc = "Toggle pin";
+        };
+      }
+      {
+        mode = "n";
+        key = "<Leader>bP";
+        action = "<Cmd>BufferLineGroupClose ungrouped<CR>";
+        options = {
+          desc = "Delete non-pinned buffers";
+        };
+      }
     ];
 
   };

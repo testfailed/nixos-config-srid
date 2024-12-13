@@ -1,9 +1,17 @@
 { inputs, ... }:
-{ writeShellApplication, jq, nix, ... }:
+{
+  writeShellApplication,
+  jq,
+  nix,
+  ...
+}:
 
 writeShellApplication {
   name = "om-ci-build-remote";
-  runtimeInputs = [ jq nix ];
+  runtimeInputs = [
+    jq
+    nix
+  ];
   meta.description = ''
     `om ci build`, but build remotely over SSH.
   '';

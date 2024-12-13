@@ -1,8 +1,16 @@
-{ writeShellApplication, jc, jq, ... }:
+{
+  writeShellApplication,
+  jc,
+  jq,
+  ...
+}:
 
 writeShellApplication {
   name = "fuckport";
-  runtimeInputs = [ jc jq ];
+  runtimeInputs = [
+    jc
+    jq
+  ];
   meta.description = ''
     Kill the process with the port open
 

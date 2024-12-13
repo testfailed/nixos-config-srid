@@ -69,7 +69,10 @@
       }
 
       {
-        mode = [ "n" "v" ];
+        mode = [
+          "n"
+          "v"
+        ];
         key = "<Leader>hs";
         action = ":Gitsigns stage_hunk<CR>";
         options = {
@@ -79,7 +82,10 @@
       }
 
       {
-        mode = [ "n" "v" ];
+        mode = [
+          "n"
+          "v"
+        ];
         key = "<Leader>hr";
         action = ":Gitsigns reset_hunk<CR>";
         options = {
@@ -89,7 +95,10 @@
       }
 
       {
-        mode = [ "n" "v" ];
+        mode = [
+          "n"
+          "v"
+        ];
         key = "<Leader>hS";
         action = ":Gitsigns stage_buffer<CR>";
         options = {
@@ -99,7 +108,10 @@
       }
 
       {
-        mode = [ "n" "v" ];
+        mode = [
+          "n"
+          "v"
+        ];
         key = "<Leader>hR";
         action = ":Gitsigns reset_buffer<CR>";
         options = {
@@ -109,7 +121,10 @@
       }
 
       {
-        mode = [ "n" "v" ];
+        mode = [
+          "n"
+          "v"
+        ];
         key = "<Leader>hu";
         action = ":Gitsigns undo_stage_hunk<CR>";
         options = {
@@ -119,7 +134,10 @@
       }
 
       {
-        mode = [ "n" "v" ];
+        mode = [
+          "n"
+          "v"
+        ];
         key = "<Leader>hh";
         action = ":Gitsigns preview_hunk<CR>";
         options = {
@@ -129,7 +147,10 @@
       }
 
       {
-        mode = [ "o" "x" ];
+        mode = [
+          "o"
+          "x"
+        ];
         key = "ih";
         action = ":<C-U>Gitsigns select_hunk<CR>";
         options = {

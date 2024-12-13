@@ -170,26 +170,26 @@
     noto-fonts-cjk-sans
     noto-fonts-cjk-serif
 
-    (nerdfonts.override {
-      fonts = [
-        "DejaVuSansMono"
-        "FantasqueSansMono"
-        "Hack"
-        "IBMPlexMono"
-        "JetBrainsMono"
-        "Meslo"
-        "Noto"
-      ];
-    })
+    # (nerdfonts.override {
+    #   fonts = [
+    #     "DejaVuSansMono"
+    #     "FantasqueSansMono"
+    #     "Hack"
+    #     "IBMPlexMono"
+    #     "JetBrainsMono"
+    #     "Meslo"
+    #     "Noto"
+    #   ];
+    # })
 
     # NOTE: for nixpkgs-25.05
-    # nerd-fonts.blex-mono
-    # nerd-fonts.dejavu-sans-mono
-    # nerd-fonts.fantasque-sans-mono
-    # nerd-fonts.hack
-    # nerd-fonts.jetbrains-mono
-    # nerd-fonts.meslo-lg
-    # nerd-fonts.noto
+    nerd-fonts.blex-mono
+    nerd-fonts.dejavu-sans-mono
+    nerd-fonts.fantasque-sans-mono
+    nerd-fonts.hack
+    nerd-fonts.jetbrains-mono
+    nerd-fonts.meslo-lg
+    nerd-fonts.noto
 
     # Etc.
     fortune

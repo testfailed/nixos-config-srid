@@ -31,14 +31,15 @@
     after = [ "network.target" ];
     wantedBy = [ "multi-user.target" ];
     serviceConfig = {
-      ExecStart =
-        lib.getExe (pkgs.writeShellApplication {
+      ExecStart = lib.getExe (
+        pkgs.writeShellApplication {
           name = "actualism-app-start";
           text = ''
             cd ${pkgs.actualism-app}/
             ${pkgs.actualism-app}/bin/actualism-app
           '';
-        });
+        }
+      );
       Restart = "always";
     };
   };

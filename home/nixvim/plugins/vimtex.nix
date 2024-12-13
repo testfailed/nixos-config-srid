@@ -11,7 +11,10 @@
 
     autoCmd = [
       {
-        event = [ "BufEnter" "BufWinEnter" ];
+        event = [
+          "BufEnter"
+          "BufWinEnter"
+        ];
         pattern = "*.tex";
         command = "set filetype=tex \"| VimtexTocOpen";
       }
@@ -19,7 +22,10 @@
       # Folding
       {
         event = "FileType";
-        pattern = [ "tex" "latex" ];
+        pattern = [
+          "tex"
+          "latex"
+        ];
         callback.__raw = ''
           function ()
             vim.o.foldmethod = 'expr'
@@ -64,7 +70,10 @@
         # TOC settings
         toc_config = {
           name = "TOC";
-          layers = [ "content" "todo" ];
+          layers = [
+            "content"
+            "todo"
+          ];
           resize = true;
           split_width = 50;
           todo_sorted = false;

@@ -7,7 +7,6 @@ in
   programs.alacritty = {
     enable = true; # *: false
 
-
     # Alacritty Configuration
     # REF: <https://alacritty.org/config-alacritty.html>
     settings = {
@@ -54,7 +53,6 @@ in
         resize_increments = false;
         option_as_alt = "OnlyLeft"; # NOTE: macOS only
       };
-
 
       font = {
         normal = {

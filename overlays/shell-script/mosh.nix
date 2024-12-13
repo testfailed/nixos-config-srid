@@ -1,4 +1,9 @@
-{ stdenv, fetchurl, lib, ... }:
+{
+  stdenv,
+  fetchurl,
+  lib,
+  ...
+}:
 
 # TODO: .pkg is not a valid format for nixpkgs.
 stdenv.mkDerivation {

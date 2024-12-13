@@ -15,7 +15,9 @@
     om-ci-build-remote
     ci
     omnix
-    nixpkgs-fmt
+    # nixpkgs-fmt
+    # nixfmt
+    nixfmt-rfc-style
     just
 
     # Publishing

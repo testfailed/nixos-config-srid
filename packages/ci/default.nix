@@ -1,8 +1,16 @@
-{ writeShellApplication, om-ci-build-remote, zellij, ... }:
+{
+  writeShellApplication,
+  om-ci-build-remote,
+  zellij,
+  ...
+}:
 
 writeShellApplication {
   name = "ci";
-  runtimeInputs = [ om-ci-build-remote zellij ];
+  runtimeInputs = [
+    om-ci-build-remote
+    zellij
+  ];
   meta.description = ''
     Run CI locally. 
 

@@ -19,19 +19,18 @@
 
     # https://nixos.wiki/wiki/PostgreSQL
 
-    authentication = pkgs.lib.mkOverride 10
-      ''
-        # type database DBuser origin-address auth-method
+    authentication = pkgs.lib.mkOverride 10 ''
+      # type database DBuser origin-address auth-method
 
-        # Unix domain socket
-        local all      all                    trust
+      # Unix domain socket
+      local all      all                    trust
 
-        # TCP/IP connections from loopback only
-        # ipv4
-        host  all      all     127.0.0.1/32   trust
-        # ipv6
-        host  all      all     ::1/128        trust
-      '';
+      # TCP/IP connections from loopback only
+      # ipv4
+      host  all      all     127.0.0.1/32   trust
+      # ipv6
+      host  all      all     ::1/128        trust
+    '';
 
     settings = {
       log_connections = true;

@@ -78,7 +78,7 @@
         marksman.enable = true; # *: false
         nginx_language_server.enable = true; # *: false
         # nickel_ls.enable = true; # *: false # TODO: error: The option `home-manager.users.ssm.programs.nixvim.plugins.lsp.servers.nickel_ls' does not exist.
-        nil_ls.enable = true; # *: false
+        # nil_ls.enable = true; # *: false
         # nixd.enable = true; # *: false
         nushell.enable = true; # *: false
         perlpls.enable = true; # *: false
@@ -108,6 +108,40 @@
         yamlls.enable = true; # *: false
       };
 
+    };
+
+    plugins.lsp-format = {
+      enable = true; # ==: false # *:
+
+      lspServersToEnable = "all"; # ==: "all"
+    };
+
+    plugins.none-ls = {
+      enable = true; # ==: false # *:
+      enableLspFormat = true; # ==: false # *:
+
+      sources = {
+        diagnostics = {
+          deadnix = {
+            enable = true; # ==: false # *:
+          };
+        };
+
+        formatting = {
+          # nixfmt = {
+          #   enable = true; # ==: false # *:
+          #
+          #   # package = pkgs.nixfmt-classic; # ==: pkgs.nixfmt-classic
+          #   package = pkgs.nixfmt-rfc-style; # ==: pkgs.nixfmt-classic
+          # };
+
+          treefmt = {
+            enable = true; # ==: false # *:
+
+            # package = pkgs.treefmt2; # ==: pkgs.treefmt2
+          };
+        };
+      };
     };
 
   };

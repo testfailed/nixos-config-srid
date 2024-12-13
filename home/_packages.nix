@@ -91,26 +91,26 @@
 
     # nodePackages.lerna # NOTE: build error
     # nodePackages.neovim
+    # nodePackages.nodemon
+    # nodePackages.prettier
+    # nodePackages.semver
+    # nodePackages.speed-test
+    # nodePackages.svgo
+    # nodePackages.ts-node
+    # nodePackages.vercel
+    # nodePackages.webpack-cli
+    # nodePackages.yalc
     # nodePackages.yarn
+    # patch-package
     nodePackages."@prisma/language-server"
     nodePackages.cspell
     nodePackages.eslint
     nodePackages.graphql-cli
     nodePackages.node-gyp
-    nodePackages.nodemon
     nodePackages.npm
     nodePackages.pm2
     nodePackages.pnpm
-    nodePackages.prettier
     nodePackages.prisma
-    nodePackages.semver
-    nodePackages.speed-test
-    nodePackages.svgo
-    nodePackages.ts-node
-    nodePackages.vercel
-    nodePackages.webpack-cli
-    nodePackages.yalc
-    patch-package
 
     dotenv-cli
     dotenvx
@@ -174,26 +174,26 @@
     noto-fonts-cjk-sans
     noto-fonts-cjk-serif
 
-    (nerdfonts.override {
-      fonts = [
-        "DejaVuSansMono"
-        "FantasqueSansMono"
-        "Hack"
-        "IBMPlexMono"
-        "JetBrainsMono"
-        "Meslo"
-        "Noto"
-      ];
-    })
+    # (nerdfonts.override {
+    #   fonts = [
+    #     "DejaVuSansMono"
+    #     "FantasqueSansMono"
+    #     "Hack"
+    #     "IBMPlexMono"
+    #     "JetBrainsMono"
+    #     "Meslo"
+    #     "Noto"
+    #   ];
+    # })
 
     # NOTE: for nixpkgs-25.05
-    # nerd-fonts.blex-mono
-    # nerd-fonts.dejavu-sans-mono
-    # nerd-fonts.fantasque-sans-mono
-    # nerd-fonts.hack
-    # nerd-fonts.jetbrains-mono
-    # nerd-fonts.meslo-lg
-    # nerd-fonts.noto
+    nerd-fonts.blex-mono
+    nerd-fonts.dejavu-sans-mono
+    nerd-fonts.fantasque-sans-mono
+    nerd-fonts.hack
+    nerd-fonts.jetbrains-mono
+    nerd-fonts.meslo-lg
+    nerd-fonts.noto
 
     # Etc.
     fortune
