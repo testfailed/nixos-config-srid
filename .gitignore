@@ -118,3 +118,6 @@ result/
 
 .devenv
 .pre-commit-config.yaml
+
+*.bak
+*.bak.*

@@ -181,34 +181,7 @@
           #
           #     hooks = {
           #       # nixpkgs-fmt.enable = true;
-          #       treefmt = {
-          #         enable = true; # ==: false
-          #         # package = null; # ==: null
-          #
-          #         excludes = [ ]; # ==: [ ]
-          #         extraPackages = [ ]; # ==: [ ]
-          #         fail_fast = false; # ==: false
-          #         files = ""; # ==: ""
-          #         language = "system"; # ==: "system"
-          #         pass_filenames = true; # ==: true
-          #         require_serial = false; # ==: false
-          #         stages = [
-          #           "pre-commit"
-          #           "manual"
-          #         ]; # ==: default_stages
-          #         types = [ "file" ]; # ==: [ "file" ]
-          #         verbose = false; # ==: false
-          #
-          #         settings = {
-          #           formatters = [
-          #             # pkgs.nixpkgs-fmt
-          #             # pkgs.ruff
-          #             pkgs.nixfmt
-          #             # pkgs.nixfmt-classic
-          #             # pkgs.nixfmt-rfc-style
-          #           ]; # ==: [ ]
-          #         };
-          #       };
+          #       treefmt =
           #     };
           #   };
           # };
@@ -217,7 +190,6 @@
             hooks = {
               # nixfmt-rfc-style.enable = true; # ==: false # *:
               treefmt.enable = true; # ==: false # *:
-              # treefmt-nix.enable = true; # ==: false # *:
             };
           };
 
@@ -228,29 +200,23 @@
 
             settings = {
               formatters = [
-                # pkgs.nixpkgs-fmt
-                # pkgs.ruff
-                # pkgs.nixfmt
-                # pkgs.nixfmt-classic
-                # pkgs.nixfmt-rfc-style
+                "deadnix"
                 "nixfmt-rfc-style"
               ]; # ==: [ ]
             };
 
             programs = {
-              deadnix.enable = true; # ==: false
-              # nixpkgs-fmt.enable = true; # ==: false
-              # nixfmt.enable = true; # ==: false
-              # nixfmt.package = pkgs.nixfmt; # ==: null
-              # nixfmt.package = pkgs.nixfmt-rfc-style; # ==: null
-              nixfmt-rfc-style.enable = true; # ==: false
-              nixfmt-rfc-style.package = pkgs.nixfmt-rfc-style;
-              # prettier.enable = true; # ==: false
-              # ruff.enable = true; # ==: false
-              # shellcheck.enable = true; # ==: false
-              # shfmt.enable = true; # ==: false
-              # taplo.enable = true; # ==: false
-              # yamlfmt.enable = true; # ==: false
+              deadnix.enable = true; # ==: false # *:
+              nixfmt-rfc-style.enable = true; # ==: false # *:
+              # nixfmt-rfc-style.package = pkgs.nixfmt-rfc-style;
+              # nixpkgs-fmt.enable = true; # ==: false # *:
+              # nixfmt.enable = true; # ==: false # *:
+              # prettier.enable = true; # ==: false # *:
+              # ruff.enable = true; # ==: false # *:
+              # shellcheck.enable = true; # ==: false # *:
+              # shfmt.enable = true; # ==: false # *:
+              # taplo.enable = true; # ==: false # *:
+              # yamlfmt.enable = true; # ==: false # *:
             };
           };
 
