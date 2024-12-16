@@ -15,8 +15,6 @@
     om-ci-build-remote
     ci
     omnix
-    # nixpkgs-fmt
-    # nixfmt
     nixfmt-rfc-style
     just
 

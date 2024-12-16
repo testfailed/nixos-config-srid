@@ -166,27 +166,12 @@
           #   let tests = import ./tests/eval-tests.nix;
           #   in tests.runTests pkgs.emptyFile // { internals = tests; };
 
-          # pre-commit = {
-          #   inherit pkgs;
-          #   check.enable = true; # ==: true
-          #
-          #   settings = {
-          #     enabledPackages = [ ]; # ==: [ ]
-          #     package = pkgs.pre-commit; # ==: pkgs.pre-commit
-          #     default_stages = [
-          #       "pre-commit"
-          #       "manual"
-          #     ]; # ==: [ "pre-commit" ]
-          #     excludes = [ ]; # ==: [ ]
-          #
-          #     hooks = {
-          #       # nixpkgs-fmt.enable = true;
-          #       treefmt =
-          #     };
-          #   };
-          # };
-
           pre-commit.settings = {
+            default_stages = [
+              "pre-commit"
+              "manual"
+            ]; # ==: [ "pre-commit" ]
+
             hooks = {
               # nixfmt-rfc-style.enable = true; # ==: false # *:
               treefmt.enable = true; # ==: false # *:
@@ -209,14 +194,6 @@
               deadnix.enable = true; # ==: false # *:
               nixfmt-rfc-style.enable = true; # ==: false # *:
               # nixfmt-rfc-style.package = pkgs.nixfmt-rfc-style;
-              # nixpkgs-fmt.enable = true; # ==: false # *:
-              # nixfmt.enable = true; # ==: false # *:
-              # prettier.enable = true; # ==: false # *:
-              # ruff.enable = true; # ==: false # *:
-              # shellcheck.enable = true; # ==: false # *:
-              # shfmt.enable = true; # ==: false # *:
-              # taplo.enable = true; # ==: false # *:
-              # yamlfmt.enable = true; # ==: false # *:
             };
           };
 
@@ -227,8 +204,6 @@
 
             nativeBuildInputs = with pkgs; [
               # hci
-              # nixpkgs-fmt
-              # nixfmt
               nixfmt-rfc-style
               pre-commit
             ];
