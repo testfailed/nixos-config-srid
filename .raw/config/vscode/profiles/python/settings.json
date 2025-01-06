@@ -1,0 +1,99 @@
+{
+  "[html]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+
+  "[json][jsonc]": {
+    "editor.codeActionsOnSave": {},
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true
+  },
+  "[python]": {
+    "editor.codeActionsOnSave": {
+      "source.fixAll": "always",
+      "source.fixAll.pylance": "always",
+      "source.fixAll.ruff": "always",
+      "source.organizeImports.ruff": "always"
+    },
+    "editor.defaultFormatter": "charliermarsh.ruff",
+    "editor.formatOnSave": true
+  },
+  "[yaml]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+
+  "cSpell.allowedSchemas": [
+    "file",
+    "gist",
+    "sftp",
+    "untitled",
+    "vscode-notebook-cell"
+  ],
+
+  "debug.gutterMiddleClickAction": "conditionalBreakpoint",
+  "debug.showBreakpointsInOverviewRuler": true,
+  "editor.codeActionsOnSave": {
+    "source.fixAll": "explicit",
+    "source.organizeImports": "explicit"
+  },
+  "editor.formatOnSave": false,
+  "files.exclude": {
+    "**/__pycache__": true,
+    "**/.cache": true,
+    "**/.coverage": true,
+    "**/.coverage.*": true,
+    "**/.hypothesis": true,
+    "**/.mypy_cache": true,
+    "**/.nox": true,
+    "**/.pytest_cache": true,
+    "**/.ruff_cache": true,
+    "**/.tox": true
+  },
+  "python.analysis.autoImportCompletions": true,
+  "python.analysis.diagnosticMode": "workspace",
+  "python.analysis.fixAll": ["source.unusedImports"],
+  "python.analysis.logLevel": "Warning",
+  "python.analysis.typeCheckingMode": "strict", // *: "off"
+  // "python.defaultInterpreterPath": ".\\.venv\\Scripts\\python.exe",
+  "python.languageServer": "Pylance",
+  "redhat.telemetry.enabled": true,
+  "ruff.codeAction.disableRuleComment": { "enable": true },
+  "ruff.codeAction.fixViolation": { "enable": true },
+  "ruff.configurationPreference": "filesystemFirst", // *: "editorFirst"
+  "ruff.enable": true,
+  "ruff.fixAll": true,
+  "ruff.format.preview": false, // ==: null
+  "ruff.ignoreStandardLibrary": true,
+  "ruff.importStrategy": "fromEnvironment",
+  "ruff.lint.enable": true,
+  "ruff.lint.preview": false, // ==: null
+  "ruff.lint.run": "onType", // ==: "onType"
+  "ruff.nativeServer": false, // ==: false
+  "ruff.organizeImports": true, // ==: true
+  "ruff.showNotifications": "onWarning", // ==: "off"
+  "ruff.trace.server": "messages", // ==: "off"
+  // "ruff.configuration": null,
+  // "ruff.exclude": null,
+  // "ruff.format.args": [],
+  // "ruff.interpreter": ["python"],
+  // "ruff.lineLength": null,
+  // "ruff.lint.args": [],
+  // "ruff.lint.extendSelect": null,
+  // "ruff.lint.ignore": null,
+  // "ruff.lint.select": null,
+  // "ruff.path": [],
+  "terminal.integrated.defaultProfile.linux": "poetry",
+  "terminal.integrated.defaultProfile.osx": "poetry",
+  "terminal.integrated.defaultProfile.windows": "poetry",
+  "terminal.integrated.env.linux": {},
+  "terminal.integrated.env.osx": { "FIG_NEW_SESSION": "1" },
+  "terminal.integrated.env.windows": {},
+  "markdown.extension.preview.autoShowPreviewToSide": true,
+  "markdown.extension.syntax.plainTheme": true,
+  "markdown.extension.completion.enabled": true,
+  "markdown.extension.print.theme": "dark",
+  "markdown-preview-enhanced.previewTheme": "one-dark.css",
+  "markdown-preview-enhanced.mermaidTheme": "dark",
+  "markdown-preview-enhanced.revealjsTheme": "night.css",
+  "editor.accessibilitySupport": "off"
+}

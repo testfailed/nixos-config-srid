@@ -1,0 +1,375 @@
+{
+  "[html]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[javascript][javascriptreact][typescript][typescriptreact]": {
+    "editor.defaultFormatter": null, // ==: null
+    "editor.codeActionsOnSave": {
+      "source.addMissingImports.ts": "never",
+      "source.fixAll.eslint": "explicit",
+      "source.fixAll.ts": "explicit",
+      "source.organizeImports": "never",
+      "source.removeUnused.ts": "never",
+      "source.removeUnusedImports": "never",
+      "source.sortImports": "never"
+      // "source.fixAll.markdownlint": "explicit",
+      // "source.fixAll.sortJSON": "never",
+    }
+  },
+  "[json][jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[markdown][plaintext]": {
+    "editor.defaultFormatter": "DavidAnson.vscode-markdownlint",
+    "editor.quickSuggestions": {
+      "other": "off",
+      "comments": "off",
+      "strings": "off"
+    },
+    "editor.unicodeHighlight.nonBasicASCII": false, // ==: "inUntrustedWorkspace" // *:
+    "editor.wordWrap": "on", // ==: "off" // *:
+    "editor.wordWrapColumn": 90 // ==: 80 // *:
+  },
+  "[prisma]": {
+    "editor.defaultFormatter": "Prisma.prisma",
+    "editor.formatOnSave": true // ==: false // *:
+  },
+  "[shellscript][bat][bats][dotenv][ignore][properties]": {
+    // "editor.defaultFormatter": "mkhl.shfmt",
+    "editor.defaultFormatter": "foxundermoon.shell-format"
+  },
+  "[svg]": {
+    "editor.defaultFormatter": "jock.svg"
+  },
+  "[toml]": {
+    "editor.defaultFormatter": "tamasfe.even-better-toml"
+  },
+  "[yaml]": {
+    "editor.defaultFormatter": "redhat.vscode-yaml",
+    "editor.tabSize": 2, // ==: 4 // *:
+    "editor.codeLens": true // ==: true
+  },
+  "css.lint.duplicateProperties": "error",
+  "css.lint.important": "warning", // *:
+  "css.lint.universalSelector": "warning", // *:
+  "debug.gutterMiddleClickAction": "conditionalBreakpoint",
+  "debug.showBreakpointsInOverviewRuler": true,
+  "editor.accessibilitySupport": "off",
+  "eslint.format.enable": true, // *:
+  "eslint.lintTask.enable": true, // *:
+  "eslint.lintTask.options": ".",
+  "eslint.options": {},
+  "eslint.probe": [
+    "css",
+    "html",
+    "javascript",
+    "javascriptreact",
+    "json",
+    "jsonc",
+    "markdown",
+    "typescript",
+    "typescriptreact",
+    "vue"
+  ], // *:
+  "eslint.quiet": false,
+  "eslint.runtime": null,
+  "eslint.trace.server": "messages", // ==: "off" // *:
+  "eslint.workingDirectories": [
+    {
+      "mode": "auto"
+    }
+  ],
+  "explorer.confirmDelete": false,
+  "git.autofetch": true,
+  // "jest.autoRevealOutput": "on-run",
+  // "jest.autoRun": {
+  //   "watch": true,
+  //   "onStartup": [
+  //     "all-tests"
+  //   ],
+  //   "onSave": [
+  //     "test-file"
+  //   ]
+  // },
+  "jest.coverageColors": {
+    "covered": "rgba(9, 156, 65, 0.4)",
+    "uncovered": "rgba(121, 31, 10, 0.4)",
+    "partially-covered": "rgba(235, 198, 52, 0.4)"
+  },
+  "jest.coverageFormatter": "DefaultFormatter",
+  "jest.debugMode": false,
+  "jest.disabledWorkspaceFolders": [],
+  "jest.enable": true, // ==: true
+  "jest.jestCommandLine": "",
+  "jest.monitorLongRun": 60000,
+  // "jest.nodeEnv": null,
+  // "jest.parserPluginOptions": null,
+  // "jest.rootPath": "",
+  "jest.runMode": "watch",
+  // "jest.shell": null,
+  // "jest.showCoverageOnLoad": true, // ==: false // *:
+  // "jest.testExplorer": null,
+  "npm-intellisense.importDeclarationType": "const", // ==: "const"
+  "npm-intellisense.importES6": true, // ==: true
+  "npm-intellisense.importLinebreak": ";\r\n", // ==: ";\r\n"
+  "npm-intellisense.importQuotes": "\"", // ==: "'" // *:
+  "npm-intellisense.packageSubfoldersIntellisense": true, // ==: false // *:
+  "npm-intellisense.recursivePackageJsonLookup": true, // ==: true
+  "npm-intellisense.scanDevDependencies": false, // ==: false
+  "npm-intellisense.showBuildInLibs": false, // ==: false
+  "npm.autoDetect": "on", // ==: "on"
+  "npm.enableRunFromFolder": false, // ==: false
+  "npm.exclude": "", // ==: ""
+  "npm.fetchOnlinePackageInfo": true, // ==: true
+  "npm.packageManager": "auto", // ==: "auto"
+  "npm.runSilent": false, // ==: false
+  "npm.scriptExplorerAction": "open", // ==: "open"
+  "npm.scriptExplorerExclude": [], // ==: []
+  "npm.scriptHover": true, // ==: true
+  "path-intellisense.extensionOnImport": false, // ==: false
+  "path-intellisense.ignoreTsConfigBaseUrl": false, // ==: false
+  "prisma.enableCodeLens": true, // ==: true
+  "prisma.fileWatcher": true, // ==: true
+  "prisma.schemaPath": "", // ==: ""
+  "prisma.scriptRunner": "pnpm", // ==: "npx" // *:
+  "prisma.trace.server": "messages", // ==: "off" // *:
+  "scss.completion.completePropertyWithSemicolon": true,
+  "scss.completion.triggerPropertyValueCompletion": true,
+  "scss.format.braceStyle": "collapse",
+  "scss.format.enable": true,
+  "scss.format.maxPreserveNewLines": null,
+  "scss.format.newlineBetweenRules": true,
+  "scss.format.newlineBetweenSelectors": true,
+  "scss.format.preserveNewLines": true,
+  "scss.format.spaceAroundSelectorSeparator": true, // ==: false // *:
+  "scss.hover.documentation": true,
+  "scss.hover.references": true,
+  "scss.lint.argumentsInColorFunction": "error",
+  "scss.lint.boxModel": "warning",
+  "scss.lint.compatibleVendorPrefixes": "warning",
+  "scss.lint.duplicateProperties": "warning",
+  "scss.lint.emptyRules": "warning",
+  "scss.lint.float": "warning",
+  "scss.lint.fontFaceProperties": "warning",
+  "scss.lint.hexColorLength": "error",
+  "scss.lint.idSelector": "ignore",
+  "scss.lint.ieHack": "warning",
+  "scss.lint.important": "warning",
+  "scss.lint.importStatement": "error",
+  "scss.lint.propertyIgnoredDueToDisplay": "warning",
+  "scss.lint.universalSelector": "warning",
+  "scss.lint.unknownAtRules": "warning",
+  "scss.lint.unknownProperties": "error",
+  "scss.lint.unknownVendorSpecificProperties": "warning",
+  "scss.lint.validProperties": [],
+  "scss.lint.vendorPrefix": "warning",
+  "scss.lint.zeroUnits": "warning",
+  "scss.validate": true,
+
+  //
+  // Extensions > TypeScript
+  //
+
+  "javascript.autoClosingTags": true,
+  "javascript.format.enable": false, // ==: true // *:
+  // "javascript.format.insertSpaceAfterCommaDelimiter": true,
+  // "javascript.format.insertSpaceAfterConstructor": false,
+  // "javascript.format.insertSpaceAfterFunctionKeywordForAnonymousFunctions": true,
+  // "javascript.format.insertSpaceAfterKeywordsInControlFlowStatements": true,
+  // "javascript.format.insertSpaceAfterOpeningAndBeforeClosingEmptyBraces": true,
+  // "javascript.format.insertSpaceAfterOpeningAndBeforeClosingJsxExpressionBraces": false,
+  // "javascript.format.insertSpaceAfterOpeningAndBeforeClosingNonemptyBraces": true,
+  // "javascript.format.insertSpaceAfterOpeningAndBeforeClosingNonemptyBrackets": false,
+  // "javascript.format.insertSpaceAfterOpeningAndBeforeClosingNonemptyParenthesis": false,
+  // "javascript.format.insertSpaceAfterOpeningAndBeforeClosingTemplateStringBraces": false,
+  // "javascript.format.insertSpaceAfterSemicolonInForStatements": true,
+  // "javascript.format.insertSpaceBeforeAndAfterBinaryOperators": true,
+  // "javascript.format.insertSpaceBeforeFunctionParenthesis": false,
+  // "javascript.format.placeOpenBraceOnNewLineForControlBlocks": false,
+  // "javascript.format.placeOpenBraceOnNewLineForFunctions": false,
+  // "javascript.format.semicolons": "ignore",
+  "javascript.inlayHints.enumMemberValues.enabled": true, // ==: false // *:
+  "javascript.inlayHints.functionLikeReturnTypes.enabled": true, // ==: false // *:
+  "javascript.inlayHints.parameterNames.enabled": "literals", // ==: "none" // *:
+  "javascript.inlayHints.parameterNames.suppressWhenArgumentMatchesName": true, // ==: true
+  "javascript.inlayHints.parameterTypes.enabled": false,
+  "javascript.inlayHints.propertyDeclarationTypes.enabled": false,
+  "javascript.inlayHints.variableTypes.enabled": false,
+  "javascript.inlayHints.variableTypes.suppressWhenTypeMatchesName": true, // ==: true
+  "javascript.preferences.autoImportFileExcludePatterns": [], // ==: []
+  "javascript.preferences.importModuleSpecifier": "non-relative", // ==: "shortest" // *:
+  "javascript.preferences.importModuleSpecifierEnding": "auto",
+  "javascript.preferences.jsxAttributeCompletionStyle": "none", // ==: "auto" // *:
+  "javascript.preferences.quoteStyle": "auto",
+  "javascript.preferences.renameMatchingJsxTags": true,
+  "javascript.preferences.useAliasesForRenames": false, // ==: true // *:
+  "javascript.preferGoToSourceDefinition": true, // ==: false // *:
+  "javascript.referencesCodeLens.enabled": false,
+  "javascript.referencesCodeLens.showOnAllFunctions": false,
+  "javascript.suggest.autoImports": true,
+  "javascript.suggest.classMemberSnippets.enabled": true,
+  "javascript.suggest.completeFunctionCalls": true,
+  "javascript.suggest.completeJSDocs": true,
+  "javascript.suggest.enabled": true,
+  "javascript.suggest.includeAutomaticOptionalChainCompletions": true,
+  "javascript.suggest.includeCompletionsForImportStatements": true,
+  "javascript.suggest.jsdoc.generateReturns": true,
+  "javascript.suggest.names": true,
+  "javascript.suggest.paths": false, // ==: true // *: for Path Intellisense
+  "javascript.suggestionActions.enabled": true,
+  "javascript.updateImportsOnFileMove.enabled": "always",
+  "javascript.validate.enable": true,
+  "typescript.autoClosingTags": true,
+  "typescript.check.npmIsInstalled": true,
+  "typescript.disableAutomaticTypeAcquisition": false,
+  "typescript.enablePromptUseWorkspaceTsdk": true,
+  "typescript.experimental.expandableHover": true, // ==: false // *:
+  "typescript.format.enable": false, // ==: true // *:
+  // "typescript.format.indentSwitchCase": true,
+  // "typescript.format.insertSpaceAfterCommaDelimiter": true,
+  // "typescript.format.insertSpaceAfterConstructor": false,
+  // "typescript.format.insertSpaceAfterFunctionKeywordForAnonymousFunctions": true,
+  // "typescript.format.insertSpaceAfterKeywordsInControlFlowStatements": true,
+  // "typescript.format.insertSpaceAfterOpeningAndBeforeClosingEmptyBraces": true,
+  // "typescript.format.insertSpaceAfterOpeningAndBeforeClosingJsxExpressionBraces": false,
+  // "typescript.format.insertSpaceAfterOpeningAndBeforeClosingNonemptyBraces": true,
+  // "typescript.format.insertSpaceAfterOpeningAndBeforeClosingNonemptyBrackets": false,
+  // "typescript.format.insertSpaceAfterOpeningAndBeforeClosingNonemptyParenthesis": false,
+  // "typescript.format.insertSpaceAfterOpeningAndBeforeClosingTemplateStringBraces": false,
+  // "typescript.format.insertSpaceAfterSemicolonInForStatements": true,
+  // "typescript.format.insertSpaceAfterTypeAssertion": false,
+  // "typescript.format.insertSpaceBeforeAndAfterBinaryOperators": true,
+  // "typescript.format.insertSpaceBeforeFunctionParenthesis": false,
+  // "typescript.format.placeOpenBraceOnNewLineForControlBlocks": false,
+  // "typescript.format.placeOpenBraceOnNewLineForFunctions": false,
+  // "typescript.format.semicolons": "ignore",
+  "typescript.implementationsCodeLens.enabled": true,
+  "typescript.implementationsCodeLens.showOnInterfaceMethods": true, // ==: false // *:
+  "typescript.inlayHints.enumMemberValues.enabled": true,
+  "typescript.inlayHints.functionLikeReturnTypes.enabled": false,
+  "typescript.inlayHints.parameterNames.enabled": "literals", // ==: "none" // *:
+  "typescript.inlayHints.parameterNames.suppressWhenArgumentMatchesName": true,
+  "typescript.inlayHints.parameterTypes.enabled": false,
+  "typescript.inlayHints.propertyDeclarationTypes.enabled": false,
+  "typescript.inlayHints.variableTypes.enabled": false,
+  "typescript.inlayHints.variableTypes.suppressWhenTypeMatchesName": true,
+  "typescript.locale": "en", // ==: "auto" // *:
+  "typescript.npm": "", // ==: ""
+  "typescript.preferences.autoImportFileExcludePatterns": [], // ==: []
+  "typescript.preferences.autoImportSpecifierExcludeRegexes": [], // ==: []
+  "typescript.preferences.importModuleSpecifier": "non-relative",
+  "typescript.preferences.importModuleSpecifierEnding": "auto",
+  "typescript.preferences.includePackageJsonAutoImports": "auto",
+  "typescript.preferences.jsxAttributeCompletionStyle": "auto",
+  "typescript.preferences.organizeImports": {}, // ==: {}
+  "typescript.preferences.preferTypeOnlyAutoImports": true, // ==: false // *:
+  "typescript.preferences.quoteStyle": "auto",
+  "typescript.preferences.renameMatchingJsxTags": true,
+  "typescript.preferences.useAliasesForRenames": false,
+  "typescript.preferGoToSourceDefinition": true, // ==: false // *:
+  "typescript.referencesCodeLens.enabled": false,
+  "typescript.referencesCodeLens.showOnAllFunctions": false,
+  "typescript.reportStyleChecksAsWarnings": true,
+  "typescript.suggest.autoImports": true, // ==: true
+  "typescript.suggest.classMemberSnippets.enabled": true,
+  "typescript.suggest.completeFunctionCalls": true,
+  "typescript.suggest.completeJSDocs": true,
+  "typescript.suggest.enabled": true, // ==: true
+  "typescript.suggest.includeAutomaticOptionalChainCompletions": true,
+  "typescript.suggest.includeCompletionsForImportStatements": true,
+  "typescript.suggest.jsdoc.generateReturns": true,
+  "typescript.suggest.objectLiteralMethodSnippets.enabled": true,
+  "typescript.suggest.paths": false, // ==: true // *: for Path Intellisense
+  "typescript.suggestionActions.enabled": true, // ==: true
+  "typescript.surveys.enabled": true, // ==: true
+  "typescript.tsc.autoDetect": "on", // ==: "on"
+  "typescript.tsdk": "", // ==: ""
+  "typescript.tsserver.enableTracing": false, // ==: false // NOTE: might cause too large log files
+  "typescript.tsserver.enableRegionDiagnostics": true, // ==: true
+  "typescript.tsserver.nodePath": "", // ==: "" // *:
+  "typescript.tsserver.pluginPaths": [], // ==: []
+  "typescript.tsserver.experimental.enableProjectDiagnostics": false, // ==: false
+  "typescript.tsserver.log": "off", // ==: "off"
+  "typescript.tsserver.maxTsServerMemory": 8192, // ==: 3072 // *:
+  "typescript.tsserver.useSyntaxServer": "auto", // ==: "auto"
+  "typescript.tsserver.watchOptions": {
+    "fallbackPolling": "dynamicPriorityPolling",
+    "synchronousWatchDirectory": true,
+    "watchDirectory": "useFsEvents", // ==: "useFsEvents",
+    "watchFile": "useFsEvents" // ==: "useFsEvents"
+  },
+  "typescript.tsserver.web.projectWideIntellisense.enabled": true, // ==: true
+  "typescript.tsserver.web.projectWideIntellisense.suppressSemanticErrors": false, // ==: false
+  "typescript.tsserver.web.typeAcquisition.enabled": true, // ==: true
+  "typescript.updateImportsOnFileMove.enabled": "prompt", // ==: "prompt"
+  "typescript.updateImportsOnPaste.enabled": true, // ==: true
+  "typescript.validate.enable": true, // ==: true
+  "typescript.workspaceSymbols.excludeLibrarySymbols": true, // ==: true
+  "typescript.workspaceSymbols.scope": "allOpenProjects", // ==: "allOpenProjects"
+  "window.title": "${activeEditorMedium}", // ==: "${activeEditorShort}${separator}${rootName}${separator}${profileName}", // *:
+  "workbench.panel.showLabels": false,
+  "redhat.telemetry.enabled": true,
+  "diffEditor.experimental.showMoves": true,
+  "workbench.colorCustomizations": {
+    "statusBar.debuggingBackground": "#333333",
+    "statusBar.noFolderBackground": "#333333",
+    "tab.activeBorderTop": "#008080",
+    "tab.activeModifiedBorder": "#22a2a2",
+    "tab.unfocusedActiveBorderTop": "#333333",
+    // "tab.activeBorder": "#1976d2",
+    // "tab.activeBorder": "#008080",
+    // "statusBar.background": "#1976d2",
+    "statusBar.foreground": "#ffffff"
+  },
+  "git.openRepositoryInParentFolders": "never",
+
+  // Exclusions
+  "search.exclude": {
+    "**/.env.vault": true,
+    "**/*.code-search": true,
+    "**/bower_components": true,
+    "**/coverage": true,
+    "**/dist": true,
+    "**/node_modules": true,
+    "**/package-lock.json": true,
+    "**/pnpm-lock.yaml": true,
+    "**/yarn.lock": true,
+
+    // CUSTOM:
+    "**/*.pgerd": true,
+    "**/*.sql": true
+  },
+  "editor.inlineSuggest.syntaxHighlightingEnabled": true,
+  "search.searchEditor.focusResultsOnSearch": true,
+  "explorer.autoReveal": false,
+  "explorer.fileNesting.enabled": true,
+  "problems.showCurrentInStatus": true,
+  "problems.defaultViewMode": "table",
+  "workbench.colorTheme": "One Dark Pro Mix",
+  "editor.tokenColorCustomizations": {
+    "[*Light*]": {
+      "textMateRules": [
+        {
+          "scope": "ref.matchtext",
+          "settings": {
+            "foreground": "#000"
+          }
+        }
+      ]
+    },
+    "[*Dark*]": {
+      "textMateRules": [
+        {
+          "scope": "ref.matchtext",
+          "settings": {
+            "foreground": "#fff"
+          }
+        }
+      ]
+    },
+    "textMateRules": []
+  },
+  "dotenv.enableAutocloaking": false,
+  "workbench.productIconTheme": "el-vsc-v1-icons",
+  "diffEditor.hideUnchangedRegions.enabled": true
+}
