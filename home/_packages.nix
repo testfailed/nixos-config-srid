@@ -34,12 +34,15 @@
     btop
     cheat
     cht-sh
+    coreutils-prefixed
     delta
+    diffutils
     difftastic
     du-dust
     dua
     eza
     fd
+    findutils
     hexyl
     hwatch
     hyperfine
@@ -87,7 +90,8 @@
     # android-studio-full
 
     # Node.js
-    nodejs
+    # nodejs
+    nodejs_22
 
     # nodePackages.lerna # NOTE: build error
     # nodePackages.neovim
@@ -102,19 +106,20 @@
     # nodePackages.yalc
     # nodePackages.yarn
     # patch-package
-    nodePackages."@prisma/language-server"
-    nodePackages.cspell
-    nodePackages.eslint
-    nodePackages.graphql-cli
-    nodePackages.node-gyp
-    nodePackages.npm
-    nodePackages.pm2
+
+    # nodePackages."@prisma/language-server"
+    # nodePackages.cspell
+    # nodePackages.eslint
+    # nodePackages.graphql-cli
+    # nodePackages.node-gyp
+    # nodePackages.npm
+    # nodePackages.pm2
     nodePackages.pnpm
     nodePackages.prisma
 
-    dotenv-cli
-    dotenvx
-    nodePackages.dotenv-vault
+    # dotenv-cli
+    # dotenvx
+    # nodePackages.dotenv-vault
 
     # Rust
     # TODO: setup with fenix

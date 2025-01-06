@@ -105,7 +105,8 @@
     python311Packages.virtualenv # globally install virtualenv
 
     # Node.js development tools
-    nodejs
+    # nodejs
+    nodejs_22
     # nodePackages.lerna # NOTE: build error
     nodePackages.cspell
     nodePackages.dotenv-cli

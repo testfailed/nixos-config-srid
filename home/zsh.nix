@@ -861,7 +861,7 @@
       alias pnx=pnpx
 
       # Use difftastic, syntax-aware diffing
-      alias diff=difft
+      # alias diff=difft
 
       # Always color ls and group directories
       alias ls='ls --color=auto'
