@@ -74,7 +74,7 @@
   "debug.internalConsoleOptions": "openOnFirstSessionStart",
   "debug.javascript.autoAttachFilter": "disabled",
   "debug.saveBeforeStart": "nonUntitledEditorsInActiveGroup", // ==: "allEditorsInActiveGroup" // *:
-  "diffEditor.codeLens": false, // ==: false
+  "diffEditor.codeLens": true, // ==: false // *:
   "diffEditor.ignoreTrimWhitespace": true, // ==: true
   "diffEditor.renderIndicators": false, // ==: true
   "diffEditor.renderSideBySide": false, // ==: true
@@ -170,10 +170,11 @@
   "editor.minimap.showSlider": "always", // ==: "mouseover" // *:
   "editor.minimap.side": "right", // ==: "right"
   "editor.minimap.size": "proportional", // ==: "proportional"
-  "editor.mouseWheelScrollSensitivity": 2, // ==: 1 // *:
-  "editor.parameterHints.enabled": true,
-  "editor.quickSuggestions": { "other": "off", "comments": "off", "strings": "off" }, // ==: { "other": "on", "comments": "off", "strings": "off" } // *:
-  "editor.quickSuggestionsDelay": 1500, // ==: 10 // *:
+  "editor.mouseWheelScrollSensitivity": 1.2, // ==: 1 // *:
+  "editor.parameterHints.cycle": true, // ==: true
+  "editor.parameterHints.enabled": true, // ==: true
+  "editor.quickSuggestions": { "other": "on", "comments": "off", "strings": "off" }, // ==: { "other": "on", "comments": "off", "strings": "off" }
+  "editor.quickSuggestionsDelay": 10, // ==: 10
   "editor.renderControlCharacters": true, // ==: true
   "editor.renderFinalNewline": "on", // ==: "on"
   "editor.renderLineHighlight": "all", // ==: "line" // *:
@@ -196,6 +197,7 @@
   "editor.suggest.filterGraceful": true, // ==: true
   "editor.suggest.insertMode": "insert", // ==: "insert"
   "editor.suggest.localityBonus": false, // ==: false
+  "editor.suggest.matchOnWordStartOnly": true, // ==: true
   "editor.suggest.preview": false, // ==: false
   "editor.suggest.selectionMode": "always", // ==: "always"
   "editor.suggest.shareSuggestSelections": true, // ==: false // *:
@@ -216,7 +218,7 @@
   "editor.suggest.showInlineDetails": true,
   "editor.suggest.showInterfaces": true,
   "editor.suggest.showIssues": true,
-  "editor.suggest.showKeywords": false, // ==: true // *:
+  "editor.suggest.showKeywords": true, // ==: true
   "editor.suggest.showMethods": true,
   "editor.suggest.showModules": true,
   "editor.suggest.showOperators": true,
@@ -231,12 +233,13 @@
   "editor.suggest.showValues": true,
   "editor.suggest.showVariables": true,
   "editor.suggest.showWords": false, // ==: true // *:
-  "editor.suggestFontSize": 0,
-  "editor.suggestLineHeight": 0,
-  "editor.suggestOnTriggerCharacters": true,
+  "editor.suggest.snippetsPreventQuickSuggestions": false, // ==: false
+  "editor.suggestFontSize": 0, // ==: 0
+  "editor.suggestLineHeight": 0, // ==: 0
+  "editor.suggestOnTriggerCharacters": true, // ==: true
   "editor.suggestSelection": "recentlyUsedByPrefix", // ==: "first"
   "editor.tabCompletion": "on", // ==: "off" // *:
-  "editor.tabFocusMode": false,
+  "editor.tabFocusMode": false, // ==: false
   "editor.tabSize": 2, // *:
   "editor.unicodeHighlight.allowedCharacters": { "-": true }, // ==: {} // *:
   "editor.unicodeHighlight.allowedLocales": { "_os": true, "_vscode": true }, // ==: { "_os": true, "_vscode": true }
@@ -256,34 +259,34 @@
   "emmet.showExpandedAbbreviation": "inMarkupAndStylesheetFilesOnly",
   "emmet.showSuggestionsAsSnippets": true,
   "emmet.triggerExpansionOnTab": true,
-  "explorer.autoReveal": true,
-  "explorer.compactFolders": true,
-  "explorer.confirmDelete": false, // *:
-  "explorer.confirmDragAndDrop": false,
+  "explorer.autoReveal": false, // ==: true // *:
+  "explorer.compactFolders": true, // ==: true
+  "explorer.confirmDelete": false, // ==: true // *:
+  "explorer.confirmDragAndDrop": true, // ==: true
   "explorer.copyRelativePathSeparator": "auto", // ==: "auto"
   "explorer.decorations.badges": true,
   "explorer.decorations.colors": true,
   "explorer.enableDragAndDrop": true,
   "explorer.expandSingleFolderWorkspaces": true,
-  "explorer.incrementalNaming": "smart", // *:
+  "explorer.incrementalNaming": "smart", // ==: "simple" // *:
   "explorer.openEditors.sortOrder": "editorOrder",
   "explorer.openEditors.visible": 8, // ==: 9 // *:
-  "explorer.sortOrder": "default",
-  "explorer.sortOrderLexicographicOptions": "unicode", // *:
+  "explorer.sortOrder": "default", // ==: "default"
+  "explorer.sortOrderLexicographicOptions": "unicode", // ==: "default" // *:
   "extensions.experimental.affinity": { "asvetliakov.vscode-neovim": 1 },
   "files.associations": {
     "*.json": "jsonc",
     ".env*": "dotenv"
   },
-  "files.autoGuessEncoding": true, // *:
+  "files.autoGuessEncoding": true, // ==: false // *:
   "files.autoSave": "off", // ==: "off"
   "files.autoSaveDelay": 1000,
   "files.defaultLanguage": "",
-  "files.enableTrash": true,
-  "files.encoding": "utf8",
-  "files.eol": "\n", // *:
+  "files.enableTrash": true, // ==: true
+  "files.encoding": "utf8", // ==: "utf8"
+  "files.eol": "auto", // ==: "auto"
   "files.hotExit": "onExitAndWindowClose", // *:
-  "files.insertFinalNewline": false,
+  "files.insertFinalNewline": false, // ==: false
   "files.participants.timeout": 60000,
   "files.readonlyExclude": {},
   "files.readonlyFromPermissions": false,
@@ -292,8 +295,8 @@
   "files.restoreUndoStack": true,
   "files.saveConflictResolution": "askUser",
   "files.simpleDialog.enable": true, // *:
-  "files.trimFinalNewlines": false,
-  "files.trimTrailingWhitespace": false,
+  "files.trimFinalNewlines": true, // ==: false // *:
+  "files.trimTrailingWhitespace": true, // ==: false // *:
   "files.watcherInclude": [],
   "git.allowForcePush": true, // ==: false // *:
   "git.allowNoVerifyCommit": true, // ==: false // *:
@@ -1357,6 +1360,11 @@
     // { "before": ["<Leader>", "K"], "after": ["<Leader>", "<Leader>", "g", "e"] },
   ],
   "vim.visualstar": true,
+  "vscode_custom_css.imports": [
+    "file:///Users/ssm/.vscode-custom.css",
+    "file:///Users/ssm/.vscode-custom.js"
+  ], // ==: [] // *:
+  "vscode_custom_css.statusbar": true, // ==: true
   "vscode-neovim.logLevel": "warn",
   "vscode-neovim.logOutputToConsole": true,
   "vscode-neovim.mouseSelectionStartVisualMode": true,
@@ -1664,6 +1672,7 @@
     "editor.minimap.side",
     "editor.minimap.size",
     "editor.mouseWheelScrollSensitivity",
+    "editor.parameterHints.cycle",
     "editor.parameterHints.enabled",
     "editor.quickSuggestions",
     "editor.quickSuggestionsDelay",
@@ -1689,6 +1698,7 @@
     "editor.suggest.filterGraceful",
     "editor.suggest.insertMode",
     "editor.suggest.localityBonus",
+    "editor.suggest.matchOnWordStartOnly",
     "editor.suggest.preview",
     "editor.suggest.selectionMode",
     "editor.suggest.shareSuggestSelections",
@@ -1697,7 +1707,12 @@
     "editor.suggest.showSnippets",
     "editor.suggest.showWords",
     "editor.suggest.snippetsPreventQuickSuggestions",
+    "editor.suggestFontSize",
+    "editor.suggestLineHeight",
+    "editor.suggestOnTriggerCharacters",
+    "editor.suggestSelection",
     "editor.tabCompletion",
+    "editor.tabFocusMode",
     "editor.tabSize",
     "editor.unicodeHighlight.allowedCharacters",
     "editor.unicodeHighlight.allowedLocales",
@@ -1711,8 +1726,22 @@
     "editor.wordWrap",
     "editor.wordWrapColumn",
     "emmet.showSuggestionsAsSnippets",
+    "explorer.autoReveal",
+    "explorer.compactFolders",
+    "explorer.confirmDelete",
+    "explorer.confirmDragAndDrop",
+    "explorer.copyRelativePathSeparator",
+    "explorer.incrementalNaming",
+    "explorer.sortOrder",
+    "explorer.sortOrderLexicographicOptions",
     "files.associations",
+    "files.autoGuessEncoding",
     "files.autoSave",
+    "files.enableTrash",
+    "files.encoding",
+    "files.eol",
+    "files.trimFinalNewlines",
+    "files.trimTrailingWhitespace",
     "git.detectSubmodules",
     "git.detectSubmodulesLimit",
     "git.enableCommitSigning",
@@ -2117,7 +2146,9 @@
     "vim.vimrc.enable",
     "vim.visualModeKeyBindings",
     "vim.visualModeKeyBindingsNonRecursive",
-    "vim.visualstar"
+    "vim.visualstar",
+    "vscode_custom_css.imports",
+    "vscode_custom_css.statusbar"
   ],
 
   // #endregion non-extension-settings-too-long

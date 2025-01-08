@@ -243,8 +243,8 @@
   // "typescript.format.placeOpenBraceOnNewLineForControlBlocks": false,
   // "typescript.format.placeOpenBraceOnNewLineForFunctions": false,
   // "typescript.format.semicolons": "ignore",
-  "typescript.implementationsCodeLens.enabled": true,
-  "typescript.implementationsCodeLens.showOnInterfaceMethods": true, // ==: false // *:
+  "typescript.implementationsCodeLens.enabled": false, // ==: false
+  "typescript.implementationsCodeLens.showOnInterfaceMethods": false, // ==: false
   "typescript.inlayHints.enumMemberValues.enabled": true,
   "typescript.inlayHints.functionLikeReturnTypes.enabled": false,
   "typescript.inlayHints.parameterNames.enabled": "literals", // ==: "none" // *:
