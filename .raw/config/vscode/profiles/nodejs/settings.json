@@ -55,11 +55,27 @@
   "debug.gutterMiddleClickAction": "conditionalBreakpoint",
   "debug.showBreakpointsInOverviewRuler": true,
   "editor.accessibilitySupport": "off",
-  "eslint.format.enable": true, // *:
-  "eslint.lintTask.enable": true, // *:
+  "eslint.codeAction.disableRuleComment": {
+    "enable": true,
+    "location": "separateLine",
+    "commentStyle": "line"
+  }, // _:
+  "eslint.codeAction.showDocumentation": { "enable": true }, // _:
+  "eslint.codeActionsOnSave.mode": "all", // ==: "all"
+  "eslint.codeActionsOnSave.rules": null, // ==: null
+  "eslint.enable": true, // ==: true
+  "eslint.execArgv": null, // ==: null
+  "eslint.format.enable": true, // ==: false // *:
+  "eslint.ignoreUntitled": false, // ==: false
+  "eslint.lintTask.enable": true, // ==: false // *:
   "eslint.lintTask.options": ".",
-  "eslint.options": {},
+  "eslint.nodeEnv": null, // ==: null
+  "eslint.nodePath": null, // ==: null
+  "eslint.notebooks.rules.customizations": [], // ==: []
+  "eslint.onIgnoredFiles": "off", // ==: "off"
+  "eslint.options": {}, // ==: {}
   "eslint.probe": [
+    "astro",
     "css",
     "html",
     "javascript",
@@ -67,18 +83,22 @@
     "json",
     "jsonc",
     "markdown",
+    "mdx",
     "typescript",
     "typescriptreact",
     "vue"
-  ], // *:
-  "eslint.quiet": false,
-  "eslint.runtime": null,
+  ], // _:
+  "eslint.problems.shortenToSingleLine": true, // ==: false // *:
+  "eslint.quiet": false, // ==: false
+  "eslint.rules.customizations": [], // ==: []
+  "eslint.run": "onType", // ==: "onType"
+  "eslint.runtime": null, // ==: null
+  "eslint.timeBudget.onFixes": { "warn": 3000, "error": 6000 }, // ==: { "warn": 3000, "error": 6000 }
+  "eslint.timeBudget.onValidation": { "warn": 4000, "error": 8000 }, // ==: { "warn": 4000, "error": 8000 }
   "eslint.trace.server": "messages", // ==: "off" // *:
-  "eslint.workingDirectories": [
-    {
-      "mode": "auto"
-    }
-  ],
+  "eslint.useESLintClass": true, // ==: false // *:
+  "eslint.validate": [], // ==: []
+  "eslint.workingDirectories": [{ "mode": "auto" }], // ==: [] // *:
   "explorer.confirmDelete": false,
   "git.autofetch": true,
   // "jest.autoRevealOutput": "on-run",
@@ -253,8 +273,8 @@
   "typescript.inlayHints.propertyDeclarationTypes.enabled": false,
   "typescript.inlayHints.variableTypes.enabled": false,
   "typescript.inlayHints.variableTypes.suppressWhenTypeMatchesName": true,
-  "typescript.locale": "en", // ==: "auto" // *:
-  "typescript.npm": "", // ==: ""
+  "typescript.locale": "en",
+  "typescript.npm": "",
   "typescript.preferences.autoImportFileExcludePatterns": [], // ==: []
   "typescript.preferences.autoImportSpecifierExcludeRegexes": [], // ==: []
   "typescript.preferences.importModuleSpecifier": "non-relative",
@@ -284,10 +304,9 @@
   "typescript.surveys.enabled": true, // ==: true
   "typescript.tsc.autoDetect": "on", // ==: "on"
   "typescript.tsdk": "", // ==: ""
+  "typescript.tsserver.enableRegionDiagnostics": true,
+  "typescript.tsserver.nodePath": "",
   "typescript.tsserver.enableTracing": false, // ==: false // NOTE: might cause too large log files
-  "typescript.tsserver.enableRegionDiagnostics": true, // ==: true
-  "typescript.tsserver.nodePath": "", // ==: "" // *:
-  "typescript.tsserver.pluginPaths": [], // ==: []
   "typescript.tsserver.experimental.enableProjectDiagnostics": false, // ==: false
   "typescript.tsserver.log": "off", // ==: "off"
   "typescript.tsserver.maxTsServerMemory": 8192, // ==: 3072 // *:
@@ -371,5 +390,8 @@
   },
   "dotenv.enableAutocloaking": false,
   "workbench.productIconTheme": "el-vsc-v1-icons",
-  "diffEditor.hideUnchangedRegions.enabled": true
+  "diffEditor.hideUnchangedRegions.enabled": true,
+  "keyboard.layout": "com.apple.inputmethod.Korean.2SetKorean",
+  "eslint.debug": true,
+  "eslint.useFlatConfig": true
 }

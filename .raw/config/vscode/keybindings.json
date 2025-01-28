@@ -96,10 +96,6 @@
     "when": "terminalFocus && terminalProcessSupported"
   },
   {
-    "command": "toggleVim",
-    "key": "shift+alt+v"
-  },
-  {
     "command": "workbench.action.debug.stop",
     "key": "ctrl+shift+alt+f5",
     "when": "inDebugMode"
@@ -134,10 +130,6 @@
   {
     "command": "-workbench.action.navigateForward",
     "key": "ctrl+shift+-"
-  },
-  {
-    "command": "extension.conventionalCommits",
-    "key": "ctrl+shift+alt+c"
   },
   {
     "command": "workbench.action.splitEditorOrthogonal",
@@ -1879,9 +1871,9 @@
     "when": "terminal.active"
   },
   {
-    "key": "shift+alt+s",
+    "key": "ctrl+shift+alt+c",
     "command": "toggleFindCaseSensitive",
-    "when": "editorFocus && findInputFocussed"
+    "when": "editorFocus && findInputFocussed || editorFocus && replaceInputFocussed"
   },
   {
     "key": "alt+cmd+c",
@@ -1889,29 +1881,14 @@
     "when": "editorFocus"
   },
   {
-    "key": "alt+cmd+l",
+    "key": "ctrl+shift+alt+v",
     "command": "toggleFindInSelection",
-    "when": "editorFocus && findInputFocussed"
+    "when": "editorFocus"
   },
   {
     "key": "alt+cmd+l",
     "command": "-toggleFindInSelection",
     "when": "editorFocus"
-  },
-  {
-    "key": "alt+cmd+r",
-    "command": "toggleFindRegex",
-    "when": "editorFocus && findInputFocussed"
-  },
-  {
-    "key": "alt+cmd+r",
-    "command": "-toggleFindRegex",
-    "when": "editorFocus"
-  },
-  {
-    "key": "alt+cmd+w",
-    "command": "toggleFindWholeWord",
-    "when": "editorFocus && findInputFocussed"
   },
   {
     "key": "alt+cmd+w",
@@ -2212,10 +2189,6 @@
     "command": "workbench.action.files.saveFiles"
   },
   {
-    "key": "shift+alt+w",
-    "command": "editor.action.toggleWordWrap"
-  },
-  {
     "key": "ctrl+alt+n",
     "command": "chatEditor.action.navigateNext",
     "when": "chat.hasEditorModifications && editorFocus"
@@ -2316,10 +2289,6 @@
     "when": "editorTextFocus"
   },
   {
-    "key": "alt+z",
-    "command": "-editor.action.toggleWordWrap"
-  },
-  {
     "key": "alt+z alt+x",
     "command": "git.revertSelectedRanges",
     "when": "isInDiffEditor && !operationInProgress"
@@ -2373,67 +2342,62 @@
     "when": "inQuickOpen && inRecentFilesPicker"
   },
   {
-    "key": "shift+alt+s",
+    "key": "ctrl+shift+alt+c",
     "command": "toggleSearchEditorCaseSensitive",
     "when": "inSearchEditor && searchInputBoxFocus"
   },
   {
-    "key": "shift+alt+s",
+    "key": "ctrl+shift+alt+c",
     "command": "workbench.action.terminal.toggleFindCaseSensitive",
     "when": "terminalFindVisible && terminalHasBeenCreated || terminalFindVisible && terminalProcessSupported"
   },
   {
-    "key": "shift+alt+x",
-    "command": "toggleFindRegex",
-    "when": "editorFocus && findInputFocussed"
-  },
-  {
-    "key": "shift+alt+x",
+    "key": "ctrl+shift+alt+x",
     "command": "toggleSearchRegex",
     "when": "searchViewletFocus"
   },
   {
-    "key": "shift+alt+x",
+    "key": "ctrl+shift+alt+x",
     "command": "workbench.action.terminal.toggleFindRegex",
     "when": "terminalFindVisible && terminalHasBeenCreated || terminalFindVisible && terminalProcessSupported"
   },
   {
-    "key": "shift+alt+x",
+    "key": "ctrl+shift+alt+x",
     "command": "toggleSearchEditorRegex",
     "when": "inSearchEditor && searchInputBoxFocus"
   },
   {
-    "key": "shift+alt+a",
+    "key": "ctrl+shift+alt+a",
     "command": "toggleSearchEditorWholeWord",
     "when": "inSearchEditor && searchInputBoxFocus"
   },
   {
-    "key": "shift+alt+a",
+    "key": "ctrl+shift+alt+a",
     "command": "workbench.action.terminal.toggleFindWholeWord",
     "when": "terminalFindVisible && terminalHasBeenCreated || terminalFindVisible && terminalProcessSupported"
   },
   {
-    "key": "shift+alt+a",
+    "key": "ctrl+shift+alt+a",
     "command": "toggleFindWholeWord",
-    "when": "editorFocus && findInputFocussed"
+    "when": "editorFocus && (findInputFocussed || replaceInputFocussed)"
   },
   {
-    "key": "shift+alt+a",
+    "key": "ctrl+shift+alt+a",
     "command": "toggleSearchWholeWord",
     "when": "searchViewletFocus"
   },
   {
-    "key": "shift+alt+s",
+    "key": "ctrl+shift+alt+c",
     "command": "toggleSearchCaseSensitive",
     "when": "searchViewletFocus && !fileMatchOrFolderMatchFocus"
   },
   {
-    "key": "shift+alt+z",
+    "key": "ctrl+shift+alt+z",
     "command": "togglePreserveCase",
     "when": "editorFocus"
   },
   {
-    "key": "shift+alt+z",
+    "key": "ctrl+shift+alt+z",
     "command": "toggleSearchPreserveCase",
     "when": "searchViewletFocus"
   },
@@ -2458,5 +2422,31 @@
     "key": "shift+cmd+d",
     "command": "-workbench.view.debug",
     "when": "viewContainer.workbench.view.debug.enabled"
+  },
+  {
+    "key": "ctrl+shift+alt+x",
+    "command": "toggleFindRegex",
+    "when": "editorFocus && (findInputFocussed || replaceInputFocussed)"
+  },
+  {
+    "key": "alt+cmd+r",
+    "command": "-toggleFindRegex",
+    "when": "editorFocus"
+  },
+  {
+    "key": "ctrl+alt+w",
+    "command": "editor.action.toggleWordWrap"
+  },
+  {
+    "key": "alt+z",
+    "command": "-editor.action.toggleWordWrap"
+  },
+  {
+    "key": "shift+cmd+s",
+    "command": "-workbench.action.files.saveAs"
+  },
+  {
+    "key": "shift+cmd+s",
+    "command": "workbench.action.output.toggleOutput"
   }
 ]

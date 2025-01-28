@@ -1,9 +1,7 @@
 {
   //
-  // TYPE: Language-specific Settings
+  // TYPE: MARK: Language-specific Settings
   //
-
-  // MARK: #region language-specific-settings
 
   "[html]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
@@ -54,12 +52,8 @@
     "editor.codeLens": true // ==: true
   },
 
-  // #endregion language-specific-settings
-
-  // MARK: #region non-extension-settings
-
   //
-  // TYPE: Non-Extension Settings
+  // TYPE: MARK: Non-Extension Settings
   //
 
   "accessibility.signals.terminalBell": {
@@ -67,10 +61,19 @@
     "announcement": "auto"
   },
   "accessibility.accessibleView.closeOnKeyPress": true,
+
+  // TYPE: MARK: b*
+
   "breadcrumbs.filePath": "on", // ==: "on"
   "breadcrumbs.icons": true, // ==: true
+
+  // TYPE: MARK: c*
+
   "chat.editing.alwaysSaveWithGeneratedChanges": true, // ==: true
   "comments.openView": "file",
+
+  // TYPE: MARK: d*
+
   "debug.internalConsoleOptions": "openOnFirstSessionStart",
   "debug.javascript.autoAttachFilter": "disabled",
   "debug.saveBeforeStart": "nonUntitledEditorsInActiveGroup", // ==: "allEditorsInActiveGroup" // *:
@@ -79,6 +82,9 @@
   "diffEditor.renderIndicators": false, // ==: true
   "diffEditor.renderSideBySide": false, // ==: true
   "diffEditor.wordWrap": "inherit", // ==: "inherit"
+
+  // TYPE: MARK: e*
+
   "editor.acceptSuggestionOnCommitCharacter": false, // ==: true // *:
   "editor.acceptSuggestionOnEnter": "off", // ==: "on" // *:
   "editor.accessibilityPageSize": 10,
@@ -158,13 +164,14 @@
   "editor.inlineSuggest.suppressSuggestions": true, // ==: false // *:
   "editor.lineNumbers": "on", // ==: "on"
   "editor.linkedEditing": true, // ==: false // *:
+  "editor.matchBrackets": "always", // ==: "always"
   "editor.minimap.autohide": false, // ==: false
   "editor.minimap.enabled": true, // ==: true
   "editor.minimap.maxColumn": 120, // ==: 120
   "editor.minimap.renderCharacters": true, // ==: true
   "editor.minimap.scale": 1, // ==: 1
   "editor.minimap.sectionHeaderFontSize": 9, // ==: 9
-  "editor.minimap.sectionHeaderLetterSpacing": 1, // ==: 1
+  "editor.minimap.sectionHeaderLetterSpacing": 0.5, // ==: 1 // *:
   "editor.minimap.showMarkSectionHeaders": true, // ==: true
   "editor.minimap.showRegionSectionHeaders": true, // ==: true
   "editor.minimap.showSlider": "always", // ==: "mouseover" // *:
@@ -274,8 +281,15 @@
   "explorer.sortOrder": "default", // ==: "default"
   "explorer.sortOrderLexicographicOptions": "unicode", // ==: "default" // *:
   "extensions.experimental.affinity": { "asvetliakov.vscode-neovim": 1 },
+
+  // TYPE: MARK: f*
+
   "files.associations": {
-    "*.json": "jsonc",
+    ".prettierrc": "jsonc",
+    ".syncpackrc": "jsonc",
+    "tsconfig.json": "jsonc",
+    "turbo.json": "jsonc",
+    "**/packages/config-typescript/*.json": "jsonc",
     ".env*": "dotenv"
   },
   "files.autoGuessEncoding": true, // ==: false // *:
@@ -298,6 +312,9 @@
   "files.trimFinalNewlines": true, // ==: false // *:
   "files.trimTrailingWhitespace": true, // ==: false // *:
   "files.watcherInclude": [],
+
+  // TYPE: MARK: g*
+
   "git.allowForcePush": true, // ==: false // *:
   "git.allowNoVerifyCommit": true, // ==: false // *:
   "git.alwaysShowStagedChangesResourceGroup": false,
@@ -372,12 +389,39 @@
     "markdown": false,
     "scminput": false
   },
+
+  // TYPE: MARK: h*
+
+  // TYPE: MARK: i*
+
+  // TYPE: MARK: j*
+
+  // TYPE: MARK: k*
+
+  // TYPE: MARK: l*
+
+  // TYPE: MARK: m*
+
+  // TYPE: MARK: n*
+
+  // TYPE: MARK: o*
+
+  // TYPE: MARK: p*
+
   "problems.autoReveal": true,
   "problems.decorations.enabled": true,
   "problems.defaultViewMode": "table", // ==: "tree" // *:
   "problems.showCurrentInStatus": true,
   "problems.sortOrder": "severity",
+
+  // TYPE: MARK: q*
+
+  // TYPE: MARK: r*
+
   "remote.SSH.remotePlatform": { "*.gitpod.io": "linux" },
+
+  // TYPE: MARK: s*
+
   "scm.alwaysShowActions": false,
   "scm.alwaysShowRepositories": false,
   "scm.countBadge": "all",
@@ -411,6 +455,9 @@
   "security.promptForLocalFileProtocolHandling": false, // ==: true // *:
   "security.promptForRemoteFileProtocolHandling": true,
   "security.workspace.trust.untrustedFiles": "open",
+
+  // TYPE: MARK: t*
+
   "task.problemMatchers.neverPrompt": { "shell": true },
   "terminal.integrated.allowChords": true, // ==: true
   "terminal.integrated.altClickMovesCursor": true, // ==: true
@@ -432,6 +479,13 @@
   "terminal.integrated.suggest.enabled": false, // ==: false
   "terminal.integrated.showExitAlert": false, // ==: true // *:
   "testing.defaultGutterClickAction": "contextMenu", // ==: "run" // *:
+
+  // TYPE: MARK: u*
+
+  // TYPE: MARK: v*
+
+  // TYPE: MARK: w*
+
   "window.commandCenter": true, // ==: false // *:
   "window.density.editorTabHeight": "compact", // ==: "default" // *:
   "window.newWindowDimensions": "maximized", // *:
@@ -443,6 +497,43 @@
   "workbench.colorCustomizations": {
     "editor.lineHighlightBackground": "#1073cf2d", // ==: "#ff0000" (set for Blockman) // *:
     "editor.lineHighlightBorder": "#9fced11f", // ==: "#ff0000" (set for Blockman) // *:
+
+    // "editorBracketHighlight.foreground1": "#5bb3b3",
+    // "editorBracketHighlight.foreground2": "#fac863",
+    // "editorBracketHighlight.foreground3": "#f99157",
+    // // "editorBracketHighlight.foreground4": "#ec5f67",
+    // "editorBracketHighlight.foreground4": "#4fb1bc",
+    // "editorBracketHighlight.foreground5": "#bb80b3",
+    // "editorBracketHighlight.foreground6": "#98C379",
+
+    // "editorBracketHighlight.foreground1": "#5caeef",
+    // "editorBracketHighlight.foreground2": "#dfb976",
+    // "editorBracketHighlight.foreground3": "#c172d9",
+    // "editorBracketHighlight.foreground4": "#4fb1bc",
+    // "editorBracketHighlight.foreground5": "#97c26c",
+    // "editorBracketHighlight.foreground6": "#abb2c0",
+    // "editorBracketHighlight.unexpectedBracket.foreground": "#db6165",
+
+    // "editorBracketHighlight.foreground1": "#00ffff",
+    // "editorBracketHighlight.foreground2": "#ffa500",
+    // "editorBracketHighlight.foreground3": "#00ff00",
+    // "editorBracketHighlight.foreground4": "#ff69b4",
+    // "editorBracketHighlight.foreground5": "#ffff00",
+    // "editorBracketHighlight.foreground6": "#9370db",
+    // "editorBracketHighlight.unexpectedBracket.foreground": "#ff0000",
+
+    "editorBracketHighlight.foreground1": "#56b6c2",
+    "editorBracketHighlight.foreground2": "#d19a66",
+    // "editorBracketHighlight.foreground3": "#98c379",
+    "editorBracketHighlight.foreground3": "#98d379",
+    // "editorBracketHighlight.foreground4": "#d05c76",
+    "editorBracketHighlight.foreground4": "#ff69b4",
+    "editorBracketHighlight.foreground5": "#61afef",
+    "editorBracketHighlight.foreground6": "#c678dd",
+    // "editorBracketHighlight.unexpectedBracket.foreground": "#be5046",
+
+    "editorBracketHighlight.unexpectedBracket.foreground": "#ff0000",
+
     "statusBar.background": "#333333",
     "statusBar.debuggingBackground": "#333333",
     "statusBar.noFolderBackground": "#333333",
@@ -514,18 +605,18 @@
   "workbench.editor.splitInGroupLayout": "vertical", // *:
   "workbench.editor.splitOnDragAndDrop": true,
   "workbench.editor.splitSizing": "distribute",
-  "workbench.editor.tabActionCloseVisibility": true,
-  "workbench.editor.tabActionLocation": "right",
-  "workbench.editor.tabActionUnpinVisibility": true,
-  "workbench.editor.tabSizing": "shrink", // *:
-  "workbench.editor.tabSizingFixedMaxWidth": 160,
-  "workbench.editor.tabSizingFixedMinWidth": 50,
-  "workbench.editor.titleScrollbarSizing": "default", // *:
-  "workbench.editor.untitled.labelFormat": "content",
+  "workbench.editor.tabActionCloseVisibility": true, // ==: true
+  "workbench.editor.tabActionLocation": "right", // ==: "right"
+  "workbench.editor.tabActionUnpinVisibility": true, // ==: true
+  "workbench.editor.tabSizing": "fit", // ==: "fit"
+  "workbench.editor.tabSizingFixedMaxWidth": 160, // ==: 160
+  "workbench.editor.tabSizingFixedMinWidth": 50, // ==: 50
+  "workbench.editor.titleScrollbarSizing": "default", // ==: "default"
+  "workbench.editor.untitled.labelFormat": "content", // ==: "content"
   "workbench.editor.wrapTabs": true, // ==: false // *:
-  "workbench.editorAssociations": {},
-  "workbench.editorLargeFileConfirmation": 1024,
-  "workbench.enableExperiments": true,
+  "workbench.editorAssociations": { "*.copilotmd": "vscode.markdown.preview.editor" }, // _:
+  "workbench.editorLargeFileConfirmation": 1024, // ==: 1024
+  "workbench.enableExperiments": true, // ==: true
   "workbench.experimental.cloudChanges.autoStore": "off", // ==: "off"
   "workbench.experimental.cloudChanges.partialMatches.enabled": false, // ==: false
   "workbench.experimental.share.enabled": true, // ==: false // *:
@@ -577,6 +668,13 @@
   "workbench.tree.stickyScrollMaxItemCount": 10, // ==: 7 // *:
   "workbench.trustedDomains.promptInTrustedWorkspace": false,
   "workbench.view.alwaysShowHeaderActions": false,
+
+  // TYPE: MARK: x*
+
+  // TYPE: MARK: y*
+
+  // TYPE: MARK: z*
+
   "zenMode.centerLayout": true, // ==: true
   "zenMode.fullScreen": true, // ==: true
   "zenMode.hideActivityBar": true, // ==: true
@@ -585,12 +683,8 @@
   "zenMode.restore": true, // ==: true
   "zenMode.showTabs": "multiple", // ==: "multiple"
 
-  // #endregion non-extension-settings
-
-  // MARK: #region extension-settings
-
   //
-  // TYPE: Extension Settings
+  // TYPE: MARK: Extension Settings
   //
 
   "better-comments.highlightPlainText": true,
@@ -610,6 +704,9 @@
   "bookmarks.sideBar.expanded": true, // ==: false // *:
   "bookmarks.useWorkaroundForFormatters": false, // ==: false
   "bookmarks.wrapNavigation": true, // ==: true
+
+  // TYPE: MARK: c*
+
   "codeQL.queryHistory.format": "%q on %d - %s, %r result count [%t]",
   "codeQL.resultsDisplay.pageSize": 200,
   "codeQL.runningQueries.cacheSize": 1024,
@@ -631,49 +728,82 @@
   "color-highlight.matchWords": true,
   "color-highlight.rgbWithNoFunctionLanguages": ["*"],
   "color-highlight.sass.includePaths": [],
+
+  // TYPE: MARK: cSpell.*
   "cSpell.advanced.feature.useReferenceProviderRemove": "", // ==: ""
   "cSpell.advanced.feature.useReferenceProviderWithRename": false, // ==: false
-  "cSpell.allowCompoundWords": true,
-  "cSpell.autoFormatConfigFile": false,
+  "cSpell.allowCompoundWords": true, // ==: false // *:
+  "cSpell.autoFormatConfigFile": false, // ==: false
   "cSpell.blockCheckingWhenAverageChunkSizeGreaterThan": 80, // ==: 80
   "cSpell.blockCheckingWhenLineLengthGreaterThan": 10000, // ==: 10000
-  "cSpell.blockCheckingWhenTextChunkSizeGreaterThan": 250, // *:
-  "cSpell.caseSensitive": false,
-  "cSpell.checkLimit": 250, // *:
-  "cSpell.checkOnlyEnabledFileTypes": true,
-  "cSpell.customDictionaries": {},
-  "cSpell.diagnosticLevel": "Hint", // *:
-  "cSpell.dictionaryDefinitions": [],
-  "cSpell.enabled": true,
-  "cSpell.enabledFileTypes": { "*": true, "markdown": true },
-  "cSpell.experimental.enableRegexpView": true, // *:
-  "cSpell.files": [],
-  "cSpell.fixSpellingWithRenameProvider": false, // *:
-  "cSpell.flagWords": ["hte"],
-  "cSpell.ignorePaths": ["*.dll", ".git", "node_modules", "vscode-extension"],
-  "cSpell.ignoreRegExpList": [],
-  "cSpell.ignoreWords": ["behaviour"],
-  "cSpell.import": [],
-  "cSpell.includeRegExpList": [],
+  "cSpell.blockCheckingWhenTextChunkSizeGreaterThan": 500, // ==: 500
+  "cSpell.caseSensitive": false, // ==: false
+  "cSpell.checkLimit": 500, // ==: 500
+  "cSpell.checkOnlyEnabledFileTypes": true, // ==: true
+  "cSpell.customDictionaries": {}, // ==: {}
+  "cSpell.diagnosticLevel": "Information", // ==: "Information"
+  "cSpell.dictionaryDefinitions": [], // ==: []
+  "cSpell.enabled": true, // ==: true
+  "cSpell.enabledFileTypes": { "*": true, "markdown": true }, // ==: { "*": true, "markdown": true }
+  "cSpell.experimental.enableRegexpView": true, // ==: false // *:
+  "cSpell.files": [], // ==: []
+  "cSpell.fixSpellingWithRenameProvider": false, // ==: true // *:
+  "cSpell.flagWords": [
+    "canceled: cancelled",
+    "canot: cannot, can't",
+    "hte: the, gte",
+    "incase: in case, encase"
+  ], // ==: [] // *:
+  // "cSpell.ignorePaths": ["*.dll", ".git", "node_modules", "vscode-extension"],
+  "cSpell.ignorePaths": [
+    ".git/{index,*refs,*HEAD}",
+    ".git/{info,lfs,logs,refs,objects}/**",
+    "*.cache.*",
+    "*.cache",
+    "*.dll",
+    "*.lock.*",
+    "*.lock",
+    "*.lockfile.*",
+    "*.lockfile",
+    "**/.cache/**",
+    "**/.next/**",
+    "**/.turbo/**",
+    "**/.vscode-insiders/**",
+    "**/.vscode/**",
+    "**/{log,logs}/**",
+    "**/build/**",
+    "**/dist/**",
+    "**/node_modules/**",
+    "**/vscode-extension/**",
+    "package-lock.json",
+    "pnpm-lock.yaml"
+  ], // *:
+  "cSpell.ignoreRegExpList": [], // ==: []
+  "cSpell.ignoreWords": ["behaviour", "colour", "referrers"], // ==: [] // *:
+  "cSpell.import": [], // ==: []
+  "cSpell.includeRegExpList": [], // ==: []
   "cSpell.language": "en,en-US,en-GB,ko-KR",
-  "cSpell.logLevel": "Information",
-  "cSpell.maxDuplicateProblems": 3, // *:
-  "cSpell.maxNumberOfProblems": 100,
-  "cSpell.minWordLength": 4,
-  "cSpell.noConfigSearch": false,
-  "cSpell.noSuggestDictionaries": [],
-  "cSpell.numSuggestions": 8,
-  "cSpell.overrides": [],
-  "cSpell.patterns": [],
-  "cSpell.showAutocompleteSuggestions": false, // ==: false
+  "cSpell.logLevel": "Error", // ==: "Error"
+  "cSpell.maxDuplicateProblems": 3, // ==: 20 // *:
+  "cSpell.maxNumberOfProblems": 100, // ==: 100
+  "cSpell.minWordLength": 4, // ==: 4
+  "cSpell.noConfigSearch": false, // ==: false
+  "cSpell.noSuggestDictionaries": [], // ==: []
+  "cSpell.numSuggestions": 8, // ==: 8
+  "cSpell.overrides": [], // ==: []
+  "cSpell.patterns": [], // ==: []
   "cSpell.showCommandsInEditorContextMenu": false, // ==: true // *:
-  "cSpell.spellCheckDelayMs": 50,
+  "cSpell.spellCheckDelayMs": 50, // ==: 50
   "cSpell.spellCheckOnlyWorkspaceFiles": true, // ==: false // *:
-  "cSpell.suggestionMenuType": "quickPick",
-  "cSpell.suggestionNumChanges": 3,
-  "cSpell.suggestionsTimeout": 400,
-  "cSpell.useGitignore": true,
-  "cSpell.usePnP": false, // ==: false
+  "cSpell.suggestionMenuType": "quickPick", // ==: "quickPick"
+  "cSpell.suggestionNumChanges": 3, // ==: 3
+  "cSpell.suggestionsTimeout": 400, // ==: 400
+  "cSpell.useGitignore": true, // ==: true
+  "cSpell.usePnP": false, // ==: []
+  "cSpell.mergeCSpellSettings": true, // ==: true
+
+  // TYPE: MARK: e*
+
   "editorconfig.generateAuto": true, // ==: true
   "editorconfig.template": "default", // ==: "default"
   "errorLens.borderRadius": "5px", // *:
@@ -725,6 +855,11 @@
   "errorLens.statusBarMessageType": "closestSeverity", // *:
   "errorLens.warningGutterIconColor": "#ff942f",
   "explorerExclude.backup": { "**/bazel_tools/**/*.py": true },
+
+  // TYPE: MARK: d*
+
+  // TYPE: MARK: f*
+
   "fileutils.duplicateFile.typeahead.enabled": false,
   "fileutils.inputBox.pathType": "workspace",
   "fileutils.inputBox.pathTypeIndicator": "_",
@@ -736,6 +871,9 @@
   "footsteps.doHighlightCurrentlyFocusedChunk": true, // ==: false
   "footsteps.doHighlightEmptyLines": true, // ==: true
   "footsteps.doHighlightInactiveEditors": true, // ==: false
+
+  // TYPE: MARK: g*
+
   "git-graph.commitDetailsView.autoCenter": true,
   "git-graph.commitDetailsView.fileView.fileTree.compactFolders": true,
   "git-graph.commitDetailsView.fileView.type": "File Tree",
@@ -864,6 +1002,9 @@
   "gitlens.views.stashes.files.layout": "tree",
   "gitlens.views.tags.files.layout": "tree",
   "gitTreeCompare.diffMode": "merge",
+
+  // TYPE: MARK: h*
+
   "highlight.decorations": {
     "borderRadius": "3px",
     "opacity": "0.9",
@@ -872,6 +1013,13 @@
   "highlight.maxMatches": 1000, // ==: 250 // *:
   "highlight.minDelay": 50, // ==: 50
   "highlight.regexFlags": "g", // ==: "gi" // *:
+
+  // TYPE: MARK: i*
+
+  "importCost.bundleSizeDecoration": "both",
+
+  // TYPE: MARK: j*
+
   "jake.autoDetect": "off", // ==: "off"
   "java.format.enabled": true,
   "java.format.settings.profile": "GoogleStyle",
@@ -884,7 +1032,9 @@
       "url": "https://on.cypress.io/cypress.schema.json"
     }
   ],
-  "importCost.bundleSizeDecoration": "both",
+
+  // TYPE: MARK: l*
+
   "languageTool.enabled": true,
   "languageTool.language": "en",
   "licenser.disableAutoHeaderInsertion": true,
@@ -924,6 +1074,9 @@
   "logFileHighlighter.enableProgressIndicator": true, // ==: true
   "logFileHighlighter.enableTailMode": true, // ==: true
   "logFileHighlighter.progressIndicatorUnderlineColor": "#00ff1f8f", // ==: "#00ff1f8f"
+
+  // TYPE: MARK: m*
+
   "markdown-preview-enhanced.mermaidTheme": "dark",
   "markdown-preview-enhanced.previewTheme": "one-dark.css",
   "markdown-preview-enhanced.revealjsTheme": "night.css",
@@ -952,9 +1105,15 @@
   "monkeyPatch.mainProcessModules": [],
   "monorepoWorkspace.folders.prefix.root": "🌱",
   "multiDiffEditor.experimental.enabled": true, // ==: false // *:
+
+  // TYPE: MARK: n*
+
   "numberedBookmarks.keepBookmarksOnLineDelete": true, // ==: false // *:
   "numberedBookmarks.saveBookmarksInProject": true, // ==: false // *:
   "numberedBookmarks.showBookmarkNotDefinedWarning": true, // ==: false // *:
+
+  // TYPE: MARK: o*
+
   "outline-map.customFont": "JetBrainsMonoNL Nerd Font Mono", // ==: "" // *:
   "outline-map.defaultMaxDepth": 0, // ==: 0
   "outline-map.expand": "cursor", // ==: "viewport" // *:
@@ -963,6 +1122,9 @@
   "outline-map.region.highlight": true, // ==: true
   "outline-map.region.highlightStyle": {}, // ==: {}
   "outline-map.region.registerSymbolProvider": false, // ==: false
+
+  // TYPE: MARK: p*
+
   "path-intellisense.absolutePathTo": "", // ==: ""
   "path-intellisense.absolutePathToWorkspace": false, // ==: true // *:
   "path-intellisense.autoSlashAfterDirectory": true, // ==: true
@@ -989,7 +1151,15 @@
   "prettier.trailingComma": "all",
   "prettier.useEditorConfig": true,
   "prettier.useTabs": false,
+
+  // TYPE: MARK: q*
+
+  // TYPE: MARK: r*
+
   "rewrap.reformat": true,
+
+  // TYPE: MARK: s*
+
   "shellcheck.customArgs": ["-x"],
   "shellcheck.enable": true, // *:
   "shellcheck.exclude": [],
@@ -1067,6 +1237,9 @@
   "sourcegraph.url": "https://sourcegraph.com",
   "svg.preview.background": "custom",
   "svg.preview.mode": "img",
+
+  // TYPE: MARK: t*
+
   "textmarker.autoSelectDistinctiveTextColor": true,
   "textmarker.commandsOnContextMenu": {
     "clearAllHighlight": false,
@@ -1123,6 +1296,11 @@
   "todo-tree.general.tags": ["BUG", "HACK", "FIXME", "TODO", "XXX", "[ ]", "[x]"],
   "todo-tree.regex.regex": "(//|#|<!--|;|/\\*|^|^\\s*(-|\\d+.))\\s*($TAGS)",
   "todohighlight.isEnable": true,
+
+  // TYPE: MARK: u*
+
+  // TYPE: MARK: vim.*
+
   "vim.argumentObjectClosingDelimiters": [")", "]"], // ==: [")", "]"]
   "vim.argumentObjectOpeningDelimiters": ["(", "["], // ==: ["(", "["]
   "vim.argumentObjectSeparators": [","], // ==: [","]
@@ -1360,6 +1538,9 @@
     // { "before": ["<Leader>", "K"], "after": ["<Leader>", "<Leader>", "g", "e"] },
   ],
   "vim.visualstar": true,
+
+  // TYPE: MARK: vs*
+
   "vscode_custom_css.imports": [
     "file:///Users/ssm/.vscode-custom.css",
     "file:///Users/ssm/.vscode-custom.js"
@@ -1378,7 +1559,15 @@
   "vsintellicode.python.completionsEnabled": true,
   "vsintellicode.sql.completionsEnabled": true,
   "vsintellicode.typescript.completionsEnabled": true,
+
+  // TYPE: MARK: w*
+
+  // TYPE: MARK: x*
+
   "xml.codeLens.enabled": true,
+
+  // TYPE: MARK: y*
+
   "yaml.completion": false, // ==: true // *:
   "yaml.format.bracketSpacing": false, // ==: true // *:
   "yaml.format.enable": true, // ==: true
@@ -1392,12 +1581,10 @@
   "yaml.style.flowSequence": "forbid", // ==: "allow" // *:
   "yaml.validate": true, // ==: true
 
-  // #endregion extension-settings
-
-  // MARK: #region local-settings-not-synced
+  // TYPE: MARK: z*
 
   //
-  // TYPE: Local (Not synced)
+  // TYPE: MARK: Local (Not synced)
   // @gitignore:on // TODO: implement @GITIGNORE:ON/OFF
   //
 
@@ -1542,23 +1729,15 @@
     "file:///home/clvswft03/.vscode/extensions/atlassian.atlascode-2.10.9/resources/schemas/pipelines-schema.json": "bitbucket-pipelines.yml"
   },
 
-  // #endregion local-settings-not-synced
-
   //
-  // TYPE: NOTE: Too Long (Non-Extension)
+  // TYPE: NOTE: MARK: Too Long (Non-Extension)
   //
 
-  // MARK: #region non-extension-settings-too-long
-
-  // #tag "terminal.integrated.commandsToSkipShell"
+  // TYPE: terminal.integrated.commandsToSkipShell
   "terminal.integrated.commandsToSkipShell": [
-    //
     // TYPE: Language-specific Settings
-    //
 
-    //
     // TYPE: Non-Extension Settings
-    //
 
     "workbench.action.findInFiles",
     "workbench.action.focusActiveEditorGroup",
@@ -1582,24 +1761,15 @@
     // "workbench.action.navigateUp",
     // "workbench.action.openRecent",
 
-    //
-    // TYPE: Extensioin
-    //
+    // TYPE: Extension Settings
   ],
 
-  // #tag "workbench.settings.applyToAllProfiles"
+  // TYPE: MARK: workbench.settings.applyToAllProfiles
   "workbench.settings.applyToAllProfiles": [
-    //
     // TYPE: Language-specific Settings
-    //
 
-    // "[json][jsonc]",
+    // TYPE: MARK: Non-Extension Settings
 
-    //
-    // TYPE: Non-Extension Settings
-    //
-
-    // "editor.codeActionsOnSave",
     "accessibility.signals.terminalBell",
     "breadcrumbs.filePath",
     "breadcrumbs.icons",
@@ -1933,9 +2103,7 @@
     "workbench.view.alwaysShowHeaderActions",
     "workbench.welcomePage.walkthroughs.openOnInstall",
 
-    //
-    // TYPE: Extensioin
-    //
+    // TYPE: MARK: Extension Settings
 
     "better-comments.highlightPlainText",
     "better-comments.multilineComments",
@@ -1971,8 +2139,17 @@
     "cSpell.dictionaries",
     "cSpell.dictionaryDefinitions",
     "cSpell.enabled",
-    "cSpell.enableFiletypes",
+    "cSpell.enabledFileTypes",
     "cSpell.enabledLanguageIds",
+    "cSpell.files",
+    "cSpell.fixSpellingWithRenameProvider",
+    "cSpell.flagWords",
+    "cSpell.ignorePaths",
+    "cSpell.ignoreRegExpList",
+    "cSpell.ignoreWords",
+    "cSpell.import",
+    "cSpell.includeRegExpList",
+    "cSpell.language",
     "cSpell.logLevel",
     "cSpell.maxDuplicateProblems",
     "cSpell.maxNumberOfProblems",
@@ -1980,10 +2157,16 @@
     "cSpell.noConfigSearch",
     "cSpell.noSuggestDictionaries",
     "cSpell.numSuggestions",
-    "cSpell.showAutocompleteSuggestions",
+    "cSpell.overrides",
+    "cSpell.patterns",
     "cSpell.spellCheckOnlyWorkspaceFiles",
+    "cSpell.suggestionMenuType",
+    "cSpell.suggestionNumChanges",
+    "cSpell.suggestionsTimeout",
+    "cSpell.useGitignore",
     "cSpell.usePnP",
     "cSpell.userWords",
+    "cSpell.words",
     "editorconfig.generateAuto",
     "editorconfig.template",
     "footsteps.clearChangesOnFileSave",
@@ -2148,18 +2331,15 @@
     "vim.visualModeKeyBindingsNonRecursive",
     "vim.visualstar",
     "vscode_custom_css.imports",
-    "vscode_custom_css.statusbar"
+    "vscode_custom_css.statusbar",
+    "eslint.debug"
   ],
 
-  // #endregion non-extension-settings-too-long
-
   //
-  // TYPE: NOTE: Too Long (Extension)
+  // TYPE: NOTE: MARK: Too Long (Extension)
   //
 
-  // MARK: #region extension-settings-too-long
-
-  // #tag "better-comments.tags"
+  // TYPE: better-comments.tags
   "better-comments.tags": [
     // TODO: rearrange comment format and order
     // ! Deprecated method, do not use
@@ -2397,6 +2577,8 @@
     }
   ],
 
+  // TYPE: MARK: cSpell.*
+
   "cSpell.dictionaries": [
     // CUSTOM:
 
@@ -2435,130 +2617,80 @@
     "vsls": true
   },
 
-  // "cSpell.languageSettings": [
-  //   {
-  //     "languageId": "*",
-  //     "dictionaries": [
-  //       "companies",
-  //       "misc",
-  //       "softwareTerms",
-  //       "wordsEn",
-  //       "wordsEnGb"
-  //     ]
-  //   },
-  //   {
-  //     "languageId": "*",
-  //     "locale": "en-GB",
-  //     "dictionaries": [
-  //       "wordsEnGb"
-  //     ]
-  //   },
-  //   {
-  //     "languageId": "*",
-  //     "locale": "en-US",
-  //     "dictionaries": [
-  //       "wordsEn"
-  //     ]
-  //   },
-  //   {
-  //     "languageId": "*",
-  //     "locale": "en",
-  //     "dictionaries": [
-  //       "wordsEn"
-  //     ]
-  //   },
-  //   {
-  //     "languageId": "*",
-  //     "locale": "en",
-  //     "dictionaries": [
-  //       "wordsEn"
-  //     ]
-  //   },
-  //   {
-  //     "languageId": "css",
-  //     "dictionaries": [
-  //       "fonts",
-  //       "css"
-  //     ]
-  //   },
-  //   {
-  //     "languageId": "go",
-  //     "allowCompoundWords": true,
-  //     "dictionaries": [
-  //       "go"
-  //     ]
-  //   },
-  //   {
-  //     "languageId": "html",
-  //     "dictionaries": [
-  //       "html",
-  //       "fonts",
-  //       "typescript",
-  //       "css"
-  //     ]
-  //   },
-  //   {
-  //     "languageId": "javascript",
-  //     "dictionaries": [
-  //       "typescript",
-  //       "node"
-  //     ]
-  //   },
-  //   {
-  //     "languageId": "javascriptreact",
-  //     "dictionaries": [
-  //       "typescript",
-  //       "node"
-  //     ]
-  //   },
-  //   {
-  //     "languageId": "less",
-  //     "dictionaries": [
-  //       "fonts",
-  //       "css"
-  //     ]
-  //   },
-  //   {
-  //     "languageId": "php",
-  //     "dictionaries": [
-  //       "php",
-  //       "html",
-  //       "fonts",
-  //       "css",
-  //       "typescript"
-  //     ]
-  //   },
-  //   {
-  //     "languageId": "python",
-  //     "allowCompoundWords": true,
-  //     "dictionaries": [
-  //       "python"
-  //     ]
-  //   },
-  //   {
-  //     "languageId": "scss",
-  //     "dictionaries": [
-  //       "fonts",
-  //       "css"
-  //     ]
-  //   },
-  //   {
-  //     "languageId": "typescript",
-  //     "dictionaries": [
-  //       "typescript",
-  //       "node"
-  //     ]
-  //   },
-  //   {
-  //     "languageId": "typescriptreact",
-  //     "dictionaries": [
-  //       "typescript",
-  //       "node"
-  //     ]
-  //   }
-  // ],
+  "cSpell.languageSettings": [
+    {
+      "languageId": "*",
+      "dictionaries": ["companies", "misc", "softwareTerms", "wordsEn", "wordsEnGb"]
+    },
+    {
+      "languageId": "*",
+      "locale": "en-GB",
+      "dictionaries": ["wordsEnGb"]
+    },
+    {
+      "languageId": "*",
+      "locale": "en-US",
+      "dictionaries": ["wordsEn"]
+    },
+    {
+      "languageId": "*",
+      "locale": "en",
+      "dictionaries": ["wordsEn"]
+    },
+    {
+      "languageId": "*",
+      "locale": "en",
+      "dictionaries": ["wordsEn"]
+    },
+    {
+      "languageId": "css",
+      "dictionaries": ["fonts", "css"]
+    },
+    {
+      "languageId": "go",
+      "allowCompoundWords": true,
+      "dictionaries": ["go"]
+    },
+    {
+      "languageId": "html",
+      "dictionaries": ["html", "fonts", "typescript", "css"]
+    },
+    {
+      "languageId": "javascript",
+      "dictionaries": ["typescript", "node"]
+    },
+    {
+      "languageId": "javascriptreact",
+      "dictionaries": ["typescript", "node"]
+    },
+    {
+      "languageId": "less",
+      "dictionaries": ["fonts", "css"]
+    },
+    {
+      "languageId": "php",
+      "dictionaries": ["php", "html", "fonts", "css", "typescript"]
+    },
+    {
+      "languageId": "python",
+      "allowCompoundWords": true,
+      "dictionaries": ["python"]
+    },
+    {
+      "languageId": "scss",
+      "dictionaries": ["fonts", "css"]
+    },
+    {
+      "languageId": "typescript",
+      "dictionaries": ["typescript", "node"]
+    },
+    {
+      "languageId": "typescriptreact",
+      "dictionaries": ["typescript", "node"]
+    }
+  ],
 
-  // #tag "cSpell.userWords"
+  // TYPE: MARK: cSpell.userWords
   "cSpell.userWords": [
     "aarch",
     "acnf",
@@ -2569,6 +2701,8 @@
     "appium",
     "appiumby",
     "armhf",
+    "asce",
+    "asseinfo",
     "Assumenda",
     "asvetliakov",
     "azcli",
@@ -2583,6 +2717,7 @@
     "cadetblue",
     "catppuccin",
     "charliermarsh",
+    "chartjs",
     "CHERE",
     "choco",
     "cillum",
@@ -2590,6 +2725,7 @@
     "clvsw",
     "clvswft",
     "CMDER",
+    "cmstead",
     "cmyk",
     "combi",
     "commitlint",
@@ -2599,6 +2735,8 @@
     "cython",
     "cythonize",
     "daterange",
+    "Daum",
+    "davidanson",
     "dbaeumer",
     "dbscheme",
     "dconf",
@@ -2614,12 +2752,15 @@
     "dotenv",
     "dpad",
     "duis",
+    "ecommerce",
     "eiusmod",
     "elit",
     "enim",
     "errback",
     "esbenp",
+    "fabiospampinato",
     "fffc",
+    "fkey",
     "formdata",
     "formik",
     "fugiat",
@@ -2635,22 +2776,27 @@
     "iframe",
     "ilasota",
     "imwheel",
+    "innodb",
     "innonm",
     "intellij",
     "isort",
     "iternodes",
     "itertag",
+    "jbockle",
     "jenv",
     "jonathonf",
+    "jsrefactor",
     "jvectormap",
     "jvmoptions",
     "kakao",
     "kakaotalk",
     "keyevent",
+    "kohler",
     "laboris",
     "lcov",
     "logoipsum",
     "markdownlint",
+    "marky",
     "mdlrc",
     "mdtxt",
     "mdwn",
@@ -2678,6 +2824,7 @@
     "oldstuff",
     "onkibi",
     "openai",
+    "orta",
     "ostw",
     "osunix",
     "osunixdarwinmacos",
@@ -2690,6 +2837,7 @@
     "popperjs",
     "ppadb",
     "Proxyless",
+    "prsm",
     "pwsh",
     "pycache",
     "pycharm",
@@ -2761,8 +2909,11 @@
     "wmctrl",
     "WRKA",
     "xhere",
-    "xonshrc"
+    "xonshrc",
+    "yzane"
   ],
+
+  // TYPE: MARK: foam.*
 
   "foam.graph.style": {
     "background": "#202020",
@@ -2782,6 +2933,8 @@
     }
   },
   "foam.openDailyNote.onStartup": false,
+
+  // TYPE: MARK: git-graph.*
 
   "fileutils.menus.context.editor": [
     "renameFile",
@@ -2805,6 +2958,8 @@
     "copyFileName"
   ],
 
+  // TYPE: MARK: git-graph.*
+
   "git-graph.graph.colours": [
     "#0085d9",
     "#d9008f",
@@ -2819,6 +2974,8 @@
     "#6f24d6",
     "#ffcc00"
   ], // *:
+
+  // TYPE: MARK: gitlens.*
 
   "gitlens.menus": {
     "editor": {
@@ -2890,6 +3047,7 @@
     }
   },
 
+  // TYPE: MARK: highlight.regexes
   // #tag "highlight.regexes"
   "highlight.regexes": {
     // Deep Orange 500 #FF5722
@@ -3011,6 +3169,7 @@
     }
   },
 
+  // TYPE: MARK: multiCommand.commands
   "multiCommand.commands": [
     {
       "command": "multiCommand.git.stageAllWithUntracked",
@@ -3068,13 +3227,9 @@
     "!Sub"
   ],
 
-  // #endregion extension-settings-too-long
-
   //
-  // TYPE: Handle from other profile
+  // TYPE: MARK: Handle from other profile
   //
-
-  // MARK: #region handle-from-other-profile
 
   "nix.enableLanguageServer": true, // ==: false
   "nushellLanguageServer.hints.showInferredTypes": true,
@@ -3146,15 +3301,14 @@
   "python.diagnostics.sourceMapsEnabled": true,
   "redhat.telemetry.enabled": true,
 
-  // #endregion handle-from-other-profile
-
   //
-  // TYPE: Unsorted
+  // TYPE: MARK: Unsorted
   //
 
-  // MARK: #region unsorted
-
-  "zenMode.silentNotifications": true // ==: true
-
-  // #endregion unsorted
+  "zenMode.silentNotifications": true,
+  "[jsonc]": {
+    "editor.tabSize": 2,
+    "prettier.trailingComma": "all"
+  },
+  "eslint.debug": true // ==: true
 }
