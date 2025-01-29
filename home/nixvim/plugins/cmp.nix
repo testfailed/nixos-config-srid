@@ -31,10 +31,12 @@
       copilot-cmp = {
         enable = false; # ==: false
 
-        event = [
-          "InsertEnter"
-          "LspAttach"
-        ];
+        settings = {
+          event = [
+            "InsertEnter"
+            "LspAttach"
+          ];
+        };
       };
 
       # cuda

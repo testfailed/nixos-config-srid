@@ -21,7 +21,7 @@
     ./telescope.nix
     ./treesitter.nix
     ./trim.nix
-    ./vimtex.nix
+    # ./vimtex.nix
     ./which-key.nix
 
     # NOTE: Order

@@ -56,7 +56,7 @@
         bashls.enable = true; # *: false
         clangd.enable = true; # *: false
         cmake.enable = true; # *: false
-        csharp_ls.enable = true; # *: false
+        csharp_ls.enable = false; # ==: false # NOTE: it's not available on aarch64-darwin.
         cssls.enable = true; # *: false
         docker_compose_language_service.enable = true; # *: false
         dockerls.enable = true; # *: false
@@ -67,7 +67,6 @@
         graphql.enable = true; # *: false
         hls = {
           enable = true; # *: false
-
           installGhc = true; # ==: false # TODO: change to false.
         };
         html.enable = true; # *: false
@@ -93,7 +92,6 @@
         # ruff_lsp.enable = true; # *: false
         rust_analyzer = {
           enable = true; # *: false
-
           installCargo = true; # *: null # TODO: change to false.
           installRustc = true; # *: null # TODO: change to false.
         };

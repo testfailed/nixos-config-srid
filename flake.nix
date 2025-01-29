@@ -4,7 +4,13 @@
   inputs = {
     # Nixpkgs Inputs
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+    # nixpkgs.url = "github:nixos/nixpkgs/master";
     # nixpkgs.url = "github:nixos/nixpkgs/nixos-24.11";
+    # nixpkgs-24-11-darwin.url = "github:nixos/nixpkgs/nixpkgs-24.11-darwin";
+    # nixpkgs-24-11.url = "github:nixos/nixpkgs/nixos-24.11";
+    # nixpkgs-23-11.url = "github:nixos/nixpkgs/nixos-23.11";
+    # nixpkgs-23-05.url = "github:nixos/nixpkgs/nixos-23.05";
+    # nixpkgs-master.url = "github:nixos/nixpkgs/master";
     # nixpkgs.url = "https://flakehub.com/f/NixOS/nixpkgs/0.2405.*";
     # nixpkgs.url = "https://flakehub.com/f/NixOS/nixpkgs/0.2411.*";
     # nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
@@ -57,6 +63,7 @@
     # Neovim
     nixvim.url = "github:nix-community/nixvim";
     nixvim.inputs.nixpkgs.follows = "nixpkgs";
+    # nixvim.inputs.nixpkgs.follows = "nixpkgs-24-11-darwin";
 
     # Devshell
     treefmt-nix.url = "github:numtide/treefmt-nix";
@@ -226,6 +233,26 @@
             overlays = [
               inputs.nix-on-droid.overlays.default
               # add other overlays
+
+              # (_final: _prev: {
+              #   # clisp = prev.clisp.overrideAttrs (_oldAttrs: {
+              #   #   # version = "2.50pre20230112";
+              #   #   # version = "2.49.95-unstable-2024-12-28";
+              #   #   src = prev.fetchFromGitLab {
+              #   #     rev = "c3ec11bab87cfdbeba01523ed88ac2a16b22304d";
+              #   #     # hash = "sha256-xXGx2FlS0l9huVMHqNbcAViLjxK8szOFPT0J8MpGp9w=";
+              #   #     hash = "";
+              #   #   };
+              #   # });
+              #
+              #   # clisp = inputs'.nixpkgs-24-11.clisp.default;
+              #
+              #   # clisp = (import inputs.nixpkgs { inherit system; }).clisp;
+              #   # clisp = (import inputs.nixpkgs-24-11 { inherit system; }).clisp;
+              #   # clisp = (import inputs.nixpkgs-23-11 { inherit system; }).clisp;
+              #   # clisp = (import inputs.nixpkgs-23-05 { inherit system; }).clisp;
+              #   clisp = (import inputs.nixpkgs-master { inherit system; }).clisp;
+              # })
             ];
           };
         };
