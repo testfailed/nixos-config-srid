@@ -30,25 +30,26 @@
     # hunspell
     # just # TODO: use it
     # ncdu
+    # xsv # NOTE: error: 'xsv' has been removed due to lack of upstream maintenance
     # zsh-vi-mode # TODO: use it
     btop
     cheat
     cht-sh
     coreutils-prefixed
     delta
-    diffutils
     difftastic
+    diffutils
     du-dust
     dua
     eza
     fd
     findutils
-    hexyl
-    hwatch
-    hyperfine
     gdu
     gh
+    hexyl
     htop
+    hwatch
+    hyperfine
     iftop
     jq
     killall
@@ -61,7 +62,6 @@
     sqlite
     uutils-coreutils
     watchman
-    xsv
     yq-go
 
     #
