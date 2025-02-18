@@ -28,8 +28,6 @@
     # aspell
     # aspellDicts.en
     # hunspell
-    # just # TODO: use it
-    # ncdu
     # xsv # NOTE: error: 'xsv' has been removed due to lack of upstream maintenance
     # zsh-vi-mode # TODO: use it
     btop
@@ -39,12 +37,9 @@
     delta
     difftastic
     diffutils
-    du-dust
-    dua
     eza
     fd
     findutils
-    gdu
     gh
     hexyl
     htop
@@ -52,6 +47,7 @@
     hyperfine
     iftop
     jq
+    just # TODO: use it
     killall
     lesspipe
     neofetch
@@ -63,6 +59,13 @@
     uutils-coreutils
     watchman
     yq-go
+
+    # Disk usage tools
+    du-dust
+    dua
+    gdu
+    ncdu
+    parallel-disk-usage
 
     #
     # Development tools
