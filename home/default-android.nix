@@ -104,32 +104,33 @@
     python311 # NOTE: try python-rewrite
     python311Packages.virtualenv # globally install virtualenv
 
-    # Node.js development tools
+    # Node.js
     # nodejs
     nodejs_22
+
     # nodePackages.lerna # NOTE: build error
-    nodePackages.cspell
-    nodePackages.dotenv-cli
-    nodePackages.dotenv-vault
-    nodePackages.eslint
-    nodePackages.graphql-cli
-    nodePackages.neovim
-    nodePackages.node-gyp
-    nodePackages.nodemon
-    nodePackages.npm
-    nodePackages.patch-package
-    nodePackages.pm2
-    nodePackages.pnpm
-    nodePackages.prettier
-    nodePackages.prisma
-    nodePackages.semver
-    nodePackages.speed-test
-    nodePackages.svgo
-    nodePackages.ts-node
+    # nodePackages.neovim
+    # nodePackages.nodemon
+    # nodePackages.prettier
+    # nodePackages.semver
+    # nodePackages.speed-test
+    # nodePackages.svgo
+    # nodePackages.ts-node
     # nodePackages.vercel
-    nodePackages.webpack-cli
-    nodePackages.yalc
+    # nodePackages.webpack-cli
+    # nodePackages.yalc
     # nodePackages.yarn
+    # patch-package
+
+    # nodePackages."@prisma/language-server"
+    # nodePackages.cspell
+    # nodePackages.eslint
+    # nodePackages.graphql-cli
+    # nodePackages.node-gyp
+    # nodePackages.npm
+    # nodePackages.pm2
+    nodePackages.pnpm
+    nodePackages.prisma
 
     #
     # DevOps tools

@@ -64,7 +64,7 @@
         eslint.enable = true; # *: false
         golangci_lint_ls.enable = true; # *: false
         gopls.enable = true; # *: false
-        graphql.enable = true; # *: false
+        # graphql.enable = true; # *: false # NOTE: error: nodePackages.graphql-language-service-cli cannot be found in pkgs
         hls = {
           enable = true; # *: false
           installGhc = true; # ==: false # TODO: change to false.

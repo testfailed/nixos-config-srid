@@ -35,12 +35,19 @@ in
   security.pam.enableSudoTouchIdAuth = true;
 
   # Auto upgrade nix package and the daemon service.
-  services.nix-daemon.enable = true;
+  #
+  # NOTE: - The option definition `services.nix-daemon.enable' in `/nix/store/hnc7qshiy94lzgl5kmxdxvcblvxqi7ll-source/systems/darwin.nix' no longer has any effect; please remove it.
+  # nix-darwin now manages nix-daemon unconditionally when
+  # `nix.enable` is on.
+  # services.nix-daemon.enable = true;
 
   # Turn off NIX_PATH warnings now that we're using flakes
   system.checks.verifyNixPath = false;
 
-  nix.configureBuildUsers = true;
+  # NOTE: - The option definition `nix.configureBuildUsers' in `/nix/store/hnc7qshiy94lzgl5kmxdxvcblvxqi7ll-source/systems/darwin.nix' no longer has any effect; please remove it.
+  # nix-darwin now manages build users unconditionally when
+  # `nix.enable` is on.
+  # nix.configureBuildUsers = true;
 
   environment.systemPackages = with pkgs; [
     # macOS GUI programs

@@ -69,6 +69,10 @@
   # };
 
   # Auto upgrade nix package and the daemon service.
+  #
+  # NOTE: - The option definition `services.nix-daemon.enable' in `/nix/store/hnc7qshiy94lzgl5kmxdxvcblvxqi7ll-source/systems/darwin.nix' no longer has any effect; please remove it.
+  # nix-darwin now manages nix-daemon unconditionally when
+  # `nix.enable` is on.
   # services.nix-daemon.enable = true;
 
   # For home-manager to work.
